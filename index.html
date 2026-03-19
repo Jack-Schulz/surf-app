@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fetch — Indiana Lake Forecast</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --water:   #0a1628;
+      --deep:    #060e1c;
+      --surface: #0f2040;
+      --glass:   rgba(255,255,255,0.04);
+      --rim:     rgba(255,255,255,0.08);
+      --fog:     rgba(255,255,255,0.45);
+      --mist:    rgba(255,255,255,0.15);
+      --gold:    #c8a96e;
+      --gold-dim:#7a6441;
+      --sky:     #4a90d9;
+      --cyan:    #7ec8e3;
+      --good:    #4caf82;
+      --fair:    #e8a94a;
+      --poor:    #d05a5a;
+      --white:   #f0ece4;
+      --serif:   'DM Serif Display', Georgia, serif;
+      --mono:    'DM Mono', monospace;
+      --sans:    'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--deep);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ─────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .hero-lake {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(6,14,28,0.55) 0%, rgba(6,14,28,0.2) 40%, rgba(6,14,28,0.7) 80%, var(--deep) 100%),
+        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&fit=crop') center/cover no-repeat;
+      transform-origin: center;
+      animation: slow-zoom 25s ease-in-out infinite alternate;
+    }
+
+    @keyframes slow-zoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.06); }
+    }
+
+    /* water shimmer overlay */
+    .hero-lake::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        transparent 0px,
+        transparent 3px,
+        rgba(74,144,217,0.03) 3px,
+        rgba(74,144,217,0.03) 4px
+      );
+      animation: shimmer 8s linear infinite;
+    }
+    @keyframes shimmer { from { background-position-y: 0; } to { background-position-y: 40px; } }
+
+    /* ── NAV ─────────────────────────────── */
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 3rem;
+      border-bottom: 1px solid var(--rim);
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: var(--white);
+    }
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--fog);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      padding: 0.6rem 1.4rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--deep);
+    }
+
+    /* ── HERO CONTENT ─────────────────────────────── */
+    .hero-body {
+      position: relative;
+      z-index: 5;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 2rem;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fade-up 0.8s 0.2s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fade-up 0.8s 0.4s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--fog);
+      max-width: 460px;
+      line-height: 1.7;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: fade-up 0.8s 0.6s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      opacity: 0;
+      animation: fade-up 0.8s 0.8s forwards;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--deep);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #e0c07a; }
+
+    .btn-ghost {
+      border: 1px solid var(--rim);
+      color: var(--fog);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--fog); color: var(--white); }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── LIVE STRIP ─────────────────────────────── */
+    .live-strip {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      gap: 0;
+      border-top: 1px solid var(--rim);
+      margin-top: auto;
+      opacity: 0;
+      animation: fade-up 0.8s 1s forwards;
+    }
+
+    .live-card {
+      flex: 1;
+      padding: 1.4rem 2rem;
+      border-right: 1px solid var(--rim);
+      transition: background 0.2s;
+    }
+    .live-card:last-child { border-right: none; }
+    .live-card:hover { background: var(--glass); }
+
+    .live-card-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-bottom: 0.5rem;
+    }
+
+    .live-card-value {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .live-card-sub {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--mist);
+      margin-top: 0.3rem;
+    }
+
+    .score-good  { color: var(--good); }
+    .score-fair  { color: var(--fair); }
+    .score-poor  { color: var(--poor); }
+
+    .pulse {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--good);
+      margin-right: 6px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.4; transform: scale(1.4); }
+    }
+
+    /* ── SECTION SHARED ─────────────────────────────── */
+    section {
+      padding: 7rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: var(--fog);
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    /* ── FORECAST CARD ─────────────────────────────── */
+    .forecast-section {
+      background: var(--surface);
+      border-top: 1px solid var(--rim);
+      border-bottom: 1px solid var(--rim);
+      max-width: 100%;
+      padding: 5rem 3rem;
+    }
+
+    .forecast-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .forecast-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .lake-selector {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lake-btn {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--rim);
+      background: none;
+      color: var(--fog);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .lake-btn.active {
+      border-color: var(--gold-dim);
+      color: var(--gold);
+      background: rgba(200,169,110,0.07);
+    }
+    .lake-btn:hover:not(.active) { border-color: var(--mist); color: var(--white); }
+
+    .mode-toggle {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--rim);
+    }
+    .mode-btn {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.1rem;
+      border: none;
+      background: none;
+      color: var(--fog);
+      cursor: pointer;
+      transition: all 0.15s;
+      border-right: 1px solid var(--rim);
+    }
+    .mode-btn:last-child { border-right: none; }
+    .mode-btn.active { background: var(--sky); color: var(--white); }
+
+    /* day cards */
+    .day-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0;
+      border: 1px solid var(--rim);
+    }
+
+    .day-card {
+      padding: 1.8rem 1.2rem;
+      border-right: 1px solid var(--rim);
+      text-align: center;
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+    .day-card:last-child { border-right: none; }
+    .day-card.today { background: rgba(74,144,217,0.07); }
+    .day-card:hover { background: var(--glass); }
+
+    .day-name {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-bottom: 1rem;
+    }
+    .day-card.today .day-name { color: var(--cyan); }
+
+    .day-score-ring {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 1rem;
+      position: relative;
+    }
+    .day-score-ring svg { transform: rotate(-90deg); }
+    .ring-bg { fill: none; stroke: var(--rim); stroke-width: 3; }
+    .ring-fill { fill: none; stroke-width: 3; stroke-linecap: round; transition: stroke-dashoffset 0.6s; }
+
+    .day-score-num {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+    }
+
+    .day-wind {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--mist);
+      margin-bottom: 0.3rem;
+    }
+
+    .day-condition {
+      font-size: 0.72rem;
+      color: var(--fog);
+    }
+
+    /* hourly */
+    .hourly-bar-section {
+      margin-top: 2.5rem;
+      border: 1px solid var(--rim);
+      padding: 2rem;
+    }
+
+    .hourly-title {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-bottom: 1.5rem;
+    }
+
+    .hourly-grid {
+      display: flex;
+      gap: 0.4rem;
+      align-items: flex-end;
+      height: 80px;
+    }
+
+    .hour-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hour-bar-wrap {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hour-bar {
+      width: 60%;
+      border-radius: 2px 2px 0 0;
+      min-height: 4px;
+      transition: height 0.4s;
+    }
+
+    .hour-label {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--mist);
+      white-space: nowrap;
+    }
+
+    /* best window callout */
+    .best-window {
+      margin-top: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-left: 2px solid var(--good);
+      background: rgba(76,175,130,0.05);
+    }
+    .best-window p {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      color: var(--good);
+    }
+    .best-window span { color: var(--fog); }
+
+    /* ── FEATURES ─────────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--rim);
+      margin-top: 4rem;
+    }
+
+    .feature-item {
+      padding: 2.8rem;
+      border-right: 1px solid var(--rim);
+      border-bottom: 1px solid var(--rim);
+    }
+    .feature-item:nth-child(3n) { border-right: none; }
+    .feature-item:nth-child(n+4) { border-bottom: none; }
+
+    .feature-icon {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-desc {
+      font-size: 0.85rem;
+      color: var(--fog);
+      line-height: 1.7;
+    }
+
+    /* ── LAKES MAP ─────────────────────────────── */
+    .lakes-section {
+      background: var(--water);
+      border-top: 1px solid var(--rim);
+      max-width: 100%;
+      padding: 5rem 3rem;
+    }
+
+    .lakes-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .lake-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 1px solid var(--rim);
+    }
+
+    .lake-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid var(--rim);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .lake-row:last-child { border-bottom: none; }
+    .lake-row:hover { background: var(--glass); }
+
+    .lake-row-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+    }
+
+    .lake-row-meta {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--mist);
+    }
+
+    .lake-badge {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+    }
+    .badge-live { border: 1px solid var(--good); color: var(--good); }
+    .badge-soon { border: 1px solid var(--rim); color: var(--mist); }
+
+    /* SVG lake map */
+    .lake-map-svg {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* ── ALERTS CTA ─────────────────────────────── */
+    .alert-section {
+      text-align: center;
+      padding: 8rem 3rem;
+      max-width: 100%;
+      background: linear-gradient(to bottom, var(--deep), var(--water));
+      border-top: 1px solid var(--rim);
+    }
+
+    .alert-inner { max-width: 600px; margin: 0 auto; }
+
+    .alert-section .section-title { margin-bottom: 1rem; }
+
+    .email-form {
+      display: flex;
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 1px solid var(--rim);
+    }
+
+    .email-input {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 1rem 1.5rem;
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      outline: none;
+    }
+    .email-input::placeholder { color: var(--mist); }
+
+    .email-submit {
+      background: var(--gold);
+      color: var(--deep);
+      border: none;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .email-submit:hover { background: #e0c07a; }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rim);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+    }
+    .footer-logo span { color: var(--gold); }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--mist);
+    }
+
+    /* ── DIVIDER ─────────────────────────────── */
+    .full-divider {
+      border: none;
+      border-top: 1px solid var(--rim);
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE (basic) ─────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .day-grid { grid-template-columns: repeat(4, 1fr); }
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-item { border-right: none; }
+      .lakes-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .live-strip { flex-wrap: wrap; }
+      .live-card { flex: 1 1 50%; }
+      .forecast-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-lake"></div>
+
+  <nav>
+    <div class="logo">Fetch<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#forecast">Forecast</a></li>
+      <li><a href="#lakes">Lakes</a></li>
+      <li><a href="#features">Features</a></li>
+    </ul>
+    <a href="#alerts" class="nav-cta">Get Alerts</a>
+  </nav>
+
+  <div class="hero-body">
+    <p class="hero-eyebrow"><span class="pulse"></span>Live · Indiana Lakes</p>
+    <h1 class="hero-title">Know before<br>you <em>launch.</em></h1>
+    <p class="hero-sub">Hourly wind, wave, and session forecasts for Indiana's lakes — built for wake surfers, kiteboaders, and anyone who lives for open water.</p>
+    <div class="hero-actions">
+      <a href="#forecast" class="btn-primary">See Today's Forecast</a>
+      <a href="#lakes" class="btn-ghost">View All Lakes</a>
+    </div>
+  </div>
+
+  <!-- live conditions strip -->
+  <div class="live-strip">
+    <div class="live-card">
+      <p class="live-card-label">Morse Reservoir</p>
+      <p class="live-card-value score-good">8.2 <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span></p>
+      <p class="live-card-sub">Excellent · Wake Surf</p>
+    </div>
+    <div class="live-card">
+      <p class="live-card-label">Geist Reservoir</p>
+      <p class="live-card-value score-fair">5.4 <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span></p>
+      <p class="live-card-sub">Fair · Moderate Chop</p>
+    </div>
+    <div class="live-card">
+      <p class="live-card-label">Wind · Morse</p>
+      <p class="live-card-value">9 <span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">mph NW</span></p>
+      <p class="live-card-sub">Gusting to 13 mph</p>
+    </div>
+    <div class="live-card">
+      <p class="live-card-label">Best Window</p>
+      <p class="live-card-value" style="font-size:1.3rem;">6–9 AM</p>
+      <p class="live-card-sub">Glassy · Sat Morning</p>
+    </div>
+    <div class="live-card">
+      <p class="live-card-label">Water Temp</p>
+      <p class="live-card-value">74°<span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">F</span></p>
+      <p class="live-card-sub">No wetsuit needed</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     FORECAST
+════════════════════════════════════════ -->
+<div class="forecast-section" id="forecast">
+  <div class="forecast-inner">
+    <div class="forecast-header">
+      <div>
+        <p class="section-eyebrow">7-Day Forecast</p>
+        <h2 class="section-title" style="margin-bottom:0;font-size:2rem;">Morse Reservoir</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.8rem;align-items:flex-end;">
+        <div class="lake-selector">
+          <button class="lake-btn active">Morse</button>
+          <button class="lake-btn">Geist</button>
+          <button class="lake-btn">Monroe</button>
+          <button class="lake-btn">Wawasee</button>
+        </div>
+        <div class="mode-toggle">
+          <button class="mode-btn active">Wake Surf</button>
+          <button class="mode-btn">Wind / Kite</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- day cards -->
+    <div class="day-grid" id="day-grid"></div>
+
+    <!-- hourly -->
+    <div class="hourly-bar-section">
+      <p class="hourly-title">Hourly Wind · Today</p>
+      <div class="hourly-grid" id="hourly-grid"></div>
+      <div class="best-window">
+        <p>Best window tomorrow: <span>6:30 – 9:00 AM · NW 7 mph · Glassy conditions expected</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     FEATURES
+════════════════════════════════════════ -->
+<section id="features">
+  <p class="section-eyebrow">Why Fetch</p>
+  <h2 class="section-title">Built for lake people,<br>not ocean people.</h2>
+  <p class="section-body">Generic weather apps don't understand fetch distance, lake geometry, or what makes a glassy morning window. We do.</p>
+
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">🌊</div>
+      <h3 class="feature-title">Fetch Calculation</h3>
+      <p class="feature-desc">We map the open-water distance wind travels on your lake. A north wind at Morse means something specific — we know exactly what.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🎯</div>
+      <h3 class="feature-title">Session Scores</h3>
+      <p class="feature-desc">One number, 1–10. No translating wind vectors. Good means good. You'll know in two seconds whether to load the boat.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">⏱</div>
+      <h3 class="feature-title">Window Alerts</h3>
+      <p class="feature-desc">Set a minimum score. We text you the night before when your lake hits it. Arrive at the right moment, every time.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🏄</div>
+      <h3 class="feature-title">Two Modes</h3>
+      <p class="feature-desc">Wake surf mode rewards calm, glassy water. Wind & kite mode rewards sustained directional wind. One app, two disciplines.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">📍</div>
+      <h3 class="feature-title">Spot-Level Accuracy</h3>
+      <p class="feature-desc">Different ends of the same lake behave differently. Save your launch ramp or favorite cove — we forecast it specifically.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🌡</div>
+      <h3 class="feature-title">Water Conditions</h3>
+      <p class="feature-desc">Water temp, wetsuit advisory, boat traffic patterns, and thermal wind timing baked into every forecast.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider" />
+
+<!-- ════════════════════════════════════════
+     LAKES
+════════════════════════════════════════ -->
+<div class="lakes-section" id="lakes">
+  <div class="lakes-inner">
+    <div>
+      <p class="section-eyebrow">Coverage</p>
+      <h2 class="section-title">Indiana first.<br>Then everywhere.</h2>
+      <p class="section-body" style="margin-bottom:0;">Starting with the lakes we know, so we get it right before we get it big. Expanding outward as the community grows.</p>
+
+      <div class="lake-list">
+        <div class="lake-row">
+          <div>
+            <p class="lake-row-name">Morse Reservoir</p>
+            <p class="lake-row-meta">Cicero, IN · 1,595 acres</p>
+          </div>
+          <span class="lake-badge badge-live">Live</span>
+        </div>
+        <div class="lake-row">
+          <div>
+            <p class="lake-row-name">Geist Reservoir</p>
+            <p class="lake-row-meta">Fishers, IN · 1,890 acres</p>
+          </div>
+          <span class="lake-badge badge-live">Live</span>
+        </div>
+        <div class="lake-row">
+          <div>
+            <p class="lake-row-name">Lake Monroe</p>
+            <p class="lake-row-meta">Bloomington, IN · 10,750 acres</p>
+          </div>
+          <span class="lake-badge badge-soon">Coming Soon</span>
+        </div>
+        <div class="lake-row">
+          <div>
+            <p class="lake-row-name">Lake Wawasee</p>
+            <p class="lake-row-meta">Syracuse, IN · 3,410 acres</p>
+          </div>
+          <span class="lake-badge badge-soon">Coming Soon</span>
+        </div>
+        <div class="lake-row">
+          <div>
+            <p class="lake-row-name">Patoka Lake</p>
+            <p class="lake-row-meta">Dubois County, IN · 8,800 acres</p>
+          </div>
+          <span class="lake-badge badge-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indiana outline SVG -->
+    <div>
+      <svg class="lake-map-svg" viewBox="0 0 340 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Indiana state outline (simplified) -->
+        <path d="M85,20 L255,20 L270,40 L275,80 L280,130 L272,160 L278,200 L275,240 L268,280 L260,320 L240,360 L210,400 L180,420 L150,415 L120,400 L95,370 L75,330 L68,290 L65,250 L68,210 L65,170 L68,130 L72,90 L78,55 Z"
+              stroke="rgba(255,255,255,0.12)" stroke-width="1.5" fill="rgba(15,32,64,0.6)" />
+
+        <!-- Lake dots -->
+        <!-- Morse Reservoir -->
+        <circle cx="168" cy="108" r="8" fill="rgba(76,175,130,0.3)" stroke="#4caf82" stroke-width="1.5"/>
+        <circle cx="168" cy="108" r="3" fill="#4caf82"/>
+        <text x="182" y="112" font-family="'DM Mono',monospace" font-size="9" fill="rgba(76,175,130,0.9)" letter-spacing="0.05em">Morse</text>
+
+        <!-- Geist Reservoir -->
+        <circle cx="185" cy="135" r="7" fill="rgba(76,175,130,0.3)" stroke="#4caf82" stroke-width="1.5"/>
+        <circle cx="185" cy="135" r="3" fill="#4caf82"/>
+        <text x="197" y="139" font-family="'DM Mono',monospace" font-size="9" fill="rgba(76,175,130,0.9)" letter-spacing="0.05em">Geist</text>
+
+        <!-- Lake Wawasee -->
+        <circle cx="200" cy="65" r="6" fill="rgba(126,200,227,0.15)" stroke="rgba(126,200,227,0.4)" stroke-width="1"/>
+        <circle cx="200" cy="65" r="2.5" fill="rgba(126,200,227,0.5)"/>
+        <text x="212" y="69" font-family="'DM Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)" letter-spacing="0.05em">Wawasee</text>
+
+        <!-- Lake Monroe -->
+        <circle cx="172" cy="295" r="6" fill="rgba(126,200,227,0.15)" stroke="rgba(126,200,227,0.4)" stroke-width="1"/>
+        <circle cx="172" cy="295" r="2.5" fill="rgba(126,200,227,0.5)"/>
+        <text x="184" y="299" font-family="'DM Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)" letter-spacing="0.05em">Monroe</text>
+
+        <!-- Patoka Lake -->
+        <circle cx="145" cy="345" r="6" fill="rgba(126,200,227,0.15)" stroke="rgba(126,200,227,0.4)" stroke-width="1"/>
+        <circle cx="145" cy="345" r="2.5" fill="rgba(126,200,227,0.5)"/>
+        <text x="157" y="349" font-family="'DM Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)" letter-spacing="0.05em">Patoka</text>
+
+        <!-- Legend -->
+        <circle cx="75" cy="390" r="5" fill="rgba(76,175,130,0.3)" stroke="#4caf82" stroke-width="1.5"/>
+        <text x="86" y="394" font-family="'DM Mono',monospace" font-size="8" fill="rgba(76,175,130,0.8)" letter-spacing="0.05em">Live now</text>
+        <circle cx="75" cy="410" r="5" fill="rgba(126,200,227,0.15)" stroke="rgba(126,200,227,0.4)" stroke-width="1"/>
+        <text x="86" y="414" font-family="'DM Mono',monospace" font-size="8" fill="rgba(255,255,255,0.3)" letter-spacing="0.05em">Coming soon</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ALERTS CTA
+════════════════════════════════════════ -->
+<div class="alert-section" id="alerts">
+  <div class="alert-inner">
+    <p class="section-eyebrow" style="text-align:center;">Early Access</p>
+    <h2 class="section-title">Get notified when<br>your lake goes <em style="font-style:italic;color:var(--gold);">glass.</em></h2>
+    <p class="section-body" style="margin:0 auto;text-align:center;">Set a session score threshold. We'll text you the night before when conditions align. Free during beta.</p>
+    <div class="email-form">
+      <input class="email-input" type="email" placeholder="your@email.com" />
+      <button class="email-submit">Notify Me</button>
+    </div>
+    <p style="font-family:var(--mono);font-size:0.62rem;color:var(--mist);margin-top:1rem;letter-spacing:0.05em;">No spam. Unsubscribe anytime. Indiana lakes only during beta.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">Fetch<span>.</span></div>
+  <p class="footer-copy">© 2025 Fetch · Indiana Lake Forecast · Built in Cicero</p>
+</footer>
+
+<!-- ════════════════════════════════════════
+     JS — FORECAST DATA
+════════════════════════════════════════ -->
+<script>
+  const days = [
+    { name:'Wed', score:6.1, wind:'14 NE', condition:'Moderate Chop', today:true },
+    { name:'Thu', score:4.2, wind:'19 S',  condition:'Rough',         today:false },
+    { name:'Fri', score:7.8, wind:'8 NW',  condition:'Good',          today:false },
+    { name:'Sat', score:9.1, wind:'6 NW',  condition:'Excellent',     today:false },
+    { name:'Sun', score:8.4, wind:'7 W',   condition:'Great',         today:false },
+    { name:'Mon', score:5.5, wind:'12 SW', condition:'Fair',          today:false },
+    { name:'Tue', score:3.8, wind:'22 S',  condition:'Poor',          today:false },
+  ];
+
+  const circumference = 2 * Math.PI * 22; // r=22
+
+  function scoreColor(s) {
+    if (s >= 7) return '#4caf82';
+    if (s >= 5) return '#e8a94a';
+    return '#d05a5a';
+  }
+
+  const grid = document.getElementById('day-grid');
+  days.forEach(d => {
+    const pct = d.score / 10;
+    const offset = circumference * (1 - pct);
+    const col = scoreColor(d.score);
+    const card = document.createElement('div');
+    card.className = 'day-card' + (d.today ? ' today' : '');
+    card.innerHTML = `
+      <p class="day-name">${d.today ? 'Today' : d.name}</p>
+      <div class="day-score-ring">
+        <svg viewBox="0 0 52 52" width="52" height="52">
+          <circle class="ring-bg" cx="26" cy="26" r="22"/>
+          <circle class="ring-fill" cx="26" cy="26" r="22"
+            stroke="${col}"
+            stroke-dasharray="${circumference}"
+            stroke-dashoffset="${offset}"/>
+        </svg>
+        <div class="day-score-num" style="color:${col}">${d.score.toFixed(1)}</div>
+      </div>
+      <p class="day-wind">${d.wind} mph</p>
+      <p class="day-condition" style="color:${col}">${d.condition}</p>
+    `;
+    grid.appendChild(card);
+  });
+
+  // hourly bars
+  const hourlyData = [
+    {h:'5a', w:4}, {h:'6a', w:5}, {h:'7a', w:6}, {h:'8a', w:7},
+    {h:'9a', w:10},{h:'10a',w:13},{h:'11a',w:15},{h:'12p',w:16},
+    {h:'1p', w:17},{h:'2p', w:18},{h:'3p', w:17},{h:'4p', w:15},
+    {h:'5p', w:13},{h:'6p', w:11},{h:'7p', w:8}, {h:'8p', w:6},
+    {h:'9p', w:4}, {h:'10p',w:3}
+  ];
+
+  const maxW = Math.max(...hourlyData.map(h => h.w));
+  const hGrid = document.getElementById('hourly-grid');
+
+  hourlyData.forEach(h => {
+    const heightPct = (h.w / maxW) * 100;
+    const col = h.w <= 8 ? '#4caf82' : h.w <= 13 ? '#e8a94a' : '#d05a5a';
+    const div = document.createElement('div');
+    div.className = 'hour-col';
+    div.innerHTML = `
+      <div class="hour-bar-wrap">
+        <div class="hour-bar" style="height:${heightPct}%;background:${col};opacity:0.8;"></div>
+      </div>
+      <p class="hour-label">${h.h}</p>
+    `;
+    hGrid.appendChild(div);
+  });
+
+  // lake btn toggle
+  document.querySelectorAll('.lake-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lake-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // mode toggle
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
