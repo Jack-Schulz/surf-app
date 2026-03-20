@@ -101,7 +101,7 @@ const map = new maplibregl.Map({
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
 async function loadConditions() {
-  const resp = await fetch('conditions_data.json');
+  const resp = await fetch('conditions_data.json?v=' + Date.now());
   return resp.json();
 }
 
