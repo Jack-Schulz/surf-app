@@ -7,6 +7,7 @@ import csv
 import json
 import requests
 import numpy as np
+from datetime import datetime
 
 FETCH_CSV  = "morse_fetch.csv"
 DEPTH_CSV  = "morse_grid_depth.csv"
@@ -136,10 +137,13 @@ def main():
     total   = len(points)
     summary = lake_summary(counts, total, wind_speed, dir_name)
 
+    last_updated = datetime.now().strftime("%B %-d, %Y %-I:%M %p")
+
     output = {
         "wind_speed":     wind_speed,
         "wind_direction": wind_dir_deg,
         "wind_dir_label": dir_name,
+        "last_updated":   last_updated,
         "summary":        summary,
         "counts":         counts,
         "points":         points,
