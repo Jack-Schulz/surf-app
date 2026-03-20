@@ -39,6 +39,72 @@ def fetch_weather():
     return float(cw["windspeed"]), float(cw["winddirection"])
 
 
+def fetch_hourly_forecast():
+    url = (
+        "https://api.open-meteo.com/v1/forecast"
+        f"?latitude={LAT}&longitude={LNG}"
+        "&hourly=windspeed_10m,winddirection_10m"
+        "&windspeed_unit=mph"
+        "&forecast_days=2"
+        "&timezone=America%2FChicago"
+    )
+    resp = requests.get(url, timeout=10)
+    resp.raise_for_status()
+    h = resp.json()["hourly"]
+    return h["time"], h["windspeed_10m"], h["winddirection_10m"]
+
+
+def build_forecast(times, speeds, directions):
+    now = datetime.now()
+    current_hour_str = now.strftime("%Y-%m-%dT%H:00")
+
+    start_idx = 0
+    for i, t in enumerate(times):
+        if t >= current_hour_str:
+            start_idx = i
+            break
+
+    forecast = []
+    for i in range(24):
+        idx = start_idx + i
+        if idx >= len(times):
+            break
+
+        speed = round(float(speeds[idx]), 1)
+        deg   = float(directions[idx])
+        dt    = datetime.strptime(times[idx], "%Y-%m-%dT%H:%M")
+
+        if i == 0:
+            hour_label = "Now"
+        elif dt.date() == now.date():
+            hour_label = dt.strftime("%-I %p")
+        else:
+            hour_label = "Tomorrow " + dt.strftime("%-I %p")
+
+        if speed <= 7:
+            cond_label, cond_color = "Glass",     "#2ECC71"
+        elif speed <= 12:
+            cond_label, cond_color = "Rippled",   "#F1C40F"
+        elif speed <= 17:
+            cond_label, cond_color = "Choppy",    "#E67E22"
+        elif speed <= 22:
+            cond_label, cond_color = "Rough",     "#E74C3C"
+        else:
+            cond_label, cond_color = "Stay Home", "#922B21"
+
+        forecast.append({
+            "hour_label":           hour_label,
+            "wind_speed":           speed,
+            "wind_direction":       deg,
+            "wind_dir_label":       nearest_direction(deg),
+            "condition_label":      cond_label,
+            "condition_color":      cond_color,
+            "roughness_multiplier": round(min(speed / 25.0, 1.0), 3),
+        })
+
+    return forecast
+
+
 def nearest_direction(deg):
     deg = deg % 360
     deltas = [abs((deg - d + 180) % 360 - 180) for d in DIR_DEGREES]
@@ -100,6 +166,11 @@ def main():
     dir_name = nearest_direction(wind_dir_deg)
     print(f"  {wind_speed} mph from {wind_dir_deg}° ({dir_name})")
 
+    print("Fetching hourly forecast...")
+    fc_times, fc_speeds, fc_dirs = fetch_hourly_forecast()
+    forecast = build_forecast(fc_times, fc_speeds, fc_dirs)
+    print(f"  {len(forecast)} forecast hours built")
+
     fetch_data = load_csv_by_id(FETCH_CSV)
     depth_data = load_csv_by_id(DEPTH_CSV)
     point_ids  = sorted(pid for pid in fetch_data if pid in depth_data)
@@ -132,6 +203,7 @@ def main():
             "depth_ft":        round(depth_ft, 2),
             "roughness_score": float(score),
             "final_condition": f_cond,
+            "fetch_values":    {d: round(float(fetch_data[pid][f"fetch_{d}"]), 2) for d in DIRECTIONS},
         })
 
     total   = len(points)
@@ -146,6 +218,7 @@ def main():
         "last_updated":   last_updated,
         "summary":        summary,
         "counts":         counts,
+        "forecast":       forecast,
         "points":         points,
     }
 

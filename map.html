@@ -60,6 +60,80 @@
       border-radius: 50%;
       flex-shrink: 0;
     }
+
+    /* ── Time slider ── */
+    #time-slider-panel {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background: rgba(20, 20, 30, 0.90);
+      padding: 12px 16px;
+    }
+
+    #slider-time-label {
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    #time-slider {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.2);
+      outline: none;
+      cursor: pointer;
+    }
+
+    #time-slider::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2ECC71;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+
+    #time-slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2ECC71;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+
+    #tick-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      padding: 0 2px;
+    }
+
+    .tick-label {
+      font-family: monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      position: relative;
+    }
+
+    .tick-now {
+      background: #2ECC71;
+      color: #000;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -80,9 +154,16 @@
   <div class="legend-item"><div class="swatch" style="background:#E74C3C"></div>Rough</div>
 </div>
 
+<div id="time-slider-panel">
+  <div id="slider-time-label">Now</div>
+  <input type="range" id="time-slider" min="0" max="23" value="0" step="1" />
+  <div id="tick-row"></div>
+</div>
+
 <script>
-// Weight encodes condition as a 0–1 value so the heatmap color ramp
-// can map each condition to a distinct color.
+const DIRECTIONS   = ['N','NE','E','SE','S','SW','W','NW'];
+const DIR_DEGREES  = [0, 45, 90, 135, 180, 225, 270, 315];
+
 const CONDITION_WEIGHT = {
   GREEN:  0.9,
   YELLOW: 0.55,
@@ -121,23 +202,66 @@ function buildGeoJSON(points) {
   };
 }
 
+function nearestDirection(deg) {
+  deg = ((deg % 360) + 360) % 360;
+  let best = 0, bestDelta = 999;
+  DIR_DEGREES.forEach((d, i) => {
+    const delta = Math.abs(((deg - d + 180 + 360) % 360) - 180);
+    if (delta < bestDelta) { bestDelta = delta; best = i; }
+  });
+  return DIRECTIONS[best];
+}
+
 function windLabel(speed) {
-  if (speed <= 4)  return 'Glass';
-  if (speed <= 8)  return 'Rippled';
-  if (speed <= 13) return 'Choppy';
-  if (speed <= 19) return 'Rough';
+  if (speed <= 7)  return 'Glass';
+  if (speed <= 12) return 'Rippled';
+  if (speed <= 17) return 'Choppy';
+  if (speed <= 22) return 'Rough';
   return 'Stay Home';
 }
 
-function updateUI(data) {
-  document.getElementById('wind-speed').textContent = data.wind_speed.toFixed(1);
-  document.getElementById('wind-dir').textContent   = data.wind_dir_label;
-  document.getElementById('wind-label').textContent = windLabel(data.wind_speed);
-  document.getElementById('wind-arrow').style.transform = `rotate(${data.wind_direction}deg)`;
-  document.getElementById('last-updated').textContent   = data.last_updated || '—';
+function updateWindCard(speed, dirLabel, dirDeg, lastUpdated) {
+  document.getElementById('wind-speed').textContent = speed.toFixed(1);
+  document.getElementById('wind-dir').textContent   = dirLabel;
+  document.getElementById('wind-label').textContent = windLabel(speed);
+  document.getElementById('wind-arrow').style.transform = `rotate(${dirDeg}deg)`;
+  if (lastUpdated !== undefined) {
+    document.getElementById('last-updated').textContent = lastUpdated || '—';
+  }
 }
 
-function addBestMarker(map, points) {
+// Recalculate per-point conditions for a given wind speed + direction
+function recalculatePoints(points, windSpeed, windDir) {
+  const dir = nearestDirection(windDir);
+  const raw = points.map(p => {
+    const fetchVal = (p.fetch_values && p.fetch_values[dir]) || 0;
+    return fetchVal * (windSpeed * windSpeed);
+  });
+  const rmin = Math.min(...raw);
+  const rmax = Math.max(...raw);
+  const range = rmax - rmin;
+
+  return points.map((p, i) => {
+    const score = range > 0 ? ((raw[i] - rmin) / range) * 100 : 0;
+    let cond;
+    if (score > 66) {
+      cond = 'RED';
+    } else if (p.depth_ft < 8) {
+      cond = 'YELLOW';
+    } else if (score > 33) {
+      cond = 'ORANGE';
+    } else {
+      cond = 'GREEN';
+    }
+    return { ...p, roughness_score: score, final_condition: cond };
+  });
+}
+
+let bestMarker = null;
+
+function updateBestMarker(points) {
+  if (bestMarker) { bestMarker.remove(); bestMarker = null; }
+
   const best = points
     .filter(p => p.final_condition === 'GREEN' || p.final_condition === 'GOLD')
     .sort((a, b) => a.roughness_score - b.roughness_score)[0];
@@ -150,17 +274,35 @@ function addBestMarker(map, points) {
   label.style.cssText = 'position:absolute;top:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(20,20,30,0.85);color:#fff;font-family:sans-serif;font-size:10px;padding:2px 6px;border-radius:4px;pointer-events:none;';
   el.appendChild(label);
 
-  new maplibregl.Marker({ element: el })
+  bestMarker = new maplibregl.Marker({ element: el })
     .setLngLat([best.longitude, best.latitude])
     .addTo(map);
+}
+
+function buildTickRow(forecast) {
+  const row = document.getElementById('tick-row');
+  row.innerHTML = '';
+  // 8 ticks at positions 0, 3, 6, 9, 12, 15, 18, 21
+  const tickPositions = [0, 3, 6, 9, 12, 15, 18, 21];
+  tickPositions.forEach(pos => {
+    const div = document.createElement('div');
+    div.className = 'tick-label';
+    if (pos === 0) {
+      div.innerHTML = '<span class="tick-now">NOW</span>';
+    } else {
+      const entry = forecast[pos];
+      div.textContent = entry ? entry.hour_label.replace('Tomorrow ', '') : '';
+    }
+    row.appendChild(div);
+  });
 }
 
 map.on('load', async () => {
   const data    = await loadConditions();
   const geojson = buildGeoJSON(data.points);
 
-  updateUI(data);
-  addBestMarker(map, data.points);
+  updateWindCard(data.wind_speed, data.wind_dir_label, data.wind_direction, data.last_updated);
+  updateBestMarker(data.points);
 
   map.addSource('conditions', {
     type: 'geojson',
@@ -228,6 +370,37 @@ map.on('load', async () => {
       ],
       'circle-stroke-width': 0,
     },
+  });
+
+  // Build tick row
+  if (data.forecast && data.forecast.length) {
+    buildTickRow(data.forecast);
+  }
+
+  // Slider
+  const slider = document.getElementById('time-slider');
+  slider.max = Math.min(23, (data.forecast || []).length - 1);
+
+  slider.addEventListener('input', () => {
+    const idx = parseInt(slider.value, 10);
+    const hour = data.forecast[idx];
+    if (!hour) return;
+
+    // Update label
+    document.getElementById('slider-time-label').textContent =
+      idx === 0 ? 'Now' : hour.hour_label;
+
+    // Update wind card (no timestamp update)
+    updateWindCard(hour.wind_speed, hour.wind_dir_label, hour.wind_direction);
+
+    // Recalculate points
+    const updated = recalculatePoints(data.points, hour.wind_speed, hour.wind_direction);
+
+    // Update map source
+    map.getSource('conditions').setData(buildGeoJSON(updated));
+
+    // Update best marker
+    updateBestMarker(updated);
   });
 });
 </script>
