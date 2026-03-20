@@ -154,14 +154,151 @@
 </div>
 
 <script>
-// Weight encodes condition as a 0–1 value so the heatmap color ramp
-// can map each condition to a distinct color.
-const CONDITION_WEIGHT = {
-  GREEN:  0.9,
-  YELLOW: 0.55,
-  ORANGE: 0.35,
-  RED:    0.05,
-};
+const MORSE_LAT  = 40.093;
+const MORSE_LNG  = -86.044;
+const DIRECTIONS  = ['N','NE','E','SE','S','SW','W','NW'];
+const DIR_DEGREES = [0, 45, 90, 135, 180, 225, 270, 315];
+
+function nearestDirection(deg) {
+  deg = ((deg % 360) + 360) % 360;
+  const deltas = DIR_DEGREES.map(d => Math.abs(((deg - d + 180) % 360) - 180));
+  return DIRECTIONS[deltas.indexOf(Math.min(...deltas))];
+}
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.trim());
+  return lines.slice(1).map(line => {
+    const vals = line.split(',');
+    const obj = {};
+    headers.forEach((h, i) => { obj[h] = vals[i] ? vals[i].trim() : ''; });
+    return obj;
+  });
+}
+
+function windCondition(score) {
+  if (score <= 33) return 'Glass';
+  if (score <= 66) return 'Moderate';
+  return 'Rough';
+}
+
+function depthTier(depthFt) {
+  if (depthFt >= 15) return 'Deep';
+  if (depthFt >= 8)  return 'Moderate Depth';
+  return 'Shallow';
+}
+
+function finalCondition(windCond, depthT) {
+  if (windCond === 'Rough')    return 'RED';
+  if (depthT   === 'Shallow')  return 'YELLOW';
+  if (windCond === 'Glass')    return 'GREEN';
+  return 'ORANGE';
+}
+
+function lakeSummary(counts, total, windSpeed, dirName) {
+  const greenPct  = counts.GREEN  / total * 100;
+  const orangePct = counts.ORANGE / total * 100;
+  const redPct    = counts.RED    / total * 100;
+  let mood, detail;
+  if (redPct > 40) {
+    mood = 'choppy out there';
+    detail = 'wind is up and fetch is long — probably not the day';
+  } else if (redPct > 15 || orangePct > 40) {
+    mood = 'mixed conditions';
+    detail = 'glass on the sheltered end, rougher toward the channel';
+  } else if (greenPct > 70) {
+    mood = 'looking great right now';
+    detail = 'glass conditions on the main channel';
+  } else if (greenPct > 40) {
+    mood = 'decent out there';
+    detail = 'some glass water available, check the deeper sections';
+  } else {
+    mood = 'marginal today';
+    detail = 'light wind but shallow areas limiting options';
+  }
+  return `Morse is ${mood} — ${detail}.`;
+}
+
+async function loadLiveData() {
+  const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${MORSE_LAT}&longitude=${MORSE_LNG}&current_weather=true&wind_speed_unit=mph`;
+
+  const [weatherResp, fetchCSVResp, depthCSVResp] = await Promise.all([
+    fetch(weatherUrl),
+    fetch('morse_fetch.csv'),
+    fetch('morse_grid_depth.csv'),
+  ]);
+
+  const weatherJson = await weatherResp.json();
+  const fetchCSVText = await fetchCSVResp.text();
+  const depthCSVText = await depthCSVResp.text();
+
+  const cw        = weatherJson.current_weather;
+  const windSpeed = cw.windspeed;
+  const windDirDeg = cw.winddirection;
+  const dirName   = nearestDirection(windDirDeg);
+  const fetchCol  = `fetch_${dirName}`;
+
+  const fetchRows = parseCSV(fetchCSVText);
+  const depthRows = parseCSV(depthCSVText);
+  const depthMap  = {};
+  depthRows.forEach(r => { depthMap[r.point_id] = r; });
+
+  const validRows     = fetchRows.filter(r => depthMap[r.point_id] && r[fetchCol]);
+  const rawRoughness  = validRows.map(r => parseFloat(r[fetchCol]) * (windSpeed ** 2));
+  const rmin = Math.min(...rawRoughness);
+  const rmax = Math.max(...rawRoughness);
+  const normalized = rawRoughness.map(r =>
+    rmax > rmin ? Math.round(((r - rmin) / (rmax - rmin) * 100) * 10) / 10 : 0
+  );
+
+  const counts = { GREEN: 0, YELLOW: 0, ORANGE: 0, RED: 0 };
+  const points = validRows.map((row, i) => {
+    const score   = normalized[i];
+    const depthFt = parseFloat(depthMap[row.point_id].depth_ft);
+    const wCond   = windCondition(score);
+    const dTier   = depthTier(depthFt);
+    const fCond   = finalCondition(wCond, dTier);
+    counts[fCond]++;
+    return {
+      latitude:        parseFloat(row.latitude),
+      longitude:       parseFloat(row.longitude),
+      final_condition: fCond,
+      roughness_score: score,
+      depth_ft:        depthFt,
+    };
+  });
+
+  return {
+    wind_speed:     windSpeed,
+    wind_direction: windDirDeg,
+    wind_dir_label: dirName,
+    summary:        lakeSummary(counts, points.length, windSpeed, dirName),
+    counts,
+    points,
+  };
+}
+
+function buildGeoJSON(points) {
+  return {
+    type: 'FeatureCollection',
+    features: points.map(p => ({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [p.longitude, p.latitude] },
+      properties: {
+        condition: p.final_condition,
+        roughness: p.roughness_score,
+        depth:     p.depth_ft,
+      },
+    })),
+  };
+}
+
+function updateUI(data) {
+  document.getElementById('wind-speed').textContent   = data.wind_speed.toFixed(1);
+  document.getElementById('wind-dir').textContent     = data.wind_dir_label;
+  document.getElementById('wind-dir-deg').textContent = `${data.wind_direction}°`;
+  document.getElementById('summary').textContent      = data.summary;
+}
 
 const map = new maplibregl.Map({
   container: 'map',
@@ -173,44 +310,15 @@ const map = new maplibregl.Map({
 
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
-async function loadConditions() {
-  const resp = await fetch('conditions_data.json');
-  return resp.json();
-}
-
-function buildGeoJSON(points) {
-  return {
-    type: 'FeatureCollection',
-    features: points.map(p => ({
-      type: 'Feature',
-      geometry: { type: 'Point', coordinates: [p.longitude, p.latitude] },
-      properties: {
-        condition: p.final_condition,
-        weight: CONDITION_WEIGHT[p.final_condition] ?? 0.5,
-        roughness: p.roughness_score,
-        depth: p.depth_ft,
-      },
-    })),
-  };
-}
-
-function updateUI(data) {
-  document.getElementById('wind-speed').textContent  = data.wind_speed.toFixed(1);
-  document.getElementById('wind-dir').textContent    = data.wind_dir_label;
-  document.getElementById('wind-dir-deg').textContent = `${data.wind_direction}°`;
-  document.getElementById('summary').textContent     = data.summary;
-}
-
 map.on('load', async () => {
-  const data    = await loadConditions();
+  document.getElementById('summary').textContent = 'Fetching live conditions…';
+
+  const data    = await loadLiveData();
   const geojson = buildGeoJSON(data.points);
 
   updateUI(data);
 
-  map.addSource('conditions', {
-    type: 'geojson',
-    data: geojson,
-  });
+  map.addSource('conditions', { type: 'geojson', data: geojson });
 
   map.addLayer({
     id: 'conditions-blur',
@@ -218,19 +326,13 @@ map.on('load', async () => {
     source: 'conditions',
     paint: {
       'circle-radius': ['interpolate', ['linear'], ['zoom'],
-        10, 60,
-        11, 50,
-        12, 40,
-        13, 30,
-        14, 20,
-        15, 15,
+        10, 60, 11, 50, 12, 40, 13, 30, 14, 20, 15, 15,
       ],
       'circle-blur': 1.0,
       'circle-opacity': 0.35,
       'circle-color': [
         'match', ['get', 'condition'],
         'GREEN',  '#2ECC71',
-        'GOLD',   '#2ECC71',
         'YELLOW', '#F1C40F',
         'ORANGE', '#E67E22',
         'RED',    '#E74C3C',
@@ -246,26 +348,15 @@ map.on('load', async () => {
     source: 'conditions',
     paint: {
       'circle-radius': ['interpolate', ['linear'], ['zoom'],
-        10, 28,
-        11, 22,
-        12, 18,
-        13, 14,
-        14, 10,
-        15,  8,
+        10, 28, 11, 22, 12, 18, 13, 14, 14, 10, 15, 8,
       ],
       'circle-blur': ['interpolate', ['linear'], ['zoom'],
-        10, 0.8,
-        11, 0.7,
-        12, 0.5,
-        13, 0.4,
-        14, 0.2,
-        15, 0.1,
+        10, 0.8, 11, 0.7, 12, 0.5, 13, 0.4, 14, 0.2, 15, 0.1,
       ],
       'circle-opacity': 0.75,
       'circle-color': [
         'match', ['get', 'condition'],
         'GREEN',  '#2ECC71',
-        'GOLD',   '#2ECC71',
         'YELLOW', '#F1C40F',
         'ORANGE', '#E67E22',
         'RED',    '#E74C3C',

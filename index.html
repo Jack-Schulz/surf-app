@@ -723,28 +723,28 @@
   <div class="live-strip">
     <div class="live-card">
       <p class="live-card-label">Morse Reservoir</p>
-      <p class="live-card-value score-good">8.2 <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span></p>
-      <p class="live-card-sub">Excellent · Wake Surf</p>
-    </div>
-    <div class="live-card">
-      <p class="live-card-label">Geist Reservoir</p>
-      <p class="live-card-value score-fair">5.4 <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span></p>
-      <p class="live-card-sub">Fair · Moderate Chop</p>
+      <p class="live-card-value score-good" id="morse-score">— <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span></p>
+      <p class="live-card-sub" id="morse-condition">Loading…</p>
     </div>
     <div class="live-card">
       <p class="live-card-label">Wind · Morse</p>
-      <p class="live-card-value">9 <span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">mph NW</span></p>
-      <p class="live-card-sub">Gusting to 13 mph</p>
+      <p class="live-card-value" id="wind-value">— <span id="wind-label" style="font-size:1rem;font-family:var(--mono);color:var(--mist)">mph</span></p>
+      <p class="live-card-sub" id="wind-gust">—</p>
     </div>
     <div class="live-card">
-      <p class="live-card-label">Best Window</p>
-      <p class="live-card-value" style="font-size:1.3rem;">6–9 AM</p>
-      <p class="live-card-sub">Glassy · Sat Morning</p>
+      <p class="live-card-label">Best Window Today</p>
+      <p class="live-card-value" id="best-window" style="font-size:1.3rem;">—</p>
+      <p class="live-card-sub" id="best-window-label">—</p>
     </div>
     <div class="live-card">
-      <p class="live-card-label">Water Temp</p>
-      <p class="live-card-value">74°<span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">F</span></p>
-      <p class="live-card-sub">No wetsuit needed</p>
+      <p class="live-card-label">Best Day This Week</p>
+      <p class="live-card-value" id="week-best" style="font-size:1.3rem;">—</p>
+      <p class="live-card-sub" id="week-best-label">—</p>
+    </div>
+    <div class="live-card">
+      <p class="live-card-label">Air Temp · Morse</p>
+      <p class="live-card-value" id="air-temp">—°<span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">F</span></p>
+      <p class="live-card-sub" id="air-temp-sub">—</p>
     </div>
   </div>
 </div>
@@ -926,20 +926,21 @@
 </footer>
 
 <!-- ════════════════════════════════════════
-     JS — FORECAST DATA
+     JS — LIVE WEATHER DATA
 ════════════════════════════════════════ -->
 <script>
-  const days = [
-    { name:'Wed', score:6.1, wind:'14 NE', condition:'Moderate Chop', today:true },
-    { name:'Thu', score:4.2, wind:'19 S',  condition:'Rough',         today:false },
-    { name:'Fri', score:7.8, wind:'8 NW',  condition:'Good',          today:false },
-    { name:'Sat', score:9.1, wind:'6 NW',  condition:'Excellent',     today:false },
-    { name:'Sun', score:8.4, wind:'7 W',   condition:'Great',         today:false },
-    { name:'Mon', score:5.5, wind:'12 SW', condition:'Fair',          today:false },
-    { name:'Tue', score:3.8, wind:'22 S',  condition:'Poor',          today:false },
-  ];
+  const MORSE_LAT = 40.093;
+  const MORSE_LNG = -86.044;
+  const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
-  const circumference = 2 * Math.PI * 22; // r=22
+  function toCardinal(deg) {
+    const dirs = ['N','NE','E','SE','S','SW','W','NW'];
+    return dirs[Math.round(((deg % 360) + 360) % 360 / 45) % 8];
+  }
+
+  function wakeScore(mph) {
+    return Math.max(1, Math.min(10, 10 - mph * 0.43));
+  }
 
   function scoreColor(s) {
     if (s >= 7) return '#4caf82';
@@ -947,72 +948,109 @@
     return '#d05a5a';
   }
 
-  const grid = document.getElementById('day-grid');
-  days.forEach(d => {
-    const pct = d.score / 10;
-    const offset = circumference * (1 - pct);
-    const col = scoreColor(d.score);
-    const card = document.createElement('div');
-    card.className = 'day-card' + (d.today ? ' today' : '');
-    card.innerHTML = `
-      <p class="day-name">${d.today ? 'Today' : d.name}</p>
-      <div class="day-score-ring">
-        <svg viewBox="0 0 52 52" width="52" height="52">
-          <circle class="ring-bg" cx="26" cy="26" r="22"/>
-          <circle class="ring-fill" cx="26" cy="26" r="22"
-            stroke="${col}"
-            stroke-dasharray="${circumference}"
-            stroke-dashoffset="${offset}"/>
-        </svg>
-        <div class="day-score-num" style="color:${col}">${d.score.toFixed(1)}</div>
-      </div>
-      <p class="day-wind">${d.wind} mph</p>
-      <p class="day-condition" style="color:${col}">${d.condition}</p>
-    `;
-    grid.appendChild(card);
-  });
+  function scoreClass(s) {
+    if (s >= 7) return 'score-good';
+    if (s >= 5) return 'score-fair';
+    return 'score-poor';
+  }
 
-  // hourly bars
-  const hourlyData = [
-    {h:'5a', w:4}, {h:'6a', w:5}, {h:'7a', w:6}, {h:'8a', w:7},
-    {h:'9a', w:10},{h:'10a',w:13},{h:'11a',w:15},{h:'12p',w:16},
-    {h:'1p', w:17},{h:'2p', w:18},{h:'3p', w:17},{h:'4p', w:15},
-    {h:'5p', w:13},{h:'6p', w:11},{h:'7p', w:8}, {h:'8p', w:6},
-    {h:'9p', w:4}, {h:'10p',w:3}
-  ];
+  function condLabel(s) {
+    if (s >= 8.5) return 'Excellent · Wake Surf';
+    if (s >= 7)   return 'Great · Wake Surf';
+    if (s >= 6)   return 'Good · Light Chop';
+    if (s >= 5)   return 'Fair · Some Chop';
+    if (s >= 3.5) return 'Rough · Choppy';
+    return 'Poor · Heavy Chop';
+  }
 
-  const maxW = Math.max(...hourlyData.map(h => h.w));
-  const hGrid = document.getElementById('hourly-grid');
+  async function init() {
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast`
+        + `?latitude=${MORSE_LAT}&longitude=${MORSE_LNG}`
+        + `&current_weather=true`
+        + `&hourly=windspeed_10m,windgusts_10m`
+        + `&daily=windspeed_10m_max,winddirection_10m_dominant`
+        + `&wind_speed_unit=mph`
+        + `&temperature_unit=fahrenheit`
+        + `&timezone=America%2FIndiana%2FIndianapolis`
+        + `&forecast_days=7`;
 
-  hourlyData.forEach(h => {
-    const heightPct = (h.w / maxW) * 100;
-    const col = h.w <= 8 ? '#4caf82' : h.w <= 13 ? '#e8a94a' : '#d05a5a';
-    const div = document.createElement('div');
-    div.className = 'hour-col';
-    div.innerHTML = `
-      <div class="hour-bar-wrap">
-        <div class="hour-bar" style="height:${heightPct}%;background:${col};opacity:0.8;"></div>
-      </div>
-      <p class="hour-label">${h.h}</p>
-    `;
-    hGrid.appendChild(div);
-  });
+      const resp = await fetch(url);
+      const data = await resp.json();
+      const cw   = data.current_weather;
 
-  // lake btn toggle
-  document.querySelectorAll('.lake-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.lake-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+      // --- Current score ---
+      const speed = cw.windspeed;
+      const dir   = toCardinal(cw.winddirection);
+      const score = wakeScore(speed);
 
-  // mode toggle
-  document.querySelectorAll('.mode-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+      const scoreEl = document.getElementById('morse-score');
+      scoreEl.className = 'live-card-value ' + scoreClass(score);
+      scoreEl.innerHTML = `${score.toFixed(1)} <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span>`;
+      document.getElementById('morse-condition').textContent = condLabel(score);
+
+      // --- Wind ---
+      // Find current hour in hourly array
+      const nowISO = new Date().toISOString().slice(0, 13); // "2026-03-20T14"
+      let hIdx = 0;
+      data.hourly.time.forEach((t, i) => { if (t.slice(0, 13) <= nowISO) hIdx = i; });
+      const gust = data.hourly.windgusts_10m[hIdx] || speed;
+
+      document.getElementById('wind-value').firstChild.textContent = `${Math.round(speed)} `;
+      document.getElementById('wind-label').textContent = `mph ${dir}`;
+      document.getElementById('wind-gust').textContent  = gust > speed
+        ? `Gusting to ${Math.round(gust)} mph`
+        : 'Steady winds';
+
+      // --- Air temp ---
+      const tempF = Math.round(cw.temperature); // F (temperature_unit=fahrenheit)
+      document.getElementById('air-temp').innerHTML =
+        `${tempF}°<span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">F</span>`;
+      document.getElementById('air-temp-sub').textContent =
+        tempF < 50 ? 'Wetsuit recommended'
+        : tempF < 65 ? 'Layer up on the boat'
+        : 'Good riding temp';
+
+      // --- Best window today: calmest 2-hour block 5am–11am ---
+      const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Indiana/Indianapolis' });
+      const morningSlots = [];
+      data.hourly.time.forEach((t, i) => {
+        const h = parseInt(t.slice(11, 13), 10);
+        if (t.startsWith(todayStr) && h >= 5 && h <= 10) {
+          morningSlots.push({ h, w: data.hourly.windspeed_10m[i] });
+        }
+      });
+
+      if (morningSlots.length) {
+        const best = morningSlots.reduce((a, b) => a.w <= b.w ? a : b);
+        const h12  = best.h > 12 ? best.h - 12 : best.h || 12;
+        const ws   = wakeScore(best.w);
+        document.getElementById('best-window').textContent       = `${h12}–${h12 + 1} AM`;
+        document.getElementById('best-window-label').textContent = `${ws >= 7 ? 'Glassy' : 'Light Wind'} · This Morning`;
+      } else {
+        document.getElementById('best-window').textContent       = 'See map';
+        document.getElementById('best-window-label').textContent = 'Morning window passed';
+      }
+
+      // --- Best day this week ---
+      let bestScore = -1, bestName = '';
+      data.daily.time.forEach((t, i) => {
+        const s = wakeScore(data.daily.windspeed_10m_max[i]);
+        if (s > bestScore) {
+          bestScore = s;
+          bestName  = DAY_NAMES[new Date(t + 'T12:00:00').getDay()];
+        }
+      });
+      document.getElementById('week-best').textContent       = bestName;
+      document.getElementById('week-best-label').textContent = `Score ${bestScore.toFixed(1)} · Best day`;
+
+    } catch (e) {
+      console.error('Weather fetch failed:', e);
+      document.getElementById('morse-condition').textContent = 'Check map for live data';
+    }
+  }
+
+  init();
 </script>
 
 </body>
