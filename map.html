@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morse Reservoir — Wake Surf Conditions</title>
+  <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d0d0d;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #f0f0f0;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    #map {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* ── Bottom info card ── */
+    #info-card {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10, 10, 10, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 18px 28px;
+      min-width: 320px;
+      max-width: 520px;
+      width: calc(100% - 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    #info-card .wind-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    #info-card .wind-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #info-card .wind-stat .label {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    #info-card .wind-stat .value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    #info-card .wind-stat .unit {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    #info-card .divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    #info-card .summary {
+      font-size: 13px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    /* ── Legend ── */
+    #legend {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(10, 10, 10, 0.78);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    #legend .legend-title {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 2px;
+    }
+
+    #legend .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #ddd;
+    }
+
+    #legend .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div id="info-card">
+  <div class="wind-row">
+    <div class="wind-stat">
+      <span class="label">Wind Speed</span>
+      <span class="value" id="wind-speed">—</span>
+      <span class="unit">mph</span>
+    </div>
+    <div class="divider"></div>
+    <div class="wind-stat">
+      <span class="label">Direction</span>
+      <span class="value" id="wind-dir">—</span>
+      <span class="unit" id="wind-dir-deg"></span>
+    </div>
+  </div>
+  <div class="summary" id="summary">Loading conditions…</div>
+</div>
+
+<div id="legend">
+  <div class="legend-title">Conditions</div>
+  <div class="legend-item"><div class="swatch" style="background:#2ECC71"></div>Glass + Deep</div>
+  <div class="legend-item"><div class="swatch" style="background:#F1C40F"></div>Calm / Shallow</div>
+  <div class="legend-item"><div class="swatch" style="background:#E67E22"></div>Moderate</div>
+  <div class="legend-item"><div class="swatch" style="background:#E74C3C"></div>Rough</div>
+</div>
+
+<script>
+// Weight encodes condition as a 0–1 value so the heatmap color ramp
+// can map each condition to a distinct color.
+const CONDITION_WEIGHT = {
+  GREEN:  0.9,
+  YELLOW: 0.55,
+  ORANGE: 0.35,
+  RED:    0.05,
+};
+
+const map = new maplibregl.Map({
+  container: 'map',
+  style: 'https://tiles.openfreemap.org/styles/liberty',
+  center: [-86.044, 40.093],
+  zoom: 13,
+  pitchWithRotate: false,
+});
+
+map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
+
+async function loadConditions() {
+  const resp = await fetch('conditions_data.json');
+  return resp.json();
+}
+
+function buildGeoJSON(points) {
+  return {
+    type: 'FeatureCollection',
+    features: points.map(p => ({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [p.longitude, p.latitude] },
+      properties: {
+        condition: p.final_condition,
+        weight: CONDITION_WEIGHT[p.final_condition] ?? 0.5,
+        roughness: p.roughness_score,
+        depth: p.depth_ft,
+      },
+    })),
+  };
+}
+
+function updateUI(data) {
+  document.getElementById('wind-speed').textContent  = data.wind_speed.toFixed(1);
+  document.getElementById('wind-dir').textContent    = data.wind_dir_label;
+  document.getElementById('wind-dir-deg').textContent = `${data.wind_direction}°`;
+  document.getElementById('summary').textContent     = data.summary;
+}
+
+map.on('load', async () => {
+  const data    = await loadConditions();
+  const geojson = buildGeoJSON(data.points);
+
+  updateUI(data);
+
+  map.addSource('conditions', {
+    type: 'geojson',
+    data: geojson,
+  });
+
+  map.addLayer({
+    id: 'conditions-blur',
+    type: 'circle',
+    source: 'conditions',
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'],
+        10, 60,
+        11, 50,
+        12, 40,
+        13, 30,
+        14, 20,
+        15, 15,
+      ],
+      'circle-blur': 1.0,
+      'circle-opacity': 0.35,
+      'circle-color': [
+        'match', ['get', 'condition'],
+        'GREEN',  '#2ECC71',
+        'GOLD',   '#2ECC71',
+        'YELLOW', '#F1C40F',
+        'ORANGE', '#E67E22',
+        'RED',    '#E74C3C',
+        '#888888',
+      ],
+      'circle-stroke-width': 0,
+    },
+  });
+
+  map.addLayer({
+    id: 'conditions-display',
+    type: 'circle',
+    source: 'conditions',
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'],
+        10, 28,
+        11, 22,
+        12, 18,
+        13, 14,
+        14, 10,
+        15,  8,
+      ],
+      'circle-blur': ['interpolate', ['linear'], ['zoom'],
+        10, 0.8,
+        11, 0.7,
+        12, 0.5,
+        13, 0.4,
+        14, 0.2,
+        15, 0.1,
+      ],
+      'circle-opacity': 0.75,
+      'circle-color': [
+        'match', ['get', 'condition'],
+        'GREEN',  '#2ECC71',
+        'GOLD',   '#2ECC71',
+        'YELLOW', '#F1C40F',
+        'ORANGE', '#E67E22',
+        'RED',    '#E74C3C',
+        '#888888',
+      ],
+      'circle-stroke-width': 0,
+    },
+  });
+});
+</script>
+</body>
+</html>
