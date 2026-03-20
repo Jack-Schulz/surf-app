@@ -45,6 +45,7 @@ def fetch_hourly_forecast():
         f"?latitude={LAT}&longitude={LNG}"
         "&hourly=windspeed_10m,winddirection_10m"
         "&windspeed_unit=mph"
+        "&past_days=1"
         "&forecast_days=2"
         "&timezone=America%2FChicago"
     )
@@ -64,18 +65,22 @@ def build_forecast(times, speeds, directions):
             start_idx = i
             break
 
+    # 25 entries: index 0 = 12h ago, index 12 = now, index 24 = 12h ahead
     forecast = []
-    for i in range(24):
-        idx = start_idx + i
-        if idx >= len(times):
-            break
+    for i in range(25):
+        idx = start_idx - 12 + i
+        if idx < 0 or idx >= len(times):
+            forecast.append(None)
+            continue
 
         speed = round(float(speeds[idx]), 1)
         deg   = float(directions[idx])
         dt    = datetime.strptime(times[idx], "%Y-%m-%dT%H:%M")
 
-        if i == 0:
+        if i == 12:
             hour_label = "Now"
+        elif dt.date() < now.date():
+            hour_label = dt.strftime("%-I %p") + " Yesterday"
         elif dt.date() == now.date():
             hour_label = dt.strftime("%-I %p")
         else:

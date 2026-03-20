@@ -19,7 +19,10 @@
 
     #map {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 120px;
     }
 
     /* ── Legend ── */
@@ -89,6 +92,8 @@
       background: rgba(255,255,255,0.2);
       outline: none;
       cursor: pointer;
+      padding: 0 8px;
+      box-sizing: border-box;
     }
 
     #time-slider::-webkit-slider-thumb {
@@ -156,7 +161,7 @@
 
 <div id="time-slider-panel">
   <div id="slider-time-label">Now</div>
-  <input type="range" id="time-slider" min="0" max="23" value="0" step="1" />
+  <input type="range" id="time-slider" min="0" max="24" value="12" step="1" />
   <div id="tick-row"></div>
 </div>
 
@@ -224,7 +229,7 @@ function updateWindCard(speed, dirLabel, dirDeg, lastUpdated) {
   document.getElementById('wind-speed').textContent = speed.toFixed(1);
   document.getElementById('wind-dir').textContent   = dirLabel;
   document.getElementById('wind-label').textContent = windLabel(speed);
-  document.getElementById('wind-arrow').style.transform = `rotate(${dirDeg}deg)`;
+  document.getElementById('wind-arrow').style.transform = `rotate(${dirDeg + 180}deg)`;
   if (lastUpdated !== undefined) {
     document.getElementById('last-updated').textContent = lastUpdated || '—';
   }
@@ -282,16 +287,18 @@ function updateBestMarker(points) {
 function buildTickRow(forecast) {
   const row = document.getElementById('tick-row');
   row.innerHTML = '';
-  // 8 ticks at positions 0, 3, 6, 9, 12, 15, 18, 21
-  const tickPositions = [0, 3, 6, 9, 12, 15, 18, 21];
+  const nowTime = new Date();
+  const nowTimeStr = nowTime.toLocaleTimeString('en-US', { hour: 'numeric', hour12: true }).replace(':00', '');
+  // 9 ticks at positions 0, 3, 6, 9, 12(NOW), 15, 18, 21, 24
+  const tickPositions = [0, 3, 6, 9, 12, 15, 18, 21, 24];
   tickPositions.forEach(pos => {
     const div = document.createElement('div');
     div.className = 'tick-label';
-    if (pos === 0) {
-      div.innerHTML = '<span class="tick-now">NOW</span>';
+    if (pos === 12) {
+      div.innerHTML = `<span class="tick-now">NOW</span> ${nowTimeStr}`;
     } else {
       const entry = forecast[pos];
-      div.textContent = entry ? entry.hour_label.replace('Tomorrow ', '') : '';
+      div.textContent = entry ? entry.hour_label.replace('Tomorrow ', '').replace(' Yesterday', '†') : '';
     }
     row.appendChild(div);
   });
@@ -377,29 +384,22 @@ map.on('load', async () => {
     buildTickRow(data.forecast);
   }
 
-  // Slider
+  // Slider — index 12 = NOW
+  const NOW_IDX = 12;
   const slider = document.getElementById('time-slider');
-  slider.max = Math.min(23, (data.forecast || []).length - 1);
 
   slider.addEventListener('input', () => {
     const idx = parseInt(slider.value, 10);
     const hour = data.forecast[idx];
     if (!hour) return;
 
-    // Update label
     document.getElementById('slider-time-label').textContent =
-      idx === 0 ? 'Now' : hour.hour_label;
+      idx === NOW_IDX ? 'Now' : hour.hour_label;
 
-    // Update wind card (no timestamp update)
     updateWindCard(hour.wind_speed, hour.wind_dir_label, hour.wind_direction);
 
-    // Recalculate points
     const updated = recalculatePoints(data.points, hour.wind_speed, hour.wind_direction);
-
-    // Update map source
     map.getSource('conditions').setData(buildGeoJSON(updated));
-
-    // Update best marker
     updateBestMarker(updated);
   });
 });

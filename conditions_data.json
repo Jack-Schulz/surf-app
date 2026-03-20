@@ -1,8 +1,8 @@
 {
-  "wind_speed": 17.1,
-  "wind_direction": 250.0,
+  "wind_speed": 17.5,
+  "wind_direction": 249.0,
   "wind_dir_label": "W",
-  "last_updated": "March 20, 2026 3:36 PM",
+  "last_updated": "March 20, 2026 3:53 PM",
   "summary": "Morse is decent out there \u2014 some glass water available, check the deeper sections.",
   "counts": {
     "GREEN": 282,
@@ -11,6 +11,114 @@
     "RED": 22
   },
   "forecast": [
+    {
+      "hour_label": "3 AM",
+      "wind_speed": 4.1,
+      "wind_direction": 158.0,
+      "wind_dir_label": "S",
+      "condition_label": "Glass",
+      "condition_color": "#2ECC71",
+      "roughness_multiplier": 0.164
+    },
+    {
+      "hour_label": "4 AM",
+      "wind_speed": 5.1,
+      "wind_direction": 182.0,
+      "wind_dir_label": "S",
+      "condition_label": "Glass",
+      "condition_color": "#2ECC71",
+      "roughness_multiplier": 0.204
+    },
+    {
+      "hour_label": "5 AM",
+      "wind_speed": 4.9,
+      "wind_direction": 177.0,
+      "wind_dir_label": "S",
+      "condition_label": "Glass",
+      "condition_color": "#2ECC71",
+      "roughness_multiplier": 0.196
+    },
+    {
+      "hour_label": "6 AM",
+      "wind_speed": 6.4,
+      "wind_direction": 198.0,
+      "wind_dir_label": "S",
+      "condition_label": "Glass",
+      "condition_color": "#2ECC71",
+      "roughness_multiplier": 0.256
+    },
+    {
+      "hour_label": "7 AM",
+      "wind_speed": 6.4,
+      "wind_direction": 200.0,
+      "wind_dir_label": "S",
+      "condition_label": "Glass",
+      "condition_color": "#2ECC71",
+      "roughness_multiplier": 0.256
+    },
+    {
+      "hour_label": "8 AM",
+      "wind_speed": 8.0,
+      "wind_direction": 207.0,
+      "wind_dir_label": "SW",
+      "condition_label": "Rippled",
+      "condition_color": "#F1C40F",
+      "roughness_multiplier": 0.32
+    },
+    {
+      "hour_label": "9 AM",
+      "wind_speed": 10.2,
+      "wind_direction": 220.0,
+      "wind_dir_label": "SW",
+      "condition_label": "Rippled",
+      "condition_color": "#F1C40F",
+      "roughness_multiplier": 0.408
+    },
+    {
+      "hour_label": "10 AM",
+      "wind_speed": 12.9,
+      "wind_direction": 233.0,
+      "wind_dir_label": "SW",
+      "condition_label": "Choppy",
+      "condition_color": "#E67E22",
+      "roughness_multiplier": 0.516
+    },
+    {
+      "hour_label": "11 AM",
+      "wind_speed": 12.8,
+      "wind_direction": 232.0,
+      "wind_dir_label": "SW",
+      "condition_label": "Choppy",
+      "condition_color": "#E67E22",
+      "roughness_multiplier": 0.512
+    },
+    {
+      "hour_label": "12 PM",
+      "wind_speed": 13.7,
+      "wind_direction": 236.0,
+      "wind_dir_label": "SW",
+      "condition_label": "Choppy",
+      "condition_color": "#E67E22",
+      "roughness_multiplier": 0.548
+    },
+    {
+      "hour_label": "1 PM",
+      "wind_speed": 13.3,
+      "wind_direction": 230.0,
+      "wind_dir_label": "SW",
+      "condition_label": "Choppy",
+      "condition_color": "#E67E22",
+      "roughness_multiplier": 0.532
+    },
+    {
+      "hour_label": "2 PM",
+      "wind_speed": 15.7,
+      "wind_direction": 247.0,
+      "wind_dir_label": "SW",
+      "condition_label": "Choppy",
+      "condition_color": "#E67E22",
+      "roughness_multiplier": 0.628
+    },
     {
       "hour_label": "Now",
       "wind_speed": 17.0,
@@ -127,105 +235,6 @@
       "condition_label": "Glass",
       "condition_color": "#2ECC71",
       "roughness_multiplier": 0.192
-    },
-    {
-      "hour_label": "Tomorrow 4 AM",
-      "wind_speed": 4.7,
-      "wind_direction": 3.0,
-      "wind_dir_label": "N",
-      "condition_label": "Glass",
-      "condition_color": "#2ECC71",
-      "roughness_multiplier": 0.188
-    },
-    {
-      "hour_label": "Tomorrow 5 AM",
-      "wind_speed": 4.3,
-      "wind_direction": 11.0,
-      "wind_dir_label": "N",
-      "condition_label": "Glass",
-      "condition_color": "#2ECC71",
-      "roughness_multiplier": 0.172
-    },
-    {
-      "hour_label": "Tomorrow 6 AM",
-      "wind_speed": 3.3,
-      "wind_direction": 41.0,
-      "wind_dir_label": "NE",
-      "condition_label": "Glass",
-      "condition_color": "#2ECC71",
-      "roughness_multiplier": 0.132
-    },
-    {
-      "hour_label": "Tomorrow 7 AM",
-      "wind_speed": 2.8,
-      "wind_direction": 72.0,
-      "wind_dir_label": "E",
-      "condition_label": "Glass",
-      "condition_color": "#2ECC71",
-      "roughness_multiplier": 0.112
-    },
-    {
-      "hour_label": "Tomorrow 8 AM",
-      "wind_speed": 4.0,
-      "wind_direction": 71.0,
-      "wind_dir_label": "E",
-      "condition_label": "Glass",
-      "condition_color": "#2ECC71",
-      "roughness_multiplier": 0.16
-    },
-    {
-      "hour_label": "Tomorrow 9 AM",
-      "wind_speed": 5.6,
-      "wind_direction": 106.0,
-      "wind_dir_label": "E",
-      "condition_label": "Glass",
-      "condition_color": "#2ECC71",
-      "roughness_multiplier": 0.224
-    },
-    {
-      "hour_label": "Tomorrow 10 AM",
-      "wind_speed": 8.7,
-      "wind_direction": 140.0,
-      "wind_dir_label": "SE",
-      "condition_label": "Rippled",
-      "condition_color": "#F1C40F",
-      "roughness_multiplier": 0.348
-    },
-    {
-      "hour_label": "Tomorrow 11 AM",
-      "wind_speed": 8.1,
-      "wind_direction": 148.0,
-      "wind_dir_label": "SE",
-      "condition_label": "Rippled",
-      "condition_color": "#F1C40F",
-      "roughness_multiplier": 0.324
-    },
-    {
-      "hour_label": "Tomorrow 12 PM",
-      "wind_speed": 8.5,
-      "wind_direction": 166.0,
-      "wind_dir_label": "S",
-      "condition_label": "Rippled",
-      "condition_color": "#F1C40F",
-      "roughness_multiplier": 0.34
-    },
-    {
-      "hour_label": "Tomorrow 1 PM",
-      "wind_speed": 7.2,
-      "wind_direction": 189.0,
-      "wind_dir_label": "S",
-      "condition_label": "Rippled",
-      "condition_color": "#F1C40F",
-      "roughness_multiplier": 0.288
-    },
-    {
-      "hour_label": "Tomorrow 2 PM",
-      "wind_speed": 7.8,
-      "wind_direction": 217.0,
-      "wind_dir_label": "SW",
-      "condition_label": "Rippled",
-      "condition_color": "#F1C40F",
-      "roughness_multiplier": 0.312
     }
   ],
   "points": [
