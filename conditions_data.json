@@ -1,13 +1,13 @@
 {
-  "wind_speed": 3.5,
-  "wind_direction": 130.0,
-  "wind_dir_label": "SE",
+  "wind_speed": 11.9,
+  "wind_direction": 240.0,
+  "wind_dir_label": "SW",
   "summary": "Morse is decent out there \u2014 some glass water available, check the deeper sections.",
   "counts": {
-    "GREEN": 337,
-    "YELLOW": 148,
-    "ORANGE": 74,
-    "RED": 10
+    "GREEN": 329,
+    "YELLOW": 144,
+    "ORANGE": 81,
+    "RED": 15
   },
   "points": [
     {
@@ -15,7 +15,7 @@
       "latitude": 40.0915144,
       "longitude": -86.073612,
       "depth_ft": 1.15,
-      "roughness_score": 6.2,
+      "roughness_score": 2.0,
       "final_condition": "YELLOW"
     },
     {
@@ -23,7 +23,7 @@
       "latitude": 40.091505,
       "longitude": -86.072439,
       "depth_ft": 1.68,
-      "roughness_score": 7.4,
+      "roughness_score": 4.5,
       "final_condition": "YELLOW"
     },
     {
@@ -31,7 +31,7 @@
       "latitude": 40.0924059,
       "longitude": -86.0724268,
       "depth_ft": 2.06,
-      "roughness_score": 7.1,
+      "roughness_score": 9.1,
       "final_condition": "YELLOW"
     },
     {
@@ -39,7 +39,7 @@
       "latitude": 40.0896845,
       "longitude": -86.0701177,
       "depth_ft": 7.44,
-      "roughness_score": 7.8,
+      "roughness_score": 3.7,
       "final_condition": "YELLOW"
     },
     {
@@ -47,7 +47,7 @@
       "latitude": 40.0905854,
       "longitude": -86.0701054,
       "depth_ft": 6.15,
-      "roughness_score": 13.6,
+      "roughness_score": 5.7,
       "final_condition": "YELLOW"
     },
     {
@@ -55,7 +55,7 @@
       "latitude": 40.0914862,
       "longitude": -86.0700932,
       "depth_ft": 5.25,
-      "roughness_score": 45.1,
+      "roughness_score": 6.0,
       "final_condition": "YELLOW"
     },
     {
@@ -63,7 +63,7 @@
       "latitude": 40.0896751,
       "longitude": -86.0689448,
       "depth_ft": 7.97,
-      "roughness_score": 5.0,
+      "roughness_score": 5.2,
       "final_condition": "YELLOW"
     },
     {
@@ -71,7 +71,7 @@
       "latitude": 40.0905759,
       "longitude": -86.0689325,
       "depth_ft": 7.68,
-      "roughness_score": 36.6,
+      "roughness_score": 10.8,
       "final_condition": "YELLOW"
     },
     {
@@ -79,7 +79,7 @@
       "latitude": 40.0914768,
       "longitude": -86.0689203,
       "depth_ft": 2.52,
-      "roughness_score": 35.7,
+      "roughness_score": 12.8,
       "final_condition": "YELLOW"
     },
     {
@@ -87,7 +87,7 @@
       "latitude": 40.087864,
       "longitude": -86.0677965,
       "depth_ft": 5.17,
-      "roughness_score": 3.4,
+      "roughness_score": 3.0,
       "final_condition": "YELLOW"
     },
     {
@@ -95,7 +95,7 @@
       "latitude": 40.0896657,
       "longitude": -86.0677719,
       "depth_ft": 9.37,
-      "roughness_score": 28.0,
+      "roughness_score": 5.7,
       "final_condition": "GREEN"
     },
     {
@@ -103,7 +103,7 @@
       "latitude": 40.0905665,
       "longitude": -86.0677596,
       "depth_ft": 8.78,
-      "roughness_score": 27.2,
+      "roughness_score": 12.3,
       "final_condition": "GREEN"
     },
     {
@@ -111,7 +111,7 @@
       "latitude": 40.0914673,
       "longitude": -86.0677473,
       "depth_ft": 6.83,
-      "roughness_score": 20.0,
+      "roughness_score": 17.8,
       "final_condition": "YELLOW"
     },
     {
@@ -119,7 +119,7 @@
       "latitude": 40.0923682,
       "longitude": -86.067735,
       "depth_ft": 2.42,
-      "roughness_score": 0.7,
+      "roughness_score": 5.7,
       "final_condition": "YELLOW"
     },
     {
@@ -127,7 +127,7 @@
       "latitude": 40.0878545,
       "longitude": -86.0666236,
       "depth_ft": 10.99,
-      "roughness_score": 29.0,
+      "roughness_score": 2.2,
       "final_condition": "GREEN"
     },
     {
@@ -135,7 +135,7 @@
       "latitude": 40.0887554,
       "longitude": -86.0666113,
       "depth_ft": 8.83,
-      "roughness_score": 19.5,
+      "roughness_score": 0.4,
       "final_condition": "GREEN"
     },
     {
@@ -143,7 +143,7 @@
       "latitude": 40.0896562,
       "longitude": -86.066599,
       "depth_ft": 10.86,
-      "roughness_score": 18.6,
+      "roughness_score": 4.3,
       "final_condition": "GREEN"
     },
     {
@@ -151,7 +151,7 @@
       "latitude": 40.0905571,
       "longitude": -86.0665867,
       "depth_ft": 10.07,
-      "roughness_score": 11.5,
+      "roughness_score": 12.8,
       "final_condition": "GREEN"
     },
     {
@@ -159,7 +159,7 @@
       "latitude": 40.0860434,
       "longitude": -86.0654754,
       "depth_ft": 4.25,
-      "roughness_score": 20.3,
+      "roughness_score": 0.2,
       "final_condition": "YELLOW"
     },
     {
@@ -167,7 +167,7 @@
       "latitude": 40.0869442,
       "longitude": -86.0654631,
       "depth_ft": 13.93,
-      "roughness_score": 20.4,
+      "roughness_score": 3.4,
       "final_condition": "GREEN"
     },
     {
@@ -175,7 +175,7 @@
       "latitude": 40.0878451,
       "longitude": -86.0654508,
       "depth_ft": 12.98,
-      "roughness_score": 10.9,
+      "roughness_score": 6.6,
       "final_condition": "GREEN"
     },
     {
@@ -183,7 +183,7 @@
       "latitude": 40.0887459,
       "longitude": -86.0654384,
       "depth_ft": 12.68,
-      "roughness_score": 10.1,
+      "roughness_score": 9.3,
       "final_condition": "GREEN"
     },
     {
@@ -191,7 +191,7 @@
       "latitude": 40.0896468,
       "longitude": -86.0654261,
       "depth_ft": 11.77,
-      "roughness_score": 2.9,
+      "roughness_score": 7.5,
       "final_condition": "GREEN"
     },
     {
@@ -199,7 +199,7 @@
       "latitude": 40.0905476,
       "longitude": -86.0654138,
       "depth_ft": 8.78,
-      "roughness_score": 5.3,
+      "roughness_score": 11.3,
       "final_condition": "GREEN"
     },
     {
@@ -207,7 +207,7 @@
       "latitude": 40.0824305,
       "longitude": -86.0643519,
       "depth_ft": 12.86,
-      "roughness_score": 0.3,
+      "roughness_score": 1.6,
       "final_condition": "GREEN"
     },
     {
@@ -215,23 +215,23 @@
       "latitude": 40.0833314,
       "longitude": -86.0643396,
       "depth_ft": 18.91,
-      "roughness_score": 100.0,
-      "final_condition": "RED"
+      "roughness_score": 1.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00026",
       "latitude": 40.0842322,
       "longitude": -86.0643272,
       "depth_ft": 17.77,
-      "roughness_score": 40.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 4.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00027",
       "latitude": 40.0851331,
       "longitude": -86.0643149,
       "depth_ft": 17.55,
-      "roughness_score": 11.7,
+      "roughness_score": 6.0,
       "final_condition": "GREEN"
     },
     {
@@ -239,7 +239,7 @@
       "latitude": 40.0860339,
       "longitude": -86.0643026,
       "depth_ft": 16.5,
-      "roughness_score": 11.9,
+      "roughness_score": 4.3,
       "final_condition": "GREEN"
     },
     {
@@ -247,7 +247,7 @@
       "latitude": 40.0869347,
       "longitude": -86.0642902,
       "depth_ft": 13.9,
-      "roughness_score": 2.4,
+      "roughness_score": 7.2,
       "final_condition": "GREEN"
     },
     {
@@ -255,7 +255,7 @@
       "latitude": 40.0878356,
       "longitude": -86.0642779,
       "depth_ft": 13.36,
-      "roughness_score": 1.5,
+      "roughness_score": 10.5,
       "final_condition": "GREEN"
     },
     {
@@ -263,7 +263,7 @@
       "latitude": 40.0815202,
       "longitude": -86.0631915,
       "depth_ft": 19.37,
-      "roughness_score": 7.5,
+      "roughness_score": 0.3,
       "final_condition": "GREEN"
     },
     {
@@ -271,15 +271,15 @@
       "latitude": 40.082421,
       "longitude": -86.0631791,
       "depth_ft": 21.32,
-      "roughness_score": 91.4,
-      "final_condition": "RED"
+      "roughness_score": 2.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00033",
       "latitude": 40.0833219,
       "longitude": -86.0631668,
       "depth_ft": 19.04,
-      "roughness_score": 32.1,
+      "roughness_score": 8.6,
       "final_condition": "GREEN"
     },
     {
@@ -287,7 +287,7 @@
       "latitude": 40.0842227,
       "longitude": -86.0631544,
       "depth_ft": 17.46,
-      "roughness_score": 3.2,
+      "roughness_score": 8.1,
       "final_condition": "GREEN"
     },
     {
@@ -295,7 +295,7 @@
       "latitude": 40.0851236,
       "longitude": -86.0631421,
       "depth_ft": 16.62,
-      "roughness_score": 3.3,
+      "roughness_score": 11.4,
       "final_condition": "GREEN"
     },
     {
@@ -303,7 +303,7 @@
       "latitude": 40.0779073,
       "longitude": -86.0620682,
       "depth_ft": 3.85,
-      "roughness_score": 1.2,
+      "roughness_score": 1.5,
       "final_condition": "YELLOW"
     },
     {
@@ -311,15 +311,15 @@
       "latitude": 40.0815107,
       "longitude": -86.0620187,
       "depth_ft": 21.64,
-      "roughness_score": 82.9,
-      "final_condition": "RED"
+      "roughness_score": 4.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00038",
       "latitude": 40.0824115,
       "longitude": -86.0620064,
       "depth_ft": 20.03,
-      "roughness_score": 23.5,
+      "roughness_score": 7.4,
       "final_condition": "GREEN"
     },
     {
@@ -327,31 +327,31 @@
       "latitude": 40.0787987,
       "longitude": -86.0608831,
       "depth_ft": 21.35,
-      "roughness_score": 43.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 5.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00040",
       "latitude": 40.0796995,
       "longitude": -86.0608707,
       "depth_ft": 8.09,
-      "roughness_score": 49.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 0.5,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00041",
       "latitude": 40.0806003,
       "longitude": -86.0608584,
       "depth_ft": 14.14,
-      "roughness_score": 74.4,
-      "final_condition": "RED"
+      "roughness_score": 1.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00042",
       "latitude": 40.0815012,
       "longitude": -86.060846,
       "depth_ft": 22.24,
-      "roughness_score": 15.0,
+      "roughness_score": 6.7,
       "final_condition": "GREEN"
     },
     {
@@ -359,7 +359,7 @@
       "latitude": 40.0769874,
       "longitude": -86.0597352,
       "depth_ft": 26.96,
-      "roughness_score": 6.0,
+      "roughness_score": 1.7,
       "final_condition": "GREEN"
     },
     {
@@ -367,31 +367,31 @@
       "latitude": 40.0778883,
       "longitude": -86.0597228,
       "depth_ft": 27.3,
-      "roughness_score": 35.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 3.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00045",
       "latitude": 40.0787891,
       "longitude": -86.0597104,
       "depth_ft": 26.04,
-      "roughness_score": 41.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 4.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00046",
       "latitude": 40.07969,
       "longitude": -86.059698,
       "depth_ft": 25.45,
-      "roughness_score": 65.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 12.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00047",
       "latitude": 40.0805908,
       "longitude": -86.0596856,
       "depth_ft": 25.42,
-      "roughness_score": 6.4,
+      "roughness_score": 7.5,
       "final_condition": "GREEN"
     },
     {
@@ -399,7 +399,7 @@
       "latitude": 40.0814917,
       "longitude": -86.0596732,
       "depth_ft": 20.96,
-      "roughness_score": 3.4,
+      "roughness_score": 8.9,
       "final_condition": "GREEN"
     },
     {
@@ -407,7 +407,7 @@
       "latitude": 40.0760771,
       "longitude": -86.0585749,
       "depth_ft": 6.31,
-      "roughness_score": 1.6,
+      "roughness_score": 2.7,
       "final_condition": "YELLOW"
     },
     {
@@ -415,7 +415,7 @@
       "latitude": 40.0769779,
       "longitude": -86.0585625,
       "depth_ft": 30.15,
-      "roughness_score": 26.6,
+      "roughness_score": 5.0,
       "final_condition": "GREEN"
     },
     {
@@ -423,7 +423,7 @@
       "latitude": 40.0778788,
       "longitude": -86.0585501,
       "depth_ft": 27.92,
-      "roughness_score": 32.7,
+      "roughness_score": 8.7,
       "final_condition": "GREEN"
     },
     {
@@ -431,15 +431,15 @@
       "latitude": 40.0787796,
       "longitude": -86.0585377,
       "depth_ft": 25.79,
-      "roughness_score": 57.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 10.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00053",
       "latitude": 40.073365,
       "longitude": -86.0574395,
       "depth_ft": 2.56,
-      "roughness_score": 0.2,
+      "roughness_score": 0.1,
       "final_condition": "YELLOW"
     },
     {
@@ -447,7 +447,7 @@
       "latitude": 40.0751667,
       "longitude": -86.0574147,
       "depth_ft": 6.53,
-      "roughness_score": 12.8,
+      "roughness_score": 0.4,
       "final_condition": "YELLOW"
     },
     {
@@ -455,7 +455,7 @@
       "latitude": 40.0760675,
       "longitude": -86.0574023,
       "depth_ft": 28.65,
-      "roughness_score": 18.1,
+      "roughness_score": 3.2,
       "final_condition": "GREEN"
     },
     {
@@ -463,7 +463,7 @@
       "latitude": 40.0769684,
       "longitude": -86.0573899,
       "depth_ft": 31.22,
-      "roughness_score": 24.1,
+      "roughness_score": 9.7,
       "final_condition": "GREEN"
     },
     {
@@ -471,15 +471,15 @@
       "latitude": 40.0778692,
       "longitude": -86.0573774,
       "depth_ft": 28.2,
-      "roughness_score": 48.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 12.0,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00058",
       "latitude": 40.0742563,
       "longitude": -86.0562545,
       "depth_ft": 22.83,
-      "roughness_score": 4.3,
+      "roughness_score": 7.2,
       "final_condition": "GREEN"
     },
     {
@@ -487,7 +487,7 @@
       "latitude": 40.0751571,
       "longitude": -86.0562421,
       "depth_ft": 30.27,
-      "roughness_score": 9.5,
+      "roughness_score": 4.2,
       "final_condition": "GREEN"
     },
     {
@@ -495,7 +495,7 @@
       "latitude": 40.076058,
       "longitude": -86.0562296,
       "depth_ft": 32.15,
-      "roughness_score": 15.6,
+      "roughness_score": 7.4,
       "final_condition": "GREEN"
     },
     {
@@ -503,15 +503,15 @@
       "latitude": 40.0769588,
       "longitude": -86.0562172,
       "depth_ft": 31.47,
-      "roughness_score": 40.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 10.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00062",
       "latitude": 40.0778597,
       "longitude": -86.0562047,
       "depth_ft": 28.35,
-      "roughness_score": 4.9,
+      "roughness_score": 16.8,
       "final_condition": "GREEN"
     },
     {
@@ -519,7 +519,7 @@
       "latitude": 40.0742467,
       "longitude": -86.0550819,
       "depth_ft": 16.22,
-      "roughness_score": 1.0,
+      "roughness_score": 1.4,
       "final_condition": "GREEN"
     },
     {
@@ -527,7 +527,7 @@
       "latitude": 40.0751476,
       "longitude": -86.0550694,
       "depth_ft": 34.93,
-      "roughness_score": 7.0,
+      "roughness_score": 14.2,
       "final_condition": "GREEN"
     },
     {
@@ -535,7 +535,7 @@
       "latitude": 40.0760484,
       "longitude": -86.055057,
       "depth_ft": 33.89,
-      "roughness_score": 31.6,
+      "roughness_score": 11.2,
       "final_condition": "GREEN"
     },
     {
@@ -543,7 +543,7 @@
       "latitude": 40.075138,
       "longitude": -86.0538968,
       "depth_ft": 39.8,
-      "roughness_score": 23.1,
+      "roughness_score": 8.4,
       "final_condition": "GREEN"
     },
     {
@@ -551,7 +551,7 @@
       "latitude": 40.0760389,
       "longitude": -86.0538843,
       "depth_ft": 36.44,
-      "roughness_score": 30.1,
+      "roughness_score": 21.3,
       "final_condition": "GREEN"
     },
     {
@@ -559,7 +559,7 @@
       "latitude": 40.0742276,
       "longitude": -86.0527366,
       "depth_ft": 40.55,
-      "roughness_score": 14.5,
+      "roughness_score": 1.7,
       "final_condition": "GREEN"
     },
     {
@@ -567,7 +567,7 @@
       "latitude": 40.0751284,
       "longitude": -86.0527241,
       "depth_ft": 35.44,
-      "roughness_score": 21.5,
+      "roughness_score": 6.3,
       "final_condition": "GREEN"
     },
     {
@@ -575,7 +575,7 @@
       "latitude": 40.0760293,
       "longitude": -86.0527117,
       "depth_ft": 34.4,
-      "roughness_score": 28.6,
+      "roughness_score": 15.5,
       "final_condition": "GREEN"
     },
     {
@@ -583,15 +583,15 @@
       "latitude": 40.0769301,
       "longitude": -86.0526992,
       "depth_ft": 37.2,
-      "roughness_score": 35.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 28.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00072",
       "latitude": 40.0733171,
       "longitude": -86.0515765,
       "depth_ft": 5.91,
-      "roughness_score": 6.0,
+      "roughness_score": 4.6,
       "final_condition": "YELLOW"
     },
     {
@@ -599,7 +599,7 @@
       "latitude": 40.074218,
       "longitude": -86.051564,
       "depth_ft": 40.43,
-      "roughness_score": 13.0,
+      "roughness_score": 5.2,
       "final_condition": "GREEN"
     },
     {
@@ -607,7 +607,7 @@
       "latitude": 40.0751188,
       "longitude": -86.0515515,
       "depth_ft": 36.48,
-      "roughness_score": 20.0,
+      "roughness_score": 8.8,
       "final_condition": "GREEN"
     },
     {
@@ -615,7 +615,7 @@
       "latitude": 40.0760197,
       "longitude": -86.051539,
       "depth_ft": 33.85,
-      "roughness_score": 27.1,
+      "roughness_score": 13.4,
       "final_condition": "GREEN"
     },
     {
@@ -623,15 +623,15 @@
       "latitude": 40.0769205,
       "longitude": -86.0515265,
       "depth_ft": 39.42,
-      "roughness_score": 37.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 22.5,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00077",
       "latitude": 40.0778214,
       "longitude": -86.051514,
       "depth_ft": 35.56,
-      "roughness_score": 44.1,
+      "roughness_score": 35.4,
       "final_condition": "ORANGE"
     },
     {
@@ -639,7 +639,7 @@
       "latitude": 40.0787222,
       "longitude": -86.0515015,
       "depth_ft": 5.44,
-      "roughness_score": 45.2,
+      "roughness_score": 0.8,
       "final_condition": "YELLOW"
     },
     {
@@ -647,7 +647,7 @@
       "latitude": 40.0733075,
       "longitude": -86.0504039,
       "depth_ft": 34.45,
-      "roughness_score": 4.4,
+      "roughness_score": 5.8,
       "final_condition": "GREEN"
     },
     {
@@ -655,7 +655,7 @@
       "latitude": 40.0742084,
       "longitude": -86.0503914,
       "depth_ft": 36.83,
-      "roughness_score": 11.5,
+      "roughness_score": 11.7,
       "final_condition": "GREEN"
     },
     {
@@ -663,7 +663,7 @@
       "latitude": 40.0751092,
       "longitude": -86.0503789,
       "depth_ft": 36.01,
-      "roughness_score": 18.5,
+      "roughness_score": 12.2,
       "final_condition": "GREEN"
     },
     {
@@ -671,7 +671,7 @@
       "latitude": 40.0760101,
       "longitude": -86.0503664,
       "depth_ft": 33.86,
-      "roughness_score": 29.3,
+      "roughness_score": 15.8,
       "final_condition": "GREEN"
     },
     {
@@ -679,23 +679,23 @@
       "latitude": 40.0769109,
       "longitude": -86.0503538,
       "depth_ft": 40.35,
-      "roughness_score": 35.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 20.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00084",
       "latitude": 40.0778118,
       "longitude": -86.0503413,
       "depth_ft": 34.49,
-      "roughness_score": 36.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 29.6,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00085",
       "latitude": 40.0787126,
       "longitude": -86.0503288,
       "depth_ft": 32.76,
-      "roughness_score": 36.9,
+      "roughness_score": 42.4,
       "final_condition": "ORANGE"
     },
     {
@@ -703,7 +703,7 @@
       "latitude": 40.0805143,
       "longitude": -86.0503038,
       "depth_ft": 8.87,
-      "roughness_score": 2.3,
+      "roughness_score": 0.3,
       "final_condition": "GREEN"
     },
     {
@@ -711,7 +711,7 @@
       "latitude": 40.0732979,
       "longitude": -86.0492313,
       "depth_ft": 34.76,
-      "roughness_score": 2.9,
+      "roughness_score": 3.9,
       "final_condition": "GREEN"
     },
     {
@@ -719,7 +719,7 @@
       "latitude": 40.0741988,
       "longitude": -86.0492188,
       "depth_ft": 36.48,
-      "roughness_score": 10.0,
+      "roughness_score": 12.8,
       "final_condition": "GREEN"
     },
     {
@@ -727,7 +727,7 @@
       "latitude": 40.0750996,
       "longitude": -86.0492062,
       "depth_ft": 36.75,
-      "roughness_score": 20.7,
+      "roughness_score": 18.7,
       "final_condition": "GREEN"
     },
     {
@@ -735,7 +735,7 @@
       "latitude": 40.0760005,
       "longitude": -86.0491937,
       "depth_ft": 35.64,
-      "roughness_score": 27.0,
+      "roughness_score": 19.3,
       "final_condition": "GREEN"
     },
     {
@@ -743,7 +743,7 @@
       "latitude": 40.0769013,
       "longitude": -86.0491812,
       "depth_ft": 40.28,
-      "roughness_score": 28.1,
+      "roughness_score": 22.9,
       "final_condition": "GREEN"
     },
     {
@@ -751,7 +751,7 @@
       "latitude": 40.0778021,
       "longitude": -86.0491686,
       "depth_ft": 35.03,
-      "roughness_score": 28.4,
+      "roughness_score": 27.4,
       "final_condition": "GREEN"
     },
     {
@@ -759,39 +759,39 @@
       "latitude": 40.078703,
       "longitude": -86.0491561,
       "depth_ft": 32.42,
-      "roughness_score": 27.1,
-      "final_condition": "GREEN"
+      "roughness_score": 36.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00094",
       "latitude": 40.0814055,
       "longitude": -86.0491185,
       "depth_ft": 9.22,
-      "roughness_score": 49.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 1.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00095",
       "latitude": 40.084108,
       "longitude": -86.0490809,
       "depth_ft": 8.45,
-      "roughness_score": 58.5,
-      "final_condition": "ORANGE"
+      "roughness_score": 0.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00096",
       "latitude": 40.0850089,
       "longitude": -86.0490684,
       "depth_ft": 24.72,
-      "roughness_score": 60.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 1.5,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00097",
       "latitude": 40.0732883,
       "longitude": -86.0480587,
       "depth_ft": 25.26,
-      "roughness_score": 1.4,
+      "roughness_score": 2.0,
       "final_condition": "GREEN"
     },
     {
@@ -799,7 +799,7 @@
       "latitude": 40.0741891,
       "longitude": -86.0480461,
       "depth_ft": 36.65,
-      "roughness_score": 12.2,
+      "roughness_score": 10.9,
       "final_condition": "GREEN"
     },
     {
@@ -807,7 +807,7 @@
       "latitude": 40.07509,
       "longitude": -86.0480336,
       "depth_ft": 37.59,
-      "roughness_score": 18.5,
+      "roughness_score": 19.9,
       "final_condition": "GREEN"
     },
     {
@@ -815,7 +815,7 @@
       "latitude": 40.0759908,
       "longitude": -86.048021,
       "depth_ft": 37.02,
-      "roughness_score": 19.6,
+      "roughness_score": 25.7,
       "final_condition": "GREEN"
     },
     {
@@ -823,7 +823,7 @@
       "latitude": 40.0768917,
       "longitude": -86.0480085,
       "depth_ft": 33.62,
-      "roughness_score": 19.8,
+      "roughness_score": 26.3,
       "final_condition": "GREEN"
     },
     {
@@ -831,7 +831,7 @@
       "latitude": 40.0777925,
       "longitude": -86.047996,
       "depth_ft": 36.36,
-      "roughness_score": 18.6,
+      "roughness_score": 29.9,
       "final_condition": "GREEN"
     },
     {
@@ -839,15 +839,15 @@
       "latitude": 40.0786934,
       "longitude": -86.0479834,
       "depth_ft": 33.16,
-      "roughness_score": 22.1,
-      "final_condition": "GREEN"
+      "roughness_score": 34.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00104",
       "latitude": 40.0795942,
       "longitude": -86.0479709,
       "depth_ft": 20.15,
-      "roughness_score": 33.4,
+      "roughness_score": 43.7,
       "final_condition": "ORANGE"
     },
     {
@@ -855,55 +855,55 @@
       "latitude": 40.080495,
       "longitude": -86.0479583,
       "depth_ft": 20.18,
-      "roughness_score": 40.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 5.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00106",
       "latitude": 40.0822967,
       "longitude": -86.0479332,
       "depth_ft": 37.0,
-      "roughness_score": 45.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 0.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00107",
       "latitude": 40.0831976,
       "longitude": -86.0479207,
       "depth_ft": 30.24,
-      "roughness_score": 50.0,
-      "final_condition": "ORANGE"
+      "roughness_score": 3.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00108",
       "latitude": 40.0840984,
       "longitude": -86.0479081,
       "depth_ft": 29.25,
-      "roughness_score": 52.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 6.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00109",
       "latitude": 40.0849993,
       "longitude": -86.0478956,
       "depth_ft": 32.77,
-      "roughness_score": 52.4,
-      "final_condition": "ORANGE"
+      "roughness_score": 7.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00110",
       "latitude": 40.114727,
       "longitude": -86.0474811,
       "depth_ft": 3.06,
-      "roughness_score": 99.2,
-      "final_condition": "RED"
+      "roughness_score": 1.3,
+      "final_condition": "YELLOW"
     },
     {
       "point_id": "00111",
       "latitude": 40.0732786,
       "longitude": -86.0468861,
       "depth_ft": 7.58,
-      "roughness_score": 3.6,
+      "roughness_score": 2.9,
       "final_condition": "YELLOW"
     },
     {
@@ -911,7 +911,7 @@
       "latitude": 40.0741795,
       "longitude": -86.0468735,
       "depth_ft": 36.76,
-      "roughness_score": 9.9,
+      "roughness_score": 9.0,
       "final_condition": "GREEN"
     },
     {
@@ -919,7 +919,7 @@
       "latitude": 40.0750803,
       "longitude": -86.046861,
       "depth_ft": 38.69,
-      "roughness_score": 11.0,
+      "roughness_score": 18.0,
       "final_condition": "GREEN"
     },
     {
@@ -927,7 +927,7 @@
       "latitude": 40.0759812,
       "longitude": -86.0468484,
       "depth_ft": 23.48,
-      "roughness_score": 11.3,
+      "roughness_score": 26.9,
       "final_condition": "GREEN"
     },
     {
@@ -935,7 +935,7 @@
       "latitude": 40.076882,
       "longitude": -86.0468358,
       "depth_ft": 41.08,
-      "roughness_score": 10.0,
+      "roughness_score": 32.8,
       "final_condition": "GREEN"
     },
     {
@@ -943,31 +943,31 @@
       "latitude": 40.0777829,
       "longitude": -86.0468233,
       "depth_ft": 35.21,
-      "roughness_score": 13.5,
-      "final_condition": "GREEN"
+      "roughness_score": 33.4,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00117",
       "latitude": 40.0786837,
       "longitude": -86.0468107,
       "depth_ft": 31.94,
-      "roughness_score": 24.9,
-      "final_condition": "GREEN"
+      "roughness_score": 36.9,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00118",
       "latitude": 40.0795846,
       "longitude": -86.0467981,
       "depth_ft": 19.56,
-      "roughness_score": 32.2,
-      "final_condition": "GREEN"
+      "roughness_score": 41.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00119",
       "latitude": 40.0804854,
       "longitude": -86.0467856,
       "depth_ft": 10.47,
-      "roughness_score": 35.5,
+      "roughness_score": 50.7,
       "final_condition": "ORANGE"
     },
     {
@@ -975,63 +975,63 @@
       "latitude": 40.0813862,
       "longitude": -86.046773,
       "depth_ft": 37.04,
-      "roughness_score": 37.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 1.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00121",
       "latitude": 40.0822871,
       "longitude": -86.0467605,
       "depth_ft": 30.44,
-      "roughness_score": 41.4,
-      "final_condition": "ORANGE"
+      "roughness_score": 4.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00122",
       "latitude": 40.0831879,
       "longitude": -86.0467479,
       "depth_ft": 31.27,
-      "roughness_score": 43.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 7.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00123",
       "latitude": 40.0840888,
       "longitude": -86.0467353,
       "depth_ft": 28.79,
-      "roughness_score": 43.9,
-      "final_condition": "ORANGE"
+      "roughness_score": 10.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00124",
       "latitude": 40.0849896,
       "longitude": -86.0467228,
       "depth_ft": 28.2,
-      "roughness_score": 44.0,
-      "final_condition": "ORANGE"
+      "roughness_score": 13.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00125",
       "latitude": 40.0858904,
       "longitude": -86.0467102,
       "depth_ft": 32.96,
-      "roughness_score": 48.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 14.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00126",
       "latitude": 40.1138165,
       "longitude": -86.0463204,
       "depth_ft": 4.85,
-      "roughness_score": 90.7,
-      "final_condition": "RED"
+      "roughness_score": 0.5,
+      "final_condition": "YELLOW"
     },
     {
       "point_id": "00127",
       "latitude": 40.073269,
       "longitude": -86.0457135,
       "depth_ft": 5.53,
-      "roughness_score": 1.4,
+      "roughness_score": 2.6,
       "final_condition": "YELLOW"
     },
     {
@@ -1039,7 +1039,7 @@
       "latitude": 40.0741698,
       "longitude": -86.0457009,
       "depth_ft": 36.8,
-      "roughness_score": 2.5,
+      "roughness_score": 9.9,
       "final_condition": "GREEN"
     },
     {
@@ -1047,7 +1047,7 @@
       "latitude": 40.0750707,
       "longitude": -86.0456883,
       "depth_ft": 33.57,
-      "roughness_score": 2.7,
+      "roughness_score": 16.1,
       "final_condition": "GREEN"
     },
     {
@@ -1055,7 +1055,7 @@
       "latitude": 40.0759715,
       "longitude": -86.0456757,
       "depth_ft": 8.36,
-      "roughness_score": 1.5,
+      "roughness_score": 25.0,
       "final_condition": "GREEN"
     },
     {
@@ -1063,87 +1063,87 @@
       "latitude": 40.0768724,
       "longitude": -86.0456632,
       "depth_ft": 40.55,
-      "roughness_score": 5.0,
-      "final_condition": "GREEN"
+      "roughness_score": 34.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00132",
       "latitude": 40.0777732,
       "longitude": -86.0456506,
       "depth_ft": 34.73,
-      "roughness_score": 16.3,
-      "final_condition": "GREEN"
+      "roughness_score": 39.8,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00133",
       "latitude": 40.0786741,
       "longitude": -86.045638,
       "depth_ft": 33.13,
-      "roughness_score": 23.6,
-      "final_condition": "GREEN"
+      "roughness_score": 40.4,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00134",
       "latitude": 40.0795749,
       "longitude": -86.0456254,
       "depth_ft": 24.7,
-      "roughness_score": 27.0,
-      "final_condition": "GREEN"
+      "roughness_score": 44.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00135",
       "latitude": 40.0804757,
       "longitude": -86.0456129,
       "depth_ft": 37.39,
-      "roughness_score": 28.7,
-      "final_condition": "GREEN"
+      "roughness_score": 48.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00136",
       "latitude": 40.0813766,
       "longitude": -86.0456003,
       "depth_ft": 31.77,
-      "roughness_score": 32.9,
-      "final_condition": "GREEN"
+      "roughness_score": 57.7,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00137",
       "latitude": 40.0822774,
       "longitude": -86.0455877,
       "depth_ft": 30.95,
-      "roughness_score": 35.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 8.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00138",
       "latitude": 40.0831783,
       "longitude": -86.0455751,
       "depth_ft": 31.41,
-      "roughness_score": 35.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 11.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00139",
       "latitude": 40.0840791,
       "longitude": -86.0455625,
       "depth_ft": 29.66,
-      "roughness_score": 35.4,
-      "final_condition": "ORANGE"
+      "roughness_score": 14.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00140",
       "latitude": 40.0849799,
       "longitude": -86.04555,
       "depth_ft": 27.68,
-      "roughness_score": 40.1,
-      "final_condition": "ORANGE"
+      "roughness_score": 17.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00141",
       "latitude": 40.0858808,
       "longitude": -86.0455374,
       "depth_ft": 32.72,
-      "roughness_score": 26.9,
+      "roughness_score": 20.3,
       "final_condition": "GREEN"
     },
     {
@@ -1151,7 +1151,7 @@
       "latitude": 40.0867816,
       "longitude": -86.0455248,
       "depth_ft": 11.56,
-      "roughness_score": 31.0,
+      "roughness_score": 21.2,
       "final_condition": "GREEN"
     },
     {
@@ -1159,7 +1159,7 @@
       "latitude": 40.0885833,
       "longitude": -86.0454996,
       "depth_ft": 15.4,
-      "roughness_score": 12.0,
+      "roughness_score": 2.0,
       "final_condition": "GREEN"
     },
     {
@@ -1167,7 +1167,7 @@
       "latitude": 40.1047984,
       "longitude": -86.045273,
       "depth_ft": 3.31,
-      "roughness_score": 1.1,
+      "roughness_score": 2.1,
       "final_condition": "YELLOW"
     },
     {
@@ -1175,15 +1175,15 @@
       "latitude": 40.112906,
       "longitude": -86.0451597,
       "depth_ft": 8.32,
-      "roughness_score": 82.1,
-      "final_condition": "RED"
+      "roughness_score": 1.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00146",
       "latitude": 40.1138068,
       "longitude": -86.0451471,
       "depth_ft": 5.24,
-      "roughness_score": 9.2,
+      "roughness_score": 3.7,
       "final_condition": "YELLOW"
     },
     {
@@ -1191,7 +1191,7 @@
       "latitude": 40.0768627,
       "longitude": -86.0444905,
       "depth_ft": 35.46,
-      "roughness_score": 7.8,
+      "roughness_score": 32.1,
       "final_condition": "GREEN"
     },
     {
@@ -1199,55 +1199,55 @@
       "latitude": 40.0777635,
       "longitude": -86.0444779,
       "depth_ft": 34.1,
-      "roughness_score": 15.1,
-      "final_condition": "GREEN"
+      "roughness_score": 41.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00149",
       "latitude": 40.0786644,
       "longitude": -86.0444653,
       "depth_ft": 34.51,
-      "roughness_score": 18.4,
-      "final_condition": "GREEN"
+      "roughness_score": 46.9,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00150",
       "latitude": 40.0795652,
       "longitude": -86.0444527,
       "depth_ft": 32.97,
-      "roughness_score": 20.1,
-      "final_condition": "GREEN"
+      "roughness_score": 47.4,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00151",
       "latitude": 40.0804661,
       "longitude": -86.0444401,
       "depth_ft": 32.41,
-      "roughness_score": 24.3,
-      "final_condition": "GREEN"
+      "roughness_score": 51.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00152",
       "latitude": 40.0813669,
       "longitude": -86.0444275,
       "depth_ft": 31.78,
-      "roughness_score": 26.6,
-      "final_condition": "GREEN"
+      "roughness_score": 55.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00153",
       "latitude": 40.0822678,
       "longitude": -86.0444149,
       "depth_ft": 31.55,
-      "roughness_score": 26.8,
-      "final_condition": "GREEN"
+      "roughness_score": 64.8,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00154",
       "latitude": 40.0831686,
       "longitude": -86.0444023,
       "depth_ft": 30.39,
-      "roughness_score": 26.9,
+      "roughness_score": 15.4,
       "final_condition": "GREEN"
     },
     {
@@ -1255,7 +1255,7 @@
       "latitude": 40.0840694,
       "longitude": -86.0443897,
       "depth_ft": 26.72,
-      "roughness_score": 31.6,
+      "roughness_score": 18.5,
       "final_condition": "GREEN"
     },
     {
@@ -1263,7 +1263,7 @@
       "latitude": 40.0849703,
       "longitude": -86.0443772,
       "depth_ft": 30.16,
-      "roughness_score": 18.4,
+      "roughness_score": 22.0,
       "final_condition": "GREEN"
     },
     {
@@ -1271,7 +1271,7 @@
       "latitude": 40.0858711,
       "longitude": -86.0443646,
       "depth_ft": 30.63,
-      "roughness_score": 22.5,
+      "roughness_score": 24.9,
       "final_condition": "GREEN"
     },
     {
@@ -1279,7 +1279,7 @@
       "latitude": 40.086772,
       "longitude": -86.044352,
       "depth_ft": 25.91,
-      "roughness_score": 25.8,
+      "roughness_score": 27.3,
       "final_condition": "GREEN"
     },
     {
@@ -1287,7 +1287,7 @@
       "latitude": 40.0876728,
       "longitude": -86.0443394,
       "depth_ft": 7.99,
-      "roughness_score": 3.4,
+      "roughness_score": 28.3,
       "final_condition": "YELLOW"
     },
     {
@@ -1295,7 +1295,7 @@
       "latitude": 40.0930778,
       "longitude": -86.0442638,
       "depth_ft": 28.14,
-      "roughness_score": 10.5,
+      "roughness_score": 1.0,
       "final_condition": "GREEN"
     },
     {
@@ -1303,7 +1303,7 @@
       "latitude": 40.1083921,
       "longitude": -86.0440494,
       "depth_ft": 11.36,
-      "roughness_score": 11.2,
+      "roughness_score": 0.1,
       "final_condition": "GREEN"
     },
     {
@@ -1311,23 +1311,23 @@
       "latitude": 40.1092929,
       "longitude": -86.0440368,
       "depth_ft": 13.75,
-      "roughness_score": 65.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 1.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00163",
       "latitude": 40.1119955,
       "longitude": -86.043999,
       "depth_ft": 10.84,
-      "roughness_score": 73.6,
-      "final_condition": "RED"
+      "roughness_score": 0.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00164",
       "latitude": 40.1128963,
       "longitude": -86.0439864,
       "depth_ft": 0.89,
-      "roughness_score": 0.6,
+      "roughness_score": 4.9,
       "final_condition": "YELLOW"
     },
     {
@@ -1335,7 +1335,7 @@
       "latitude": 40.076853,
       "longitude": -86.0433178,
       "depth_ft": 36.72,
-      "roughness_score": 6.5,
+      "roughness_score": 5.0,
       "final_condition": "GREEN"
     },
     {
@@ -1343,63 +1343,63 @@
       "latitude": 40.0777539,
       "longitude": -86.0433052,
       "depth_ft": 38.6,
-      "roughness_score": 9.9,
-      "final_condition": "GREEN"
+      "roughness_score": 39.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00167",
       "latitude": 40.0786547,
       "longitude": -86.0432926,
       "depth_ft": 35.11,
-      "roughness_score": 11.6,
-      "final_condition": "GREEN"
+      "roughness_score": 48.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00168",
       "latitude": 40.0795555,
       "longitude": -86.04328,
       "depth_ft": 33.05,
-      "roughness_score": 15.8,
-      "final_condition": "GREEN"
+      "roughness_score": 53.9,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00169",
       "latitude": 40.0804564,
       "longitude": -86.0432674,
       "depth_ft": 32.43,
-      "roughness_score": 18.1,
-      "final_condition": "GREEN"
+      "roughness_score": 54.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00170",
       "latitude": 40.0813572,
       "longitude": -86.0432548,
       "depth_ft": 31.34,
-      "roughness_score": 18.2,
-      "final_condition": "GREEN"
+      "roughness_score": 58.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00171",
       "latitude": 40.0822581,
       "longitude": -86.0432422,
       "depth_ft": 30.88,
-      "roughness_score": 18.3,
-      "final_condition": "GREEN"
+      "roughness_score": 62.7,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00172",
       "latitude": 40.0831589,
       "longitude": -86.0432296,
       "depth_ft": 28.14,
-      "roughness_score": 23.0,
-      "final_condition": "GREEN"
+      "roughness_score": 71.8,
+      "final_condition": "RED"
     },
     {
       "point_id": "00173",
       "latitude": 40.0840598,
       "longitude": -86.043217,
       "depth_ft": 24.68,
-      "roughness_score": 9.8,
+      "roughness_score": 22.4,
       "final_condition": "GREEN"
     },
     {
@@ -1407,7 +1407,7 @@
       "latitude": 40.0849606,
       "longitude": -86.0432043,
       "depth_ft": 34.04,
-      "roughness_score": 13.9,
+      "roughness_score": 25.5,
       "final_condition": "GREEN"
     },
     {
@@ -1415,7 +1415,7 @@
       "latitude": 40.0858614,
       "longitude": -86.0431917,
       "depth_ft": 29.14,
-      "roughness_score": 17.2,
+      "roughness_score": 29.0,
       "final_condition": "GREEN"
     },
     {
@@ -1423,7 +1423,7 @@
       "latitude": 40.0867623,
       "longitude": -86.0431791,
       "depth_ft": 24.45,
-      "roughness_score": 23.5,
+      "roughness_score": 31.9,
       "final_condition": "GREEN"
     },
     {
@@ -1431,7 +1431,7 @@
       "latitude": 40.0921673,
       "longitude": -86.0431034,
       "depth_ft": 24.61,
-      "roughness_score": 1.9,
+      "roughness_score": 0.8,
       "final_condition": "GREEN"
     },
     {
@@ -1439,15 +1439,15 @@
       "latitude": 40.0930682,
       "longitude": -86.0430908,
       "depth_ft": 23.99,
-      "roughness_score": 41.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 5.5,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00179",
       "latitude": 40.093969,
       "longitude": -86.0430782,
       "depth_ft": 25.18,
-      "roughness_score": 28.7,
+      "roughness_score": 8.1,
       "final_condition": "GREEN"
     },
     {
@@ -1455,7 +1455,7 @@
       "latitude": 40.099374,
       "longitude": -86.0430025,
       "depth_ft": 5.62,
-      "roughness_score": 1.4,
+      "roughness_score": 0.3,
       "final_condition": "YELLOW"
     },
     {
@@ -1463,7 +1463,7 @@
       "latitude": 40.1074816,
       "longitude": -86.0428889,
       "depth_ft": 13.47,
-      "roughness_score": 2.7,
+      "roughness_score": 0.9,
       "final_condition": "GREEN"
     },
     {
@@ -1471,47 +1471,47 @@
       "latitude": 40.1083824,
       "longitude": -86.0428762,
       "depth_ft": 16.03,
-      "roughness_score": 56.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 6.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00183",
       "latitude": 40.1092833,
       "longitude": -86.0428636,
       "depth_ft": 15.54,
-      "roughness_score": 60.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 7.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00184",
       "latitude": 40.1101841,
       "longitude": -86.042851,
       "depth_ft": 14.96,
-      "roughness_score": 63.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 8.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00185",
       "latitude": 40.1110849,
       "longitude": -86.0428384,
       "depth_ft": 13.19,
-      "roughness_score": 65.0,
-      "final_condition": "ORANGE"
+      "roughness_score": 0.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00186",
       "latitude": 40.1119858,
       "longitude": -86.0428257,
       "depth_ft": 11.98,
-      "roughness_score": 37.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 4.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00187",
       "latitude": 40.0768433,
       "longitude": -86.0421452,
       "depth_ft": 36.07,
-      "roughness_score": 1.3,
+      "roughness_score": 6.7,
       "final_condition": "GREEN"
     },
     {
@@ -1519,7 +1519,7 @@
       "latitude": 40.0777442,
       "longitude": -86.0421325,
       "depth_ft": 35.21,
-      "roughness_score": 3.0,
+      "roughness_score": 12.0,
       "final_condition": "GREEN"
     },
     {
@@ -1527,63 +1527,63 @@
       "latitude": 40.078645,
       "longitude": -86.0421199,
       "depth_ft": 34.39,
-      "roughness_score": 7.2,
-      "final_condition": "GREEN"
+      "roughness_score": 46.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00190",
       "latitude": 40.0795459,
       "longitude": -86.0421073,
       "depth_ft": 33.21,
-      "roughness_score": 9.5,
-      "final_condition": "GREEN"
+      "roughness_score": 55.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00191",
       "latitude": 40.0804467,
       "longitude": -86.0420947,
       "depth_ft": 32.56,
-      "roughness_score": 9.7,
-      "final_condition": "GREEN"
+      "roughness_score": 61.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00192",
       "latitude": 40.0813475,
       "longitude": -86.0420821,
       "depth_ft": 30.45,
-      "roughness_score": 9.8,
-      "final_condition": "GREEN"
+      "roughness_score": 61.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00193",
       "latitude": 40.0822484,
       "longitude": -86.0420694,
       "depth_ft": 21.43,
-      "roughness_score": 14.5,
-      "final_condition": "GREEN"
+      "roughness_score": 65.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00194",
       "latitude": 40.0831492,
       "longitude": -86.0420568,
       "depth_ft": 7.55,
-      "roughness_score": 1.3,
-      "final_condition": "YELLOW"
+      "roughness_score": 69.7,
+      "final_condition": "RED"
     },
     {
       "point_id": "00195",
       "latitude": 40.0840501,
       "longitude": -86.0420442,
       "depth_ft": 5.76,
-      "roughness_score": 5.4,
-      "final_condition": "YELLOW"
+      "roughness_score": 78.9,
+      "final_condition": "RED"
     },
     {
       "point_id": "00196",
       "latitude": 40.0849509,
       "longitude": -86.0420315,
       "depth_ft": 20.64,
-      "roughness_score": 8.7,
+      "roughness_score": 29.5,
       "final_condition": "GREEN"
     },
     {
@@ -1591,7 +1591,7 @@
       "latitude": 40.0858517,
       "longitude": -86.0420189,
       "depth_ft": 27.52,
-      "roughness_score": 14.9,
+      "roughness_score": 32.6,
       "final_condition": "GREEN"
     },
     {
@@ -1599,23 +1599,23 @@
       "latitude": 40.0867526,
       "longitude": -86.0420063,
       "depth_ft": 25.03,
-      "roughness_score": 20.4,
-      "final_condition": "GREEN"
+      "roughness_score": 36.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00199",
       "latitude": 40.0876534,
       "longitude": -86.0419937,
       "depth_ft": 8.19,
-      "roughness_score": 26.1,
-      "final_condition": "GREEN"
+      "roughness_score": 39.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00200",
       "latitude": 40.0885543,
       "longitude": -86.041981,
       "depth_ft": 3.92,
-      "roughness_score": 30.5,
+      "roughness_score": 1.4,
       "final_condition": "YELLOW"
     },
     {
@@ -1623,7 +1623,7 @@
       "latitude": 40.0903559,
       "longitude": -86.0419558,
       "depth_ft": 6.79,
-      "roughness_score": 32.6,
+      "roughness_score": 0.4,
       "final_condition": "YELLOW"
     },
     {
@@ -1631,7 +1631,7 @@
       "latitude": 40.0921576,
       "longitude": -86.0419305,
       "depth_ft": 28.32,
-      "roughness_score": 32.8,
+      "roughness_score": 3.2,
       "final_condition": "GREEN"
     },
     {
@@ -1639,7 +1639,7 @@
       "latitude": 40.0930585,
       "longitude": -86.0419179,
       "depth_ft": 24.39,
-      "roughness_score": 20.2,
+      "roughness_score": 7.8,
       "final_condition": "GREEN"
     },
     {
@@ -1647,7 +1647,7 @@
       "latitude": 40.0939593,
       "longitude": -86.0419052,
       "depth_ft": 24.47,
-      "roughness_score": 24.4,
+      "roughness_score": 12.5,
       "final_condition": "GREEN"
     },
     {
@@ -1655,7 +1655,7 @@
       "latitude": 40.0993643,
       "longitude": -86.0418294,
       "depth_ft": 14.45,
-      "roughness_score": 2.2,
+      "roughness_score": 2.4,
       "final_condition": "GREEN"
     },
     {
@@ -1663,39 +1663,39 @@
       "latitude": 40.1002652,
       "longitude": -86.0418168,
       "depth_ft": 23.21,
-      "roughness_score": 60.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 1.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00207",
       "latitude": 40.101166,
       "longitude": -86.0418042,
       "depth_ft": 22.46,
-      "roughness_score": 65.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 2.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00208",
       "latitude": 40.1020669,
       "longitude": -86.0417915,
       "depth_ft": 19.93,
-      "roughness_score": 69.0,
-      "final_condition": "RED"
+      "roughness_score": 4.7,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00209",
       "latitude": 40.1029677,
       "longitude": -86.0417789,
       "depth_ft": 19.17,
-      "roughness_score": 70.6,
-      "final_condition": "RED"
+      "roughness_score": 4.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00210",
       "latitude": 40.1047694,
       "longitude": -86.0417536,
       "depth_ft": 7.84,
-      "roughness_score": 38.2,
+      "roughness_score": 5.1,
       "final_condition": "YELLOW"
     },
     {
@@ -1703,39 +1703,39 @@
       "latitude": 40.1074719,
       "longitude": -86.0417157,
       "depth_ft": 16.83,
-      "roughness_score": 48.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 2.7,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00212",
       "latitude": 40.1083727,
       "longitude": -86.041703,
       "depth_ft": 16.37,
-      "roughness_score": 51.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 8.0,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00213",
       "latitude": 40.1092736,
       "longitude": -86.0416904,
       "depth_ft": 15.95,
-      "roughness_score": 54.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 13.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00214",
       "latitude": 40.1101744,
       "longitude": -86.0416777,
       "depth_ft": 15.12,
-      "roughness_score": 56.5,
-      "final_condition": "ORANGE"
+      "roughness_score": 14.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00215",
       "latitude": 40.1110752,
       "longitude": -86.0416651,
       "depth_ft": 14.34,
-      "roughness_score": 29.3,
+      "roughness_score": 15.8,
       "final_condition": "GREEN"
     },
     {
@@ -1743,7 +1743,7 @@
       "latitude": 40.0786353,
       "longitude": -86.0409472,
       "depth_ft": 18.3,
-      "roughness_score": 1.0,
+      "roughness_score": 19.1,
       "final_condition": "GREEN"
     },
     {
@@ -1751,39 +1751,39 @@
       "latitude": 40.0795362,
       "longitude": -86.0409346,
       "depth_ft": 17.38,
-      "roughness_score": 1.1,
-      "final_condition": "GREEN"
+      "roughness_score": 53.2,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00218",
       "latitude": 40.080437,
       "longitude": -86.040922,
       "depth_ft": 15.23,
-      "roughness_score": 1.2,
-      "final_condition": "GREEN"
+      "roughness_score": 62.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00219",
       "latitude": 40.0813378,
       "longitude": -86.0409093,
       "depth_ft": 28.46,
-      "roughness_score": 5.9,
-      "final_condition": "GREEN"
+      "roughness_score": 68.0,
+      "final_condition": "RED"
     },
     {
       "point_id": "00220",
       "latitude": 40.0822387,
       "longitude": -86.0408967,
       "depth_ft": 22.29,
-      "roughness_score": 9.3,
-      "final_condition": "GREEN"
+      "roughness_score": 68.6,
+      "final_condition": "RED"
     },
     {
       "point_id": "00221",
       "latitude": 40.0840404,
       "longitude": -86.0408714,
       "depth_ft": 4.5,
-      "roughness_score": 0.1,
+      "roughness_score": 0.8,
       "final_condition": "YELLOW"
     },
     {
@@ -1791,47 +1791,47 @@
       "latitude": 40.0849412,
       "longitude": -86.0408587,
       "depth_ft": 29.36,
-      "roughness_score": 6.4,
-      "final_condition": "GREEN"
+      "roughness_score": 85.9,
+      "final_condition": "RED"
     },
     {
       "point_id": "00223",
       "latitude": 40.085842,
       "longitude": -86.0408461,
       "depth_ft": 28.71,
-      "roughness_score": 11.8,
-      "final_condition": "GREEN"
+      "roughness_score": 36.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00224",
       "latitude": 40.0867429,
       "longitude": -86.0408335,
       "depth_ft": 25.11,
-      "roughness_score": 17.5,
-      "final_condition": "GREEN"
+      "roughness_score": 39.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00225",
       "latitude": 40.0876437,
       "longitude": -86.0408208,
       "depth_ft": 21.85,
-      "roughness_score": 21.9,
-      "final_condition": "GREEN"
+      "roughness_score": 43.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00226",
       "latitude": 40.0885446,
       "longitude": -86.0408082,
       "depth_ft": 16.56,
-      "roughness_score": 24.5,
-      "final_condition": "GREEN"
+      "roughness_score": 46.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00227",
       "latitude": 40.0894454,
       "longitude": -86.0407955,
       "depth_ft": 16.33,
-      "roughness_score": 24.0,
+      "roughness_score": 8.5,
       "final_condition": "GREEN"
     },
     {
@@ -1839,7 +1839,7 @@
       "latitude": 40.0903462,
       "longitude": -86.0407829,
       "depth_ft": 4.52,
-      "roughness_score": 23.7,
+      "roughness_score": 1.0,
       "final_condition": "YELLOW"
     },
     {
@@ -1847,7 +1847,7 @@
       "latitude": 40.0912471,
       "longitude": -86.0407702,
       "depth_ft": 31.17,
-      "roughness_score": 24.2,
+      "roughness_score": 2.3,
       "final_condition": "GREEN"
     },
     {
@@ -1855,7 +1855,7 @@
       "latitude": 40.0921479,
       "longitude": -86.0407576,
       "depth_ft": 24.36,
-      "roughness_score": 11.6,
+      "roughness_score": 6.3,
       "final_condition": "GREEN"
     },
     {
@@ -1863,7 +1863,7 @@
       "latitude": 40.0930488,
       "longitude": -86.0407449,
       "depth_ft": 22.86,
-      "roughness_score": 15.9,
+      "roughness_score": 10.2,
       "final_condition": "GREEN"
     },
     {
@@ -1871,7 +1871,7 @@
       "latitude": 40.0939496,
       "longitude": -86.0407323,
       "depth_ft": 23.28,
-      "roughness_score": 20.4,
+      "roughness_score": 14.9,
       "final_condition": "GREEN"
     },
     {
@@ -1879,7 +1879,7 @@
       "latitude": 40.0948504,
       "longitude": -86.0407196,
       "depth_ft": 24.53,
-      "roughness_score": 13.4,
+      "roughness_score": 19.6,
       "final_condition": "GREEN"
     },
     {
@@ -1895,47 +1895,47 @@
       "latitude": 40.0993546,
       "longitude": -86.0406564,
       "depth_ft": 22.97,
-      "roughness_score": 51.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 2.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00236",
       "latitude": 40.1002555,
       "longitude": -86.0406437,
       "depth_ft": 21.01,
-      "roughness_score": 57.1,
-      "final_condition": "ORANGE"
+      "roughness_score": 9.5,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00237",
       "latitude": 40.1011563,
       "longitude": -86.0406311,
       "depth_ft": 20.7,
-      "roughness_score": 60.4,
-      "final_condition": "ORANGE"
+      "roughness_score": 9.0,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00238",
       "latitude": 40.1020571,
       "longitude": -86.0406184,
       "depth_ft": 20.89,
-      "roughness_score": 62.0,
-      "final_condition": "ORANGE"
+      "roughness_score": 9.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00239",
       "latitude": 40.102958,
       "longitude": -86.0406058,
       "depth_ft": 19.81,
-      "roughness_score": 55.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 11.7,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00240",
       "latitude": 40.1038588,
       "longitude": -86.0405931,
       "depth_ft": 19.07,
-      "roughness_score": 29.7,
+      "roughness_score": 11.4,
       "final_condition": "GREEN"
     },
     {
@@ -1943,7 +1943,7 @@
       "latitude": 40.1056605,
       "longitude": -86.0405678,
       "depth_ft": 3.03,
-      "roughness_score": 35.1,
+      "roughness_score": 0.0,
       "final_condition": "YELLOW"
     },
     {
@@ -1951,39 +1951,39 @@
       "latitude": 40.1065613,
       "longitude": -86.0405551,
       "depth_ft": 19.26,
-      "roughness_score": 39.7,
-      "final_condition": "ORANGE"
+      "roughness_score": 0.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00243",
       "latitude": 40.1074622,
       "longitude": -86.0405425,
       "depth_ft": 18.19,
-      "roughness_score": 43.1,
-      "final_condition": "ORANGE"
+      "roughness_score": 4.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00244",
       "latitude": 40.108363,
       "longitude": -86.0405298,
       "depth_ft": 16.91,
-      "roughness_score": 46.1,
-      "final_condition": "ORANGE"
+      "roughness_score": 9.7,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00245",
       "latitude": 40.1092638,
       "longitude": -86.0405172,
       "depth_ft": 16.15,
-      "roughness_score": 47.9,
-      "final_condition": "ORANGE"
+      "roughness_score": 15.0,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00246",
       "latitude": 40.1101647,
       "longitude": -86.0405045,
       "depth_ft": 16.38,
-      "roughness_score": 20.7,
+      "roughness_score": 20.4,
       "final_condition": "GREEN"
     },
     {
@@ -1991,31 +1991,31 @@
       "latitude": 40.0813281,
       "longitude": -86.0397366,
       "depth_ft": 7.98,
-      "roughness_score": 0.7,
-      "final_condition": "YELLOW"
+      "roughness_score": 69.2,
+      "final_condition": "RED"
     },
     {
       "point_id": "00248",
       "latitude": 40.082229,
       "longitude": -86.0397239,
       "depth_ft": 0.3,
-      "roughness_score": 6.6,
-      "final_condition": "YELLOW"
+      "roughness_score": 75.0,
+      "final_condition": "RED"
     },
     {
       "point_id": "00249",
       "latitude": 40.0831298,
       "longitude": -86.0397113,
       "depth_ft": 12.29,
-      "roughness_score": 7.9,
-      "final_condition": "GREEN"
+      "roughness_score": 75.6,
+      "final_condition": "RED"
     },
     {
       "point_id": "00250",
       "latitude": 40.0849315,
       "longitude": -86.0396859,
       "depth_ft": 29.03,
-      "roughness_score": 3.3,
+      "roughness_score": 7.8,
       "final_condition": "GREEN"
     },
     {
@@ -2023,47 +2023,47 @@
       "latitude": 40.0858323,
       "longitude": -86.0396733,
       "depth_ft": 32.46,
-      "roughness_score": 9.0,
-      "final_condition": "GREEN"
+      "roughness_score": 93.0,
+      "final_condition": "RED"
     },
     {
       "point_id": "00252",
       "latitude": 40.0867332,
       "longitude": -86.0396606,
       "depth_ft": 27.6,
-      "roughness_score": 13.4,
-      "final_condition": "GREEN"
+      "roughness_score": 43.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00253",
       "latitude": 40.087634,
       "longitude": -86.039648,
       "depth_ft": 25.29,
-      "roughness_score": 15.9,
-      "final_condition": "GREEN"
+      "roughness_score": 46.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00254",
       "latitude": 40.0885348,
       "longitude": -86.0396353,
       "depth_ft": 24.82,
-      "roughness_score": 15.5,
-      "final_condition": "GREEN"
+      "roughness_score": 50.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00255",
       "latitude": 40.0894357,
       "longitude": -86.0396226,
       "depth_ft": 26.57,
-      "roughness_score": 15.2,
-      "final_condition": "GREEN"
+      "roughness_score": 53.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00256",
       "latitude": 40.0903365,
       "longitude": -86.03961,
       "depth_ft": 31.02,
-      "roughness_score": 15.7,
+      "roughness_score": 15.5,
       "final_condition": "GREEN"
     },
     {
@@ -2071,7 +2071,7 @@
       "latitude": 40.0912374,
       "longitude": -86.0395973,
       "depth_ft": 23.58,
-      "roughness_score": 3.1,
+      "roughness_score": 8.0,
       "final_condition": "GREEN"
     },
     {
@@ -2079,7 +2079,7 @@
       "latitude": 40.0921382,
       "longitude": -86.0395847,
       "depth_ft": 22.09,
-      "roughness_score": 7.3,
+      "roughness_score": 9.3,
       "final_condition": "GREEN"
     },
     {
@@ -2087,7 +2087,7 @@
       "latitude": 40.093039,
       "longitude": -86.039572,
       "depth_ft": 16.59,
-      "roughness_score": 11.9,
+      "roughness_score": 13.3,
       "final_condition": "GREEN"
     },
     {
@@ -2095,7 +2095,7 @@
       "latitude": 40.0939399,
       "longitude": -86.0395593,
       "depth_ft": 20.75,
-      "roughness_score": 4.8,
+      "roughness_score": 17.3,
       "final_condition": "GREEN"
     },
     {
@@ -2103,7 +2103,7 @@
       "latitude": 40.0948407,
       "longitude": -86.0395467,
       "depth_ft": 25.09,
-      "roughness_score": 7.8,
+      "roughness_score": 21.9,
       "final_condition": "GREEN"
     },
     {
@@ -2119,7 +2119,7 @@
       "latitude": 40.0966424,
       "longitude": -86.0395213,
       "depth_ft": 6.01,
-      "roughness_score": 30.9,
+      "roughness_score": 2.4,
       "final_condition": "YELLOW"
     },
     {
@@ -2127,47 +2127,47 @@
       "latitude": 40.0984441,
       "longitude": -86.039496,
       "depth_ft": 24.48,
-      "roughness_score": 43.2,
-      "final_condition": "ORANGE"
+      "roughness_score": 2.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00265",
       "latitude": 40.0993449,
       "longitude": -86.0394833,
       "depth_ft": 21.35,
-      "roughness_score": 48.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 7.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00266",
       "latitude": 40.1002457,
       "longitude": -86.0394707,
       "depth_ft": 20.51,
-      "roughness_score": 51.9,
-      "final_condition": "ORANGE"
+      "roughness_score": 9.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00267",
       "latitude": 40.1011466,
       "longitude": -86.039458,
       "depth_ft": 20.52,
-      "roughness_score": 53.5,
-      "final_condition": "ORANGE"
+      "roughness_score": 16.5,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00268",
       "latitude": 40.1020474,
       "longitude": -86.0394453,
       "depth_ft": 22.31,
-      "roughness_score": 46.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 16.0,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00269",
       "latitude": 40.1029483,
       "longitude": -86.0394326,
       "depth_ft": 20.04,
-      "roughness_score": 21.1,
+      "roughness_score": 16.9,
       "final_condition": "GREEN"
     },
     {
@@ -2175,7 +2175,7 @@
       "latitude": 40.1038491,
       "longitude": -86.03942,
       "depth_ft": 19.44,
-      "roughness_score": 18.7,
+      "roughness_score": 18.8,
       "final_condition": "GREEN"
     },
     {
@@ -2183,7 +2183,7 @@
       "latitude": 40.1047499,
       "longitude": -86.0394073,
       "depth_ft": 18.73,
-      "roughness_score": 26.6,
+      "roughness_score": 18.5,
       "final_condition": "GREEN"
     },
     {
@@ -2191,7 +2191,7 @@
       "latitude": 40.1056508,
       "longitude": -86.0393946,
       "depth_ft": 19.02,
-      "roughness_score": 31.1,
+      "roughness_score": 6.8,
       "final_condition": "GREEN"
     },
     {
@@ -2199,31 +2199,31 @@
       "latitude": 40.1065516,
       "longitude": -86.039382,
       "depth_ft": 18.37,
-      "roughness_score": 34.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 7.0,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00274",
       "latitude": 40.1074524,
       "longitude": -86.0393693,
       "depth_ft": 17.82,
-      "roughness_score": 37.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 7.9,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00275",
       "latitude": 40.1083533,
       "longitude": -86.0393566,
       "depth_ft": 17.76,
-      "roughness_score": 39.4,
-      "final_condition": "ORANGE"
+      "roughness_score": 11.2,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00276",
       "latitude": 40.1092541,
       "longitude": -86.0393439,
       "depth_ft": 16.77,
-      "roughness_score": 12.2,
+      "roughness_score": 16.8,
       "final_condition": "GREEN"
     },
     {
@@ -2231,7 +2231,7 @@
       "latitude": 40.1101549,
       "longitude": -86.0393313,
       "depth_ft": 16.65,
-      "roughness_score": 15.5,
+      "roughness_score": 22.0,
       "final_condition": "GREEN"
     },
     {
@@ -2239,7 +2239,7 @@
       "latitude": 40.0804175,
       "longitude": -86.0385765,
       "depth_ft": 5.35,
-      "roughness_score": 1.0,
+      "roughness_score": 0.8,
       "final_condition": "YELLOW"
     },
     {
@@ -2247,23 +2247,23 @@
       "latitude": 40.0831201,
       "longitude": -86.0385385,
       "depth_ft": 13.15,
-      "roughness_score": 3.1,
-      "final_condition": "GREEN"
+      "roughness_score": 82.1,
+      "final_condition": "RED"
     },
     {
       "point_id": "00280",
       "latitude": 40.0840209,
       "longitude": -86.0385258,
       "depth_ft": 8.84,
-      "roughness_score": 21.2,
-      "final_condition": "GREEN"
+      "roughness_score": 82.7,
+      "final_condition": "RED"
     },
     {
       "point_id": "00281",
       "latitude": 40.0849218,
       "longitude": -86.0385131,
       "depth_ft": 21.39,
-      "roughness_score": 0.4,
+      "roughness_score": 1.4,
       "final_condition": "GREEN"
     },
     {
@@ -2271,7 +2271,7 @@
       "latitude": 40.0858226,
       "longitude": -86.0385005,
       "depth_ft": 28.83,
-      "roughness_score": 4.8,
+      "roughness_score": 14.9,
       "final_condition": "GREEN"
     },
     {
@@ -2279,39 +2279,39 @@
       "latitude": 40.0867234,
       "longitude": -86.0384878,
       "depth_ft": 28.09,
-      "roughness_score": 7.4,
-      "final_condition": "GREEN"
+      "roughness_score": 100.0,
+      "final_condition": "RED"
     },
     {
       "point_id": "00284",
       "latitude": 40.0876243,
       "longitude": -86.0384751,
       "depth_ft": 28.58,
-      "roughness_score": 6.9,
-      "final_condition": "GREEN"
+      "roughness_score": 50.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00285",
       "latitude": 40.0885251,
       "longitude": -86.0384624,
       "depth_ft": 29.63,
-      "roughness_score": 6.6,
-      "final_condition": "GREEN"
+      "roughness_score": 53.7,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00286",
       "latitude": 40.0894259,
       "longitude": -86.0384498,
       "depth_ft": 28.56,
-      "roughness_score": 7.1,
-      "final_condition": "GREEN"
+      "roughness_score": 57.2,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00287",
       "latitude": 40.0921285,
       "longitude": -86.0384117,
       "depth_ft": 10.46,
-      "roughness_score": 3.3,
+      "roughness_score": 15.1,
       "final_condition": "GREEN"
     },
     {
@@ -2319,7 +2319,7 @@
       "latitude": 40.094831,
       "longitude": -86.0383737,
       "depth_ft": 27.44,
-      "roughness_score": 18.1,
+      "roughness_score": 24.3,
       "final_condition": "GREEN"
     },
     {
@@ -2327,7 +2327,7 @@
       "latitude": 40.0957318,
       "longitude": -86.038361,
       "depth_ft": 20.18,
-      "roughness_score": 22.3,
+      "roughness_score": 29.0,
       "final_condition": "GREEN"
     },
     {
@@ -2335,55 +2335,55 @@
       "latitude": 40.0966327,
       "longitude": -86.0383483,
       "depth_ft": 13.85,
-      "roughness_score": 28.5,
-      "final_condition": "GREEN"
+      "roughness_score": 33.7,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00291",
       "latitude": 40.0975335,
       "longitude": -86.0383356,
       "depth_ft": 25.0,
-      "roughness_score": 34.6,
-      "final_condition": "ORANGE"
+      "roughness_score": 2.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00292",
       "latitude": 40.0984343,
       "longitude": -86.038323,
       "depth_ft": 22.89,
-      "roughness_score": 40.0,
-      "final_condition": "ORANGE"
+      "roughness_score": 5.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00293",
       "latitude": 40.0993352,
       "longitude": -86.0383103,
       "depth_ft": 21.12,
-      "roughness_score": 43.3,
-      "final_condition": "ORANGE"
+      "roughness_score": 9.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00294",
       "latitude": 40.100236,
       "longitude": -86.0382976,
       "depth_ft": 21.38,
-      "roughness_score": 44.9,
-      "final_condition": "ORANGE"
+      "roughness_score": 14.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00295",
       "latitude": 40.1011368,
       "longitude": -86.0382849,
       "depth_ft": 14.83,
-      "roughness_score": 38.1,
-      "final_condition": "ORANGE"
+      "roughness_score": 16.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00296",
       "latitude": 40.1020377,
       "longitude": -86.0382722,
       "depth_ft": 21.25,
-      "roughness_score": 12.6,
+      "roughness_score": 23.6,
       "final_condition": "GREEN"
     },
     {
@@ -2391,7 +2391,7 @@
       "latitude": 40.1029385,
       "longitude": -86.0382595,
       "depth_ft": 21.12,
-      "roughness_score": 10.1,
+      "roughness_score": 23.1,
       "final_condition": "GREEN"
     },
     {
@@ -2399,7 +2399,7 @@
       "latitude": 40.1038394,
       "longitude": -86.0382469,
       "depth_ft": 20.31,
-      "roughness_score": 18.0,
+      "roughness_score": 24.0,
       "final_condition": "GREEN"
     },
     {
@@ -2407,7 +2407,7 @@
       "latitude": 40.1047402,
       "longitude": -86.0382342,
       "depth_ft": 19.45,
-      "roughness_score": 22.6,
+      "roughness_score": 25.8,
       "final_condition": "GREEN"
     },
     {
@@ -2415,7 +2415,7 @@
       "latitude": 40.105641,
       "longitude": -86.0382215,
       "depth_ft": 19.11,
-      "roughness_score": 26.0,
+      "roughness_score": 25.5,
       "final_condition": "GREEN"
     },
     {
@@ -2423,7 +2423,7 @@
       "latitude": 40.1065419,
       "longitude": -86.0382088,
       "depth_ft": 19.24,
-      "roughness_score": 29.0,
+      "roughness_score": 13.8,
       "final_condition": "GREEN"
     },
     {
@@ -2431,7 +2431,7 @@
       "latitude": 40.1074427,
       "longitude": -86.0381961,
       "depth_ft": 18.91,
-      "roughness_score": 30.8,
+      "roughness_score": 14.1,
       "final_condition": "GREEN"
     },
     {
@@ -2439,7 +2439,7 @@
       "latitude": 40.1083435,
       "longitude": -86.0381834,
       "depth_ft": 19.24,
-      "roughness_score": 3.6,
+      "roughness_score": 14.9,
       "final_condition": "GREEN"
     },
     {
@@ -2447,7 +2447,7 @@
       "latitude": 40.1092444,
       "longitude": -86.0381707,
       "depth_ft": 17.12,
-      "roughness_score": 6.9,
+      "roughness_score": 18.2,
       "final_condition": "GREEN"
     },
     {
@@ -2455,7 +2455,7 @@
       "latitude": 40.1101452,
       "longitude": -86.038158,
       "depth_ft": 16.08,
-      "roughness_score": 12.2,
+      "roughness_score": 23.8,
       "final_condition": "GREEN"
     },
     {
@@ -2463,7 +2463,7 @@
       "latitude": 40.111046,
       "longitude": -86.0381453,
       "depth_ft": 4.6,
-      "roughness_score": 17.4,
+      "roughness_score": 29.1,
       "final_condition": "YELLOW"
     },
     {
@@ -2471,7 +2471,7 @@
       "latitude": 40.0831103,
       "longitude": -86.0373657,
       "depth_ft": 2.97,
-      "roughness_score": 12.6,
+      "roughness_score": 1.5,
       "final_condition": "YELLOW"
     },
     {
@@ -2479,15 +2479,15 @@
       "latitude": 40.0840112,
       "longitude": -86.037353,
       "depth_ft": 4.85,
-      "roughness_score": 15.4,
-      "final_condition": "YELLOW"
+      "roughness_score": 89.1,
+      "final_condition": "RED"
     },
     {
       "point_id": "00309",
       "latitude": 40.0939204,
       "longitude": -86.0372134,
       "depth_ft": 24.15,
-      "roughness_score": 9.5,
+      "roughness_score": 0.9,
       "final_condition": "GREEN"
     },
     {
@@ -2495,7 +2495,7 @@
       "latitude": 40.0948212,
       "longitude": -86.0372007,
       "depth_ft": 24.61,
-      "roughness_score": 13.8,
+      "roughness_score": 6.3,
       "final_condition": "GREEN"
     },
     {
@@ -2503,7 +2503,7 @@
       "latitude": 40.0957221,
       "longitude": -86.037188,
       "depth_ft": 21.55,
-      "roughness_score": 19.9,
+      "roughness_score": 31.4,
       "final_condition": "GREEN"
     },
     {
@@ -2511,39 +2511,39 @@
       "latitude": 40.0966229,
       "longitude": -86.0371753,
       "depth_ft": 24.12,
-      "roughness_score": 26.1,
-      "final_condition": "GREEN"
+      "roughness_score": 36.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00313",
       "latitude": 40.0975238,
       "longitude": -86.0371626,
       "depth_ft": 22.96,
-      "roughness_score": 31.5,
-      "final_condition": "GREEN"
+      "roughness_score": 40.7,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00314",
       "latitude": 40.0984246,
       "longitude": -86.0371499,
       "depth_ft": 22.12,
-      "roughness_score": 34.8,
-      "final_condition": "ORANGE"
+      "roughness_score": 9.4,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00315",
       "latitude": 40.0993254,
       "longitude": -86.0371372,
       "depth_ft": 21.76,
-      "roughness_score": 36.4,
-      "final_condition": "ORANGE"
+      "roughness_score": 12.3,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00316",
       "latitude": 40.1002263,
       "longitude": -86.0371245,
       "depth_ft": 22.06,
-      "roughness_score": 29.5,
+      "roughness_score": 16.2,
       "final_condition": "GREEN"
     },
     {
@@ -2551,7 +2551,7 @@
       "latitude": 40.1011271,
       "longitude": -86.0371118,
       "depth_ft": 3.16,
-      "roughness_score": 4.0,
+      "roughness_score": 21.1,
       "final_condition": "YELLOW"
     },
     {
@@ -2559,7 +2559,7 @@
       "latitude": 40.1020279,
       "longitude": -86.0370991,
       "depth_ft": 18.76,
-      "roughness_score": 1.6,
+      "roughness_score": 23.5,
       "final_condition": "GREEN"
     },
     {
@@ -2567,7 +2567,7 @@
       "latitude": 40.1029288,
       "longitude": -86.0370864,
       "depth_ft": 19.88,
-      "roughness_score": 9.5,
+      "roughness_score": 30.6,
       "final_condition": "GREEN"
     },
     {
@@ -2575,7 +2575,7 @@
       "latitude": 40.1038296,
       "longitude": -86.0370737,
       "depth_ft": 19.69,
-      "roughness_score": 14.0,
+      "roughness_score": 30.1,
       "final_condition": "GREEN"
     },
     {
@@ -2583,7 +2583,7 @@
       "latitude": 40.1047304,
       "longitude": -86.037061,
       "depth_ft": 20.69,
-      "roughness_score": 17.5,
+      "roughness_score": 31.0,
       "final_condition": "GREEN"
     },
     {
@@ -2591,7 +2591,7 @@
       "latitude": 40.1056313,
       "longitude": -86.0370483,
       "depth_ft": 19.51,
-      "roughness_score": 20.5,
+      "roughness_score": 32.8,
       "final_condition": "GREEN"
     },
     {
@@ -2599,7 +2599,7 @@
       "latitude": 40.1065321,
       "longitude": -86.0370356,
       "depth_ft": 19.97,
-      "roughness_score": 22.3,
+      "roughness_score": 32.6,
       "final_condition": "GREEN"
     },
     {
@@ -2607,7 +2607,7 @@
       "latitude": 40.1092346,
       "longitude": -86.0369975,
       "depth_ft": 17.56,
-      "roughness_score": 3.6,
+      "roughness_score": 22.0,
       "final_condition": "GREEN"
     },
     {
@@ -2615,7 +2615,7 @@
       "latitude": 40.1101355,
       "longitude": -86.0369848,
       "depth_ft": 16.46,
-      "roughness_score": 8.8,
+      "roughness_score": 25.3,
       "final_condition": "GREEN"
     },
     {
@@ -2623,7 +2623,7 @@
       "latitude": 40.1110363,
       "longitude": -86.0369721,
       "depth_ft": 10.43,
-      "roughness_score": 14.1,
+      "roughness_score": 30.8,
       "final_condition": "GREEN"
     },
     {
@@ -2631,7 +2631,7 @@
       "latitude": 40.0812989,
       "longitude": -86.0362183,
       "depth_ft": 4.27,
-      "roughness_score": 0.0,
+      "roughness_score": 2.8,
       "final_condition": "YELLOW"
     },
     {
@@ -2639,7 +2639,7 @@
       "latitude": 40.0821997,
       "longitude": -86.0362056,
       "depth_ft": 2.12,
-      "roughness_score": 4.1,
+      "roughness_score": 4.0,
       "final_condition": "YELLOW"
     },
     {
@@ -2647,7 +2647,7 @@
       "latitude": 40.0831006,
       "longitude": -86.0361929,
       "depth_ft": 2.7,
-      "roughness_score": 6.9,
+      "roughness_score": 5.7,
       "final_condition": "YELLOW"
     },
     {
@@ -2655,7 +2655,7 @@
       "latitude": 40.0840014,
       "longitude": -86.0361802,
       "depth_ft": 6.31,
-      "roughness_score": 9.0,
+      "roughness_score": 8.5,
       "final_condition": "YELLOW"
     },
     {
@@ -2663,15 +2663,15 @@
       "latitude": 40.0849023,
       "longitude": -86.0361675,
       "depth_ft": 4.24,
-      "roughness_score": 9.1,
-      "final_condition": "YELLOW"
+      "roughness_score": 96.2,
+      "final_condition": "RED"
     },
     {
       "point_id": "00332",
       "latitude": 40.0930098,
       "longitude": -86.0360532,
       "depth_ft": 3.55,
-      "roughness_score": 1.0,
+      "roughness_score": 1.1,
       "final_condition": "YELLOW"
     },
     {
@@ -2679,7 +2679,7 @@
       "latitude": 40.0939106,
       "longitude": -86.0360405,
       "depth_ft": 24.59,
-      "roughness_score": 5.2,
+      "roughness_score": 3.9,
       "final_condition": "GREEN"
     },
     {
@@ -2687,7 +2687,7 @@
       "latitude": 40.0948115,
       "longitude": -86.0360277,
       "depth_ft": 26.44,
-      "roughness_score": 11.4,
+      "roughness_score": 8.0,
       "final_condition": "GREEN"
     },
     {
@@ -2695,7 +2695,7 @@
       "latitude": 40.0957123,
       "longitude": -86.036015,
       "depth_ft": 22.6,
-      "roughness_score": 17.5,
+      "roughness_score": 13.3,
       "final_condition": "GREEN"
     },
     {
@@ -2703,31 +2703,31 @@
       "latitude": 40.0966132,
       "longitude": -86.0360023,
       "depth_ft": 22.77,
-      "roughness_score": 22.9,
-      "final_condition": "GREEN"
+      "roughness_score": 38.4,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00337",
       "latitude": 40.097514,
       "longitude": -86.0359896,
       "depth_ft": 22.96,
-      "roughness_score": 26.2,
-      "final_condition": "GREEN"
+      "roughness_score": 43.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00338",
       "latitude": 40.0984148,
       "longitude": -86.0359769,
       "depth_ft": 22.61,
-      "roughness_score": 27.8,
-      "final_condition": "GREEN"
+      "roughness_score": 47.8,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00339",
       "latitude": 40.0993157,
       "longitude": -86.0359642,
       "depth_ft": 22.8,
-      "roughness_score": 21.0,
+      "roughness_score": 16.5,
       "final_condition": "GREEN"
     },
     {
@@ -2735,7 +2735,7 @@
       "latitude": 40.1020182,
       "longitude": -86.035926,
       "depth_ft": 12.03,
-      "roughness_score": 0.9,
+      "roughness_score": 1.7,
       "final_condition": "GREEN"
     },
     {
@@ -2743,7 +2743,7 @@
       "latitude": 40.102919,
       "longitude": -86.0359133,
       "depth_ft": 20.15,
-      "roughness_score": 5.5,
+      "roughness_score": 30.5,
       "final_condition": "GREEN"
     },
     {
@@ -2751,31 +2751,31 @@
       "latitude": 40.1038199,
       "longitude": -86.0359006,
       "depth_ft": 19.7,
-      "roughness_score": 8.9,
-      "final_condition": "GREEN"
+      "roughness_score": 37.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00343",
       "latitude": 40.1047207,
       "longitude": -86.0358879,
       "depth_ft": 19.73,
-      "roughness_score": 11.9,
-      "final_condition": "GREEN"
+      "roughness_score": 37.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00344",
       "latitude": 40.1056215,
       "longitude": -86.0358752,
       "depth_ft": 21.24,
-      "roughness_score": 13.7,
-      "final_condition": "GREEN"
+      "roughness_score": 38.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00345",
       "latitude": 40.1092249,
       "longitude": -86.0358243,
       "depth_ft": 4.96,
-      "roughness_score": 0.3,
+      "roughness_score": 1.5,
       "final_condition": "YELLOW"
     },
     {
@@ -2783,7 +2783,7 @@
       "latitude": 40.1101257,
       "longitude": -86.0358116,
       "depth_ft": 17.11,
-      "roughness_score": 5.5,
+      "roughness_score": 29.0,
       "final_condition": "GREEN"
     },
     {
@@ -2791,7 +2791,7 @@
       "latitude": 40.1110265,
       "longitude": -86.0357988,
       "depth_ft": 15.46,
-      "roughness_score": 11.2,
+      "roughness_score": 32.3,
       "final_condition": "GREEN"
     },
     {
@@ -2799,23 +2799,23 @@
       "latitude": 40.1119274,
       "longitude": -86.0357861,
       "depth_ft": 12.41,
-      "roughness_score": 17.5,
-      "final_condition": "GREEN"
+      "roughness_score": 37.9,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00349",
       "latitude": 40.1164315,
       "longitude": -86.0357225,
       "depth_ft": 13.02,
-      "roughness_score": 35.1,
-      "final_condition": "ORANGE"
+      "roughness_score": 0.1,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00350",
       "latitude": 40.1173324,
       "longitude": -86.0357098,
       "depth_ft": 11.19,
-      "roughness_score": 22.2,
+      "roughness_score": 0.1,
       "final_condition": "GREEN"
     },
     {
@@ -2823,7 +2823,7 @@
       "latitude": 40.1209357,
       "longitude": -86.0356589,
       "depth_ft": 3.28,
-      "roughness_score": 7.9,
+      "roughness_score": 1.4,
       "final_condition": "YELLOW"
     },
     {
@@ -2831,7 +2831,7 @@
       "latitude": 40.0830908,
       "longitude": -86.0350202,
       "depth_ft": 0.44,
-      "roughness_score": 0.5,
+      "roughness_score": 11.1,
       "final_condition": "YELLOW"
     },
     {
@@ -2839,7 +2839,7 @@
       "latitude": 40.0839917,
       "longitude": -86.0350075,
       "depth_ft": 4.38,
-      "roughness_score": 0.6,
+      "roughness_score": 12.7,
       "final_condition": "YELLOW"
     },
     {
@@ -2847,7 +2847,7 @@
       "latitude": 40.0939009,
       "longitude": -86.0348675,
       "depth_ft": 25.27,
-      "roughness_score": 2.8,
+      "roughness_score": 8.1,
       "final_condition": "GREEN"
     },
     {
@@ -2855,7 +2855,7 @@
       "latitude": 40.0948017,
       "longitude": -86.0348548,
       "depth_ft": 24.85,
-      "roughness_score": 9.0,
+      "roughness_score": 11.0,
       "final_condition": "GREEN"
     },
     {
@@ -2863,7 +2863,7 @@
       "latitude": 40.0957025,
       "longitude": -86.034842,
       "depth_ft": 23.95,
-      "roughness_score": 14.4,
+      "roughness_score": 15.0,
       "final_condition": "GREEN"
     },
     {
@@ -2871,7 +2871,7 @@
       "latitude": 40.0966034,
       "longitude": -86.0348293,
       "depth_ft": 24.03,
-      "roughness_score": 17.7,
+      "roughness_score": 20.4,
       "final_condition": "GREEN"
     },
     {
@@ -2879,23 +2879,23 @@
       "latitude": 40.0975042,
       "longitude": -86.0348166,
       "depth_ft": 23.19,
-      "roughness_score": 19.3,
-      "final_condition": "GREEN"
+      "roughness_score": 45.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00359",
       "latitude": 40.0984051,
       "longitude": -86.0348039,
       "depth_ft": 23.26,
-      "roughness_score": 12.4,
-      "final_condition": "GREEN"
+      "roughness_score": 50.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00360",
       "latitude": 40.1029092,
       "longitude": -86.0347402,
       "depth_ft": 7.92,
-      "roughness_score": 0.4,
+      "roughness_score": 8.7,
       "final_condition": "YELLOW"
     },
     {
@@ -2903,31 +2903,31 @@
       "latitude": 40.1038101,
       "longitude": -86.0347275,
       "depth_ft": 20.22,
-      "roughness_score": 3.4,
-      "final_condition": "GREEN"
+      "roughness_score": 37.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00362",
       "latitude": 40.1047109,
       "longitude": -86.0347147,
       "depth_ft": 20.32,
-      "roughness_score": 5.2,
-      "final_condition": "GREEN"
+      "roughness_score": 44.7,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00363",
       "latitude": 40.1056118,
       "longitude": -86.034702,
       "depth_ft": 14.37,
-      "roughness_score": 2.3,
-      "final_condition": "GREEN"
+      "roughness_score": 44.2,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00364",
       "latitude": 40.1101159,
       "longitude": -86.0346383,
       "depth_ft": 18.63,
-      "roughness_score": 2.7,
+      "roughness_score": 8.6,
       "final_condition": "GREEN"
     },
     {
@@ -2935,31 +2935,31 @@
       "latitude": 40.1110168,
       "longitude": -86.0346256,
       "depth_ft": 15.51,
-      "roughness_score": 9.0,
-      "final_condition": "GREEN"
+      "roughness_score": 36.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00366",
       "latitude": 40.1119176,
       "longitude": -86.0346129,
       "depth_ft": 15.4,
-      "roughness_score": 15.3,
-      "final_condition": "GREEN"
+      "roughness_score": 39.4,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00367",
       "latitude": 40.1128184,
       "longitude": -86.0346001,
       "depth_ft": 9.38,
-      "roughness_score": 21.3,
-      "final_condition": "GREEN"
+      "roughness_score": 44.9,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00368",
       "latitude": 40.1137193,
       "longitude": -86.0345874,
       "depth_ft": 16.3,
-      "roughness_score": 24.5,
+      "roughness_score": 1.9,
       "final_condition": "GREEN"
     },
     {
@@ -2967,7 +2967,7 @@
       "latitude": 40.1146201,
       "longitude": -86.0345746,
       "depth_ft": 15.52,
-      "roughness_score": 25.4,
+      "roughness_score": 3.4,
       "final_condition": "GREEN"
     },
     {
@@ -2975,7 +2975,7 @@
       "latitude": 40.1155209,
       "longitude": -86.0345619,
       "depth_ft": 15.17,
-      "roughness_score": 26.6,
+      "roughness_score": 4.5,
       "final_condition": "GREEN"
     },
     {
@@ -2983,7 +2983,7 @@
       "latitude": 40.1164218,
       "longitude": -86.0345492,
       "depth_ft": 14.3,
-      "roughness_score": 13.7,
+      "roughness_score": 5.8,
       "final_condition": "GREEN"
     },
     {
@@ -2991,7 +2991,7 @@
       "latitude": 40.1173226,
       "longitude": -86.0345364,
       "depth_ft": 13.73,
-      "roughness_score": 14.2,
+      "roughness_score": 7.2,
       "final_condition": "GREEN"
     },
     {
@@ -2999,7 +2999,7 @@
       "latitude": 40.1182234,
       "longitude": -86.0345237,
       "depth_ft": 13.31,
-      "roughness_score": 24.9,
+      "roughness_score": 7.1,
       "final_condition": "GREEN"
     },
     {
@@ -3007,7 +3007,7 @@
       "latitude": 40.0938911,
       "longitude": -86.0336945,
       "depth_ft": 12.9,
-      "roughness_score": 0.4,
+      "roughness_score": 1.3,
       "final_condition": "GREEN"
     },
     {
@@ -3015,7 +3015,7 @@
       "latitude": 40.0947919,
       "longitude": -86.0336818,
       "depth_ft": 26.19,
-      "roughness_score": 5.8,
+      "roughness_score": 15.1,
       "final_condition": "GREEN"
     },
     {
@@ -3023,7 +3023,7 @@
       "latitude": 40.0956928,
       "longitude": -86.0336691,
       "depth_ft": 24.08,
-      "roughness_score": 9.1,
+      "roughness_score": 18.0,
       "final_condition": "GREEN"
     },
     {
@@ -3031,7 +3031,7 @@
       "latitude": 40.0965936,
       "longitude": -86.0336563,
       "depth_ft": 25.91,
-      "roughness_score": 10.7,
+      "roughness_score": 22.1,
       "final_condition": "GREEN"
     },
     {
@@ -3039,7 +3039,7 @@
       "latitude": 40.0974944,
       "longitude": -86.0336436,
       "depth_ft": 24.27,
-      "roughness_score": 3.9,
+      "roughness_score": 27.4,
       "final_condition": "GREEN"
     },
     {
@@ -3047,15 +3047,15 @@
       "latitude": 40.0983953,
       "longitude": -86.0336308,
       "depth_ft": 20.61,
-      "roughness_score": 3.8,
-      "final_condition": "GREEN"
+      "roughness_score": 52.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00380",
       "latitude": 40.1101061,
       "longitude": -86.0334651,
       "depth_ft": 10.16,
-      "roughness_score": 0.4,
+      "roughness_score": 0.9,
       "final_condition": "GREEN"
     },
     {
@@ -3063,7 +3063,7 @@
       "latitude": 40.111007,
       "longitude": -86.0334523,
       "depth_ft": 16.36,
-      "roughness_score": 6.8,
+      "roughness_score": 15.6,
       "final_condition": "GREEN"
     },
     {
@@ -3071,31 +3071,31 @@
       "latitude": 40.1119078,
       "longitude": -86.0334396,
       "depth_ft": 16.34,
-      "roughness_score": 12.7,
-      "final_condition": "GREEN"
+      "roughness_score": 43.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00383",
       "latitude": 40.1128086,
       "longitude": -86.0334268,
       "depth_ft": 15.32,
-      "roughness_score": 15.9,
-      "final_condition": "GREEN"
+      "roughness_score": 46.4,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00384",
       "latitude": 40.1137095,
       "longitude": -86.0334141,
       "depth_ft": 14.93,
-      "roughness_score": 16.8,
-      "final_condition": "GREEN"
+      "roughness_score": 52.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00385",
       "latitude": 40.1146103,
       "longitude": -86.0334013,
       "depth_ft": 15.04,
-      "roughness_score": 18.0,
+      "roughness_score": 8.9,
       "final_condition": "GREEN"
     },
     {
@@ -3103,7 +3103,7 @@
       "latitude": 40.1155111,
       "longitude": -86.0333886,
       "depth_ft": 14.15,
-      "roughness_score": 5.1,
+      "roughness_score": 10.4,
       "final_condition": "GREEN"
     },
     {
@@ -3111,7 +3111,7 @@
       "latitude": 40.116412,
       "longitude": -86.0333758,
       "depth_ft": 14.43,
-      "roughness_score": 5.7,
+      "roughness_score": 11.5,
       "final_condition": "GREEN"
     },
     {
@@ -3119,7 +3119,7 @@
       "latitude": 40.1173128,
       "longitude": -86.0333631,
       "depth_ft": 14.18,
-      "roughness_score": 16.3,
+      "roughness_score": 12.9,
       "final_condition": "GREEN"
     },
     {
@@ -3127,7 +3127,7 @@
       "latitude": 40.1182136,
       "longitude": -86.0333503,
       "depth_ft": 14.2,
-      "roughness_score": 27.1,
+      "roughness_score": 14.2,
       "final_condition": "GREEN"
     },
     {
@@ -3135,15 +3135,15 @@
       "latitude": 40.1200153,
       "longitude": -86.0333248,
       "depth_ft": 11.3,
-      "roughness_score": 38.9,
-      "final_condition": "ORANGE"
+      "roughness_score": 2.8,
+      "final_condition": "GREEN"
     },
     {
       "point_id": "00391",
       "latitude": 40.0947821,
       "longitude": -86.0325088,
       "depth_ft": 14.4,
-      "roughness_score": 0.6,
+      "roughness_score": 8.3,
       "final_condition": "GREEN"
     },
     {
@@ -3151,7 +3151,7 @@
       "latitude": 40.095683,
       "longitude": -86.0324961,
       "depth_ft": 24.08,
-      "roughness_score": 2.2,
+      "roughness_score": 22.2,
       "final_condition": "GREEN"
     },
     {
@@ -3159,7 +3159,7 @@
       "latitude": 40.1109972,
       "longitude": -86.0322791,
       "depth_ft": 16.77,
-      "roughness_score": 4.2,
+      "roughness_score": 8.0,
       "final_condition": "GREEN"
     },
     {
@@ -3167,7 +3167,7 @@
       "latitude": 40.111898,
       "longitude": -86.0322663,
       "depth_ft": 16.16,
-      "roughness_score": 7.4,
+      "roughness_score": 22.7,
       "final_condition": "GREEN"
     },
     {
@@ -3175,23 +3175,23 @@
       "latitude": 40.1127988,
       "longitude": -86.0322536,
       "depth_ft": 15.75,
-      "roughness_score": 8.3,
-      "final_condition": "GREEN"
+      "roughness_score": 50.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00396",
       "latitude": 40.1136997,
       "longitude": -86.0322408,
       "depth_ft": 15.24,
-      "roughness_score": 9.5,
-      "final_condition": "GREEN"
+      "roughness_score": 53.5,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00397",
       "latitude": 40.1164022,
       "longitude": -86.0322025,
       "depth_ft": 13.73,
-      "roughness_score": 7.8,
+      "roughness_score": 17.5,
       "final_condition": "GREEN"
     },
     {
@@ -3207,7 +3207,7 @@
       "latitude": 40.1182038,
       "longitude": -86.0321769,
       "depth_ft": 13.55,
-      "roughness_score": 25.5,
+      "roughness_score": 19.9,
       "final_condition": "GREEN"
     },
     {
@@ -3215,7 +3215,7 @@
       "latitude": 40.1191047,
       "longitude": -86.0321642,
       "depth_ft": 13.04,
-      "roughness_score": 30.4,
+      "roughness_score": 21.3,
       "final_condition": "GREEN"
     },
     {
@@ -3223,7 +3223,7 @@
       "latitude": 40.1200055,
       "longitude": -86.0321514,
       "depth_ft": 12.36,
-      "roughness_score": 31.0,
+      "roughness_score": 6.9,
       "final_condition": "GREEN"
     },
     {
@@ -3231,7 +3231,7 @@
       "latitude": 40.1209063,
       "longitude": -86.0321386,
       "depth_ft": 13.26,
-      "roughness_score": 30.5,
+      "roughness_score": 5.9,
       "final_condition": "GREEN"
     },
     {
@@ -3239,7 +3239,7 @@
       "latitude": 40.1218072,
       "longitude": -86.0321258,
       "depth_ft": 11.69,
-      "roughness_score": 27.9,
+      "roughness_score": 3.0,
       "final_condition": "GREEN"
     },
     {
@@ -3247,7 +3247,7 @@
       "latitude": 40.112789,
       "longitude": -86.0310803,
       "depth_ft": 11.54,
-      "roughness_score": 0.9,
+      "roughness_score": 29.7,
       "final_condition": "GREEN"
     },
     {
@@ -3255,15 +3255,15 @@
       "latitude": 40.1136899,
       "longitude": -86.0310675,
       "depth_ft": 14.52,
-      "roughness_score": 3.1,
-      "final_condition": "GREEN"
+      "roughness_score": 57.2,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00406",
       "latitude": 40.1163924,
       "longitude": -86.0310291,
       "depth_ft": 13.6,
-      "roughness_score": 10.0,
+      "roughness_score": 5.3,
       "final_condition": "GREEN"
     },
     {
@@ -3271,7 +3271,7 @@
       "latitude": 40.1172932,
       "longitude": -86.0310164,
       "depth_ft": 13.23,
-      "roughness_score": 16.9,
+      "roughness_score": 24.5,
       "final_condition": "GREEN"
     },
     {
@@ -3279,7 +3279,7 @@
       "latitude": 40.118194,
       "longitude": -86.0310036,
       "depth_ft": 13.01,
-      "roughness_score": 21.8,
+      "roughness_score": 25.6,
       "final_condition": "GREEN"
     },
     {
@@ -3287,7 +3287,7 @@
       "latitude": 40.1190949,
       "longitude": -86.0309908,
       "depth_ft": 12.66,
-      "roughness_score": 22.4,
+      "roughness_score": 27.0,
       "final_condition": "GREEN"
     },
     {
@@ -3295,7 +3295,7 @@
       "latitude": 40.1199957,
       "longitude": -86.030978,
       "depth_ft": 12.16,
-      "roughness_score": 21.9,
+      "roughness_score": 28.3,
       "final_condition": "GREEN"
     },
     {
@@ -3303,7 +3303,7 @@
       "latitude": 40.1208965,
       "longitude": -86.0309652,
       "depth_ft": 12.18,
-      "roughness_score": 19.4,
+      "roughness_score": 13.9,
       "final_condition": "GREEN"
     },
     {
@@ -3311,7 +3311,7 @@
       "latitude": 40.1217974,
       "longitude": -86.0309524,
       "depth_ft": 13.57,
-      "roughness_score": 11.8,
+      "roughness_score": 12.9,
       "final_condition": "GREEN"
     },
     {
@@ -3319,7 +3319,7 @@
       "latitude": 40.1226982,
       "longitude": -86.0309396,
       "depth_ft": 11.39,
-      "roughness_score": 11.7,
+      "roughness_score": 10.1,
       "final_condition": "GREEN"
     },
     {
@@ -3327,7 +3327,7 @@
       "latitude": 40.1154817,
       "longitude": -86.0298686,
       "depth_ft": 12.06,
-      "roughness_score": 1.4,
+      "roughness_score": 1.0,
       "final_condition": "GREEN"
     },
     {
@@ -3335,7 +3335,7 @@
       "latitude": 40.1163825,
       "longitude": -86.0298558,
       "depth_ft": 13.67,
-      "roughness_score": 8.4,
+      "roughness_score": 6.7,
       "final_condition": "GREEN"
     },
     {
@@ -3343,7 +3343,7 @@
       "latitude": 40.1172834,
       "longitude": -86.029843,
       "depth_ft": 13.52,
-      "roughness_score": 13.3,
+      "roughness_score": 12.3,
       "final_condition": "GREEN"
     },
     {
@@ -3351,7 +3351,7 @@
       "latitude": 40.1181842,
       "longitude": -86.0298302,
       "depth_ft": 13.27,
-      "roughness_score": 13.9,
+      "roughness_score": 31.6,
       "final_condition": "GREEN"
     },
     {
@@ -3359,7 +3359,7 @@
       "latitude": 40.119085,
       "longitude": -86.0298174,
       "depth_ft": 13.36,
-      "roughness_score": 13.4,
+      "roughness_score": 32.6,
       "final_condition": "GREEN"
     },
     {
@@ -3367,23 +3367,23 @@
       "latitude": 40.1199859,
       "longitude": -86.0298046,
       "depth_ft": 12.57,
-      "roughness_score": 10.8,
-      "final_condition": "GREEN"
+      "roughness_score": 34.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00420",
       "latitude": 40.1208867,
       "longitude": -86.0297918,
       "depth_ft": 8.38,
-      "roughness_score": 3.2,
-      "final_condition": "GREEN"
+      "roughness_score": 35.4,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00421",
       "latitude": 40.1217875,
       "longitude": -86.029779,
       "depth_ft": 10.12,
-      "roughness_score": 3.2,
+      "roughness_score": 21.0,
       "final_condition": "GREEN"
     },
     {
@@ -3391,7 +3391,7 @@
       "latitude": 40.1226884,
       "longitude": -86.0297662,
       "depth_ft": 13.27,
-      "roughness_score": 5.8,
+      "roughness_score": 20.0,
       "final_condition": "GREEN"
     },
     {
@@ -3399,7 +3399,7 @@
       "latitude": 40.1235892,
       "longitude": -86.0297534,
       "depth_ft": 10.16,
-      "roughness_score": 18.6,
+      "roughness_score": 1.1,
       "final_condition": "GREEN"
     },
     {
@@ -3407,7 +3407,7 @@
       "latitude": 40.1389033,
       "longitude": -86.0295356,
       "depth_ft": 0.46,
-      "roughness_score": 18.7,
+      "roughness_score": 1.8,
       "final_condition": "YELLOW"
     },
     {
@@ -3415,7 +3415,7 @@
       "latitude": 40.1398041,
       "longitude": -86.0295227,
       "depth_ft": 0.44,
-      "roughness_score": 17.6,
+      "roughness_score": 2.6,
       "final_condition": "YELLOW"
     },
     {
@@ -3423,7 +3423,7 @@
       "latitude": 40.140705,
       "longitude": -86.0295099,
       "depth_ft": 0.44,
-      "roughness_score": 12.7,
+      "roughness_score": 2.4,
       "final_condition": "YELLOW"
     },
     {
@@ -3431,7 +3431,7 @@
       "latitude": 40.1416058,
       "longitude": -86.0294971,
       "depth_ft": 0.44,
-      "roughness_score": 13.9,
+      "roughness_score": 0.3,
       "final_condition": "YELLOW"
     },
     {
@@ -3439,7 +3439,7 @@
       "latitude": 40.1163727,
       "longitude": -86.0286825,
       "depth_ft": 13.54,
-      "roughness_score": 4.7,
+      "roughness_score": 8.0,
       "final_condition": "GREEN"
     },
     {
@@ -3447,7 +3447,7 @@
       "latitude": 40.1172735,
       "longitude": -86.0286696,
       "depth_ft": 13.79,
-      "roughness_score": 5.3,
+      "roughness_score": 13.8,
       "final_condition": "GREEN"
     },
     {
@@ -3455,7 +3455,7 @@
       "latitude": 40.1181744,
       "longitude": -86.0286568,
       "depth_ft": 13.88,
-      "roughness_score": 4.8,
+      "roughness_score": 19.4,
       "final_condition": "GREEN"
     },
     {
@@ -3463,15 +3463,15 @@
       "latitude": 40.1190752,
       "longitude": -86.028644,
       "depth_ft": 11.86,
-      "roughness_score": 2.3,
-      "final_condition": "GREEN"
+      "roughness_score": 38.6,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00432",
       "latitude": 40.1226785,
       "longitude": -86.0285927,
       "depth_ft": 13.6,
-      "roughness_score": 10.0,
+      "roughness_score": 28.0,
       "final_condition": "GREEN"
     },
     {
@@ -3479,7 +3479,7 @@
       "latitude": 40.1235794,
       "longitude": -86.0285799,
       "depth_ft": 11.55,
-      "roughness_score": 22.2,
+      "roughness_score": 27.0,
       "final_condition": "GREEN"
     },
     {
@@ -3487,7 +3487,7 @@
       "latitude": 40.1244802,
       "longitude": -86.0285671,
       "depth_ft": 8.35,
-      "roughness_score": 31.3,
+      "roughness_score": 0.2,
       "final_condition": "GREEN"
     },
     {
@@ -3495,7 +3495,7 @@
       "latitude": 40.1352902,
       "longitude": -86.0284132,
       "depth_ft": 3.97,
-      "roughness_score": 6.5,
+      "roughness_score": 5.2,
       "final_condition": "YELLOW"
     },
     {
@@ -3503,7 +3503,7 @@
       "latitude": 40.136191,
       "longitude": -86.0284003,
       "depth_ft": 3.7,
-      "roughness_score": 35.9,
+      "roughness_score": 3.4,
       "final_condition": "YELLOW"
     },
     {
@@ -3511,7 +3511,7 @@
       "latitude": 40.1370918,
       "longitude": -86.0283875,
       "depth_ft": 3.27,
-      "roughness_score": 44.6,
+      "roughness_score": 3.7,
       "final_condition": "YELLOW"
     },
     {
@@ -3519,7 +3519,7 @@
       "latitude": 40.1379926,
       "longitude": -86.0283747,
       "depth_ft": 2.21,
-      "roughness_score": 10.2,
+      "roughness_score": 2.3,
       "final_condition": "YELLOW"
     },
     {
@@ -3527,7 +3527,7 @@
       "latitude": 40.1388935,
       "longitude": -86.0283618,
       "depth_ft": 1.24,
-      "roughness_score": 9.0,
+      "roughness_score": 5.9,
       "final_condition": "YELLOW"
     },
     {
@@ -3535,7 +3535,7 @@
       "latitude": 40.1397943,
       "longitude": -86.028349,
       "depth_ft": 1.44,
-      "roughness_score": 4.2,
+      "roughness_score": 8.8,
       "final_condition": "YELLOW"
     },
     {
@@ -3543,7 +3543,7 @@
       "latitude": 40.1406951,
       "longitude": -86.0283362,
       "depth_ft": 1.59,
-      "roughness_score": 5.4,
+      "roughness_score": 9.7,
       "final_condition": "YELLOW"
     },
     {
@@ -3551,7 +3551,7 @@
       "latitude": 40.141596,
       "longitude": -86.0283233,
       "depth_ft": 1.32,
-      "roughness_score": 8.1,
+      "roughness_score": 9.5,
       "final_condition": "YELLOW"
     },
     {
@@ -3559,7 +3559,7 @@
       "latitude": 40.1424968,
       "longitude": -86.0283105,
       "depth_ft": 1.11,
-      "roughness_score": 9.5,
+      "roughness_score": 7.4,
       "final_condition": "YELLOW"
     },
     {
@@ -3567,7 +3567,7 @@
       "latitude": 40.1433976,
       "longitude": -86.0282977,
       "depth_ft": 0.44,
-      "roughness_score": 1.1,
+      "roughness_score": 3.8,
       "final_condition": "YELLOW"
     },
     {
@@ -3575,7 +3575,7 @@
       "latitude": 40.1217679,
       "longitude": -86.0274321,
       "depth_ft": 10.35,
-      "roughness_score": 1.5,
+      "roughness_score": 0.1,
       "final_condition": "GREEN"
     },
     {
@@ -3583,7 +3583,7 @@
       "latitude": 40.1226687,
       "longitude": -86.0274193,
       "depth_ft": 12.19,
-      "roughness_score": 13.6,
+      "roughness_score": 3.8,
       "final_condition": "GREEN"
     },
     {
@@ -3591,15 +3591,15 @@
       "latitude": 40.1235695,
       "longitude": -86.0274064,
       "depth_ft": 11.16,
-      "roughness_score": 22.7,
-      "final_condition": "GREEN"
+      "roughness_score": 35.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00448",
       "latitude": 40.1244703,
       "longitude": -86.0273936,
       "depth_ft": 3.74,
-      "roughness_score": 29.6,
+      "roughness_score": 34.0,
       "final_condition": "YELLOW"
     },
     {
@@ -3607,7 +3607,7 @@
       "latitude": 40.1352803,
       "longitude": -86.0272395,
       "depth_ft": 4.61,
-      "roughness_score": 27.3,
+      "roughness_score": 4.6,
       "final_condition": "YELLOW"
     },
     {
@@ -3615,7 +3615,7 @@
       "latitude": 40.1361811,
       "longitude": -86.0272266,
       "depth_ft": 4.72,
-      "roughness_score": 36.1,
+      "roughness_score": 12.2,
       "final_condition": "YELLOW"
     },
     {
@@ -3623,7 +3623,7 @@
       "latitude": 40.137082,
       "longitude": -86.0272138,
       "depth_ft": 3.79,
-      "roughness_score": 1.6,
+      "roughness_score": 10.5,
       "final_condition": "YELLOW"
     },
     {
@@ -3631,7 +3631,7 @@
       "latitude": 40.1379828,
       "longitude": -86.027201,
       "depth_ft": 1.58,
-      "roughness_score": 0.5,
+      "roughness_score": 10.8,
       "final_condition": "YELLOW"
     },
     {
@@ -3639,7 +3639,7 @@
       "latitude": 40.1415861,
       "longitude": -86.0271496,
       "depth_ft": 1.93,
-      "roughness_score": 1.0,
+      "roughness_score": 16.7,
       "final_condition": "YELLOW"
     },
     {
@@ -3647,7 +3647,7 @@
       "latitude": 40.121758,
       "longitude": -86.0262587,
       "depth_ft": 11.74,
-      "roughness_score": 5.1,
+      "roughness_score": 2.5,
       "final_condition": "GREEN"
     },
     {
@@ -3655,7 +3655,7 @@
       "latitude": 40.1226588,
       "longitude": -86.0262458,
       "depth_ft": 11.18,
-      "roughness_score": 14.2,
+      "roughness_score": 7.1,
       "final_condition": "GREEN"
     },
     {
@@ -3663,7 +3663,7 @@
       "latitude": 40.1235597,
       "longitude": -86.026233,
       "depth_ft": 11.0,
-      "roughness_score": 21.0,
+      "roughness_score": 10.8,
       "final_condition": "GREEN"
     },
     {
@@ -3671,7 +3671,7 @@
       "latitude": 40.1244605,
       "longitude": -86.0262201,
       "depth_ft": 7.95,
-      "roughness_score": 27.1,
+      "roughness_score": 42.1,
       "final_condition": "YELLOW"
     },
     {
@@ -3679,7 +3679,7 @@
       "latitude": 40.1253613,
       "longitude": -86.0262073,
       "depth_ft": 9.2,
-      "roughness_score": 30.5,
+      "roughness_score": 2.8,
       "final_condition": "GREEN"
     },
     {
@@ -3687,7 +3687,7 @@
       "latitude": 40.1262621,
       "longitude": -86.0261944,
       "depth_ft": 9.2,
-      "roughness_score": 30.6,
+      "roughness_score": 4.1,
       "final_condition": "GREEN"
     },
     {
@@ -3695,7 +3695,7 @@
       "latitude": 40.127163,
       "longitude": -86.0261816,
       "depth_ft": 9.03,
-      "roughness_score": 19.8,
+      "roughness_score": 2.1,
       "final_condition": "GREEN"
     },
     {
@@ -3703,7 +3703,7 @@
       "latitude": 40.132568,
       "longitude": -86.0261044,
       "depth_ft": 4.54,
-      "roughness_score": 1.2,
+      "roughness_score": 0.8,
       "final_condition": "YELLOW"
     },
     {
@@ -3711,7 +3711,7 @@
       "latitude": 40.1334688,
       "longitude": -86.0260916,
       "depth_ft": 6.03,
-      "roughness_score": 9.9,
+      "roughness_score": 2.1,
       "final_condition": "YELLOW"
     },
     {
@@ -3719,7 +3719,7 @@
       "latitude": 40.1343696,
       "longitude": -86.0260787,
       "depth_ft": 5.43,
-      "roughness_score": 18.8,
+      "roughness_score": 3.6,
       "final_condition": "YELLOW"
     },
     {
@@ -3727,7 +3727,7 @@
       "latitude": 40.1352704,
       "longitude": -86.0260658,
       "depth_ft": 5.33,
-      "roughness_score": 27.5,
+      "roughness_score": 6.1,
       "final_condition": "YELLOW"
     },
     {
@@ -3735,7 +3735,7 @@
       "latitude": 40.1217481,
       "longitude": -86.0250853,
       "depth_ft": 11.34,
-      "roughness_score": 5.6,
+      "roughness_score": 3.7,
       "final_condition": "GREEN"
     },
     {
@@ -3743,7 +3743,7 @@
       "latitude": 40.122649,
       "longitude": -86.0250724,
       "depth_ft": 11.09,
-      "roughness_score": 12.5,
+      "roughness_score": 9.6,
       "final_condition": "GREEN"
     },
     {
@@ -3751,7 +3751,7 @@
       "latitude": 40.1235498,
       "longitude": -86.0250595,
       "depth_ft": 10.96,
-      "roughness_score": 18.5,
+      "roughness_score": 14.2,
       "final_condition": "GREEN"
     },
     {
@@ -3759,7 +3759,7 @@
       "latitude": 40.1244506,
       "longitude": -86.0250466,
       "depth_ft": 10.68,
-      "roughness_score": 21.9,
+      "roughness_score": 17.9,
       "final_condition": "GREEN"
     },
     {
@@ -3767,15 +3767,15 @@
       "latitude": 40.1253514,
       "longitude": -86.0250338,
       "depth_ft": 10.7,
-      "roughness_score": 22.1,
-      "final_condition": "GREEN"
+      "roughness_score": 49.1,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00470",
       "latitude": 40.1262523,
       "longitude": -86.0250209,
       "depth_ft": 9.63,
-      "roughness_score": 11.2,
+      "roughness_score": 9.8,
       "final_condition": "GREEN"
     },
     {
@@ -3783,7 +3783,7 @@
       "latitude": 40.1271531,
       "longitude": -86.025008,
       "depth_ft": 9.29,
-      "roughness_score": 12.4,
+      "roughness_score": 11.1,
       "final_condition": "GREEN"
     },
     {
@@ -3791,7 +3791,7 @@
       "latitude": 40.1280539,
       "longitude": -86.0249952,
       "depth_ft": 9.04,
-      "roughness_score": 15.0,
+      "roughness_score": 9.1,
       "final_condition": "GREEN"
     },
     {
@@ -3799,7 +3799,7 @@
       "latitude": 40.1325581,
       "longitude": -86.0249308,
       "depth_ft": 7.81,
-      "roughness_score": 1.3,
+      "roughness_score": 1.1,
       "final_condition": "YELLOW"
     },
     {
@@ -3807,7 +3807,7 @@
       "latitude": 40.1334589,
       "longitude": -86.0249179,
       "depth_ft": 6.21,
-      "roughness_score": 10.2,
+      "roughness_score": 7.8,
       "final_condition": "YELLOW"
     },
     {
@@ -3815,7 +3815,7 @@
       "latitude": 40.1343597,
       "longitude": -86.024905,
       "depth_ft": 5.97,
-      "roughness_score": 19.0,
+      "roughness_score": 9.1,
       "final_condition": "YELLOW"
     },
     {
@@ -3823,7 +3823,7 @@
       "latitude": 40.1352606,
       "longitude": -86.0248922,
       "depth_ft": 5.7,
-      "roughness_score": 6.7,
+      "roughness_score": 10.7,
       "final_condition": "YELLOW"
     },
     {
@@ -3831,7 +3831,7 @@
       "latitude": 40.1217382,
       "longitude": -86.0239118,
       "depth_ft": 11.38,
-      "roughness_score": 3.9,
+      "roughness_score": 4.9,
       "final_condition": "GREEN"
     },
     {
@@ -3839,7 +3839,7 @@
       "latitude": 40.1226391,
       "longitude": -86.0238989,
       "depth_ft": 11.16,
-      "roughness_score": 10.0,
+      "roughness_score": 10.8,
       "final_condition": "GREEN"
     },
     {
@@ -3847,7 +3847,7 @@
       "latitude": 40.1235399,
       "longitude": -86.0238861,
       "depth_ft": 11.3,
-      "roughness_score": 13.4,
+      "roughness_score": 16.6,
       "final_condition": "GREEN"
     },
     {
@@ -3855,7 +3855,7 @@
       "latitude": 40.1244407,
       "longitude": -86.0238732,
       "depth_ft": 11.63,
-      "roughness_score": 13.5,
+      "roughness_score": 21.2,
       "final_condition": "GREEN"
     },
     {
@@ -3863,7 +3863,7 @@
       "latitude": 40.1253416,
       "longitude": -86.0238603,
       "depth_ft": 11.28,
-      "roughness_score": 2.7,
+      "roughness_score": 24.9,
       "final_condition": "GREEN"
     },
     {
@@ -3871,15 +3871,15 @@
       "latitude": 40.1262424,
       "longitude": -86.0238474,
       "depth_ft": 11.35,
-      "roughness_score": 3.8,
-      "final_condition": "GREEN"
+      "roughness_score": 56.2,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00483",
       "latitude": 40.1271432,
       "longitude": -86.0238345,
       "depth_ft": 9.65,
-      "roughness_score": 6.5,
+      "roughness_score": 16.9,
       "final_condition": "GREEN"
     },
     {
@@ -3887,7 +3887,7 @@
       "latitude": 40.128044,
       "longitude": -86.0238216,
       "depth_ft": 9.48,
-      "roughness_score": 10.0,
+      "roughness_score": 18.2,
       "final_condition": "GREEN"
     },
     {
@@ -3895,7 +3895,7 @@
       "latitude": 40.1289449,
       "longitude": -86.0238087,
       "depth_ft": 9.15,
-      "roughness_score": 14.7,
+      "roughness_score": 16.2,
       "final_condition": "GREEN"
     },
     {
@@ -3903,7 +3903,7 @@
       "latitude": 40.1298457,
       "longitude": -86.0237958,
       "depth_ft": 8.62,
-      "roughness_score": 15.1,
+      "roughness_score": 2.8,
       "final_condition": "GREEN"
     },
     {
@@ -3911,7 +3911,7 @@
       "latitude": 40.1307465,
       "longitude": -86.023783,
       "depth_ft": 9.87,
-      "roughness_score": 21.0,
+      "roughness_score": 2.0,
       "final_condition": "GREEN"
     },
     {
@@ -3919,7 +3919,7 @@
       "latitude": 40.1316474,
       "longitude": -86.0237701,
       "depth_ft": 10.66,
-      "roughness_score": 26.8,
+      "roughness_score": 2.9,
       "final_condition": "GREEN"
     },
     {
@@ -3927,7 +3927,7 @@
       "latitude": 40.1325482,
       "longitude": -86.0237572,
       "depth_ft": 10.29,
-      "roughness_score": 1.7,
+      "roughness_score": 6.3,
       "final_condition": "GREEN"
     },
     {
@@ -3935,7 +3935,7 @@
       "latitude": 40.133449,
       "longitude": -86.0237443,
       "depth_ft": 6.89,
-      "roughness_score": 10.4,
+      "roughness_score": 8.2,
       "final_condition": "YELLOW"
     },
     {
@@ -3943,7 +3943,7 @@
       "latitude": 40.1217283,
       "longitude": -86.0227384,
       "depth_ft": 11.36,
-      "roughness_score": 1.4,
+      "roughness_score": 3.2,
       "final_condition": "GREEN"
     },
     {
@@ -3951,7 +3951,7 @@
       "latitude": 40.1226292,
       "longitude": -86.0227255,
       "depth_ft": 11.57,
-      "roughness_score": 4.8,
+      "roughness_score": 12.0,
       "final_condition": "GREEN"
     },
     {
@@ -3959,7 +3959,7 @@
       "latitude": 40.12353,
       "longitude": -86.0227126,
       "depth_ft": 11.7,
-      "roughness_score": 5.0,
+      "roughness_score": 17.8,
       "final_condition": "GREEN"
     },
     {
@@ -3967,15 +3967,15 @@
       "latitude": 40.1271333,
       "longitude": -86.022661,
       "depth_ft": 9.76,
-      "roughness_score": 1.5,
-      "final_condition": "GREEN"
+      "roughness_score": 63.2,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00495",
       "latitude": 40.1280341,
       "longitude": -86.0226481,
       "depth_ft": 10.17,
-      "roughness_score": 6.2,
+      "roughness_score": 23.9,
       "final_condition": "GREEN"
     },
     {
@@ -3983,7 +3983,7 @@
       "latitude": 40.128935,
       "longitude": -86.0226352,
       "depth_ft": 9.74,
-      "roughness_score": 6.5,
+      "roughness_score": 25.2,
       "final_condition": "GREEN"
     },
     {
@@ -3991,7 +3991,7 @@
       "latitude": 40.1298358,
       "longitude": -86.0226223,
       "depth_ft": 9.23,
-      "roughness_score": 12.4,
+      "roughness_score": 23.2,
       "final_condition": "GREEN"
     },
     {
@@ -3999,7 +3999,7 @@
       "latitude": 40.1307366,
       "longitude": -86.0226094,
       "depth_ft": 8.87,
-      "roughness_score": 18.3,
+      "roughness_score": 9.9,
       "final_condition": "GREEN"
     },
     {
@@ -4007,7 +4007,7 @@
       "latitude": 40.1316375,
       "longitude": -86.0225965,
       "depth_ft": 8.9,
-      "roughness_score": 22.0,
+      "roughness_score": 9.0,
       "final_condition": "GREEN"
     },
     {
@@ -4015,7 +4015,7 @@
       "latitude": 40.1325383,
       "longitude": -86.0225836,
       "depth_ft": 7.54,
-      "roughness_score": 1.9,
+      "roughness_score": 1.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4023,7 +4023,7 @@
       "latitude": 40.1334391,
       "longitude": -86.0225707,
       "depth_ft": 6.47,
-      "roughness_score": 10.6,
+      "roughness_score": 13.4,
       "final_condition": "YELLOW"
     },
     {
@@ -4031,7 +4031,7 @@
       "latitude": 40.1343399,
       "longitude": -86.0225578,
       "depth_ft": 6.53,
-      "roughness_score": 15.1,
+      "roughness_score": 15.2,
       "final_condition": "YELLOW"
     },
     {
@@ -4039,7 +4039,7 @@
       "latitude": 40.1289251,
       "longitude": -86.0214616,
       "depth_ft": 8.74,
-      "roughness_score": 3.9,
+      "roughness_score": 31.0,
       "final_condition": "GREEN"
     },
     {
@@ -4047,7 +4047,7 @@
       "latitude": 40.1298259,
       "longitude": -86.0214487,
       "depth_ft": 8.81,
-      "roughness_score": 9.7,
+      "roughness_score": 32.2,
       "final_condition": "GREEN"
     },
     {
@@ -4055,7 +4055,7 @@
       "latitude": 40.1307267,
       "longitude": -86.0214358,
       "depth_ft": 8.82,
-      "roughness_score": 13.5,
+      "roughness_score": 30.3,
       "final_condition": "GREEN"
     },
     {
@@ -4063,7 +4063,7 @@
       "latitude": 40.1316275,
       "longitude": -86.0214229,
       "depth_ft": 9.0,
-      "roughness_score": 15.5,
+      "roughness_score": 16.9,
       "final_condition": "GREEN"
     },
     {
@@ -4071,7 +4071,7 @@
       "latitude": 40.1325284,
       "longitude": -86.02141,
       "depth_ft": 7.03,
-      "roughness_score": 2.1,
+      "roughness_score": 1.7,
       "final_condition": "YELLOW"
     },
     {
@@ -4079,7 +4079,7 @@
       "latitude": 40.1334292,
       "longitude": -86.021397,
       "depth_ft": 7.2,
-      "roughness_score": 6.5,
+      "roughness_score": 8.6,
       "final_condition": "YELLOW"
     },
     {
@@ -4087,7 +4087,7 @@
       "latitude": 40.13433,
       "longitude": -86.0213841,
       "depth_ft": 6.07,
-      "roughness_score": 8.7,
+      "roughness_score": 20.4,
       "final_condition": "YELLOW"
     },
     {
@@ -4095,7 +4095,7 @@
       "latitude": 40.1352309,
       "longitude": -86.0213712,
       "depth_ft": 6.71,
-      "roughness_score": 13.9,
+      "roughness_score": 22.2,
       "final_condition": "YELLOW"
     },
     {
@@ -4103,7 +4103,7 @@
       "latitude": 40.1361317,
       "longitude": -86.0213583,
       "depth_ft": 5.83,
-      "roughness_score": 19.4,
+      "roughness_score": 1.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4111,7 +4111,7 @@
       "latitude": 40.139735,
       "longitude": -86.0213066,
       "depth_ft": 3.4,
-      "roughness_score": 39.7,
+      "roughness_score": 0.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4119,7 +4119,7 @@
       "latitude": 40.1406358,
       "longitude": -86.0212936,
       "depth_ft": 3.61,
-      "roughness_score": 40.4,
+      "roughness_score": 3.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4127,7 +4127,7 @@
       "latitude": 40.1415366,
       "longitude": -86.0212807,
       "depth_ft": 3.91,
-      "roughness_score": 22.2,
+      "roughness_score": 5.4,
       "final_condition": "YELLOW"
     },
     {
@@ -4135,7 +4135,7 @@
       "latitude": 40.1289151,
       "longitude": -86.0202881,
       "depth_ft": 7.01,
-      "roughness_score": 1.2,
+      "roughness_score": 3.2,
       "final_condition": "YELLOW"
     },
     {
@@ -4143,23 +4143,23 @@
       "latitude": 40.129816,
       "longitude": -86.0202751,
       "depth_ft": 8.22,
-      "roughness_score": 4.9,
-      "final_condition": "GREEN"
+      "roughness_score": 38.0,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00517",
       "latitude": 40.1307168,
       "longitude": -86.0202622,
       "depth_ft": 8.55,
-      "roughness_score": 7.0,
-      "final_condition": "GREEN"
+      "roughness_score": 39.3,
+      "final_condition": "ORANGE"
     },
     {
       "point_id": "00518",
       "latitude": 40.1316176,
       "longitude": -86.0202493,
       "depth_ft": 4.73,
-      "roughness_score": 1.8,
+      "roughness_score": 37.3,
       "final_condition": "YELLOW"
     },
     {
@@ -4167,7 +4167,7 @@
       "latitude": 40.1334193,
       "longitude": -86.0202234,
       "depth_ft": 0.3,
-      "roughness_score": 0.1,
+      "roughness_score": 0.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4175,7 +4175,7 @@
       "latitude": 40.1343201,
       "longitude": -86.0202105,
       "depth_ft": 5.83,
-      "roughness_score": 5.4,
+      "roughness_score": 15.6,
       "final_condition": "YELLOW"
     },
     {
@@ -4183,7 +4183,7 @@
       "latitude": 40.1352209,
       "longitude": -86.0201975,
       "depth_ft": 5.95,
-      "roughness_score": 10.8,
+      "roughness_score": 27.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4191,7 +4191,7 @@
       "latitude": 40.1361218,
       "longitude": -86.0201846,
       "depth_ft": 6.05,
-      "roughness_score": 15.8,
+      "roughness_score": 29.3,
       "final_condition": "YELLOW"
     },
     {
@@ -4199,7 +4199,7 @@
       "latitude": 40.1370226,
       "longitude": -86.0201716,
       "depth_ft": 6.17,
-      "roughness_score": 21.7,
+      "roughness_score": 8.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4207,7 +4207,7 @@
       "latitude": 40.1388242,
       "longitude": -86.0201458,
       "depth_ft": 4.1,
-      "roughness_score": 31.1,
+      "roughness_score": 1.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4215,7 +4215,7 @@
       "latitude": 40.1397251,
       "longitude": -86.0201328,
       "depth_ft": 4.03,
-      "roughness_score": 31.8,
+      "roughness_score": 4.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4223,7 +4223,7 @@
       "latitude": 40.1406259,
       "longitude": -86.0201199,
       "depth_ft": 2.8,
-      "roughness_score": 13.6,
+      "roughness_score": 7.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4231,7 +4231,7 @@
       "latitude": 40.1415267,
       "longitude": -86.0201069,
       "depth_ft": 3.67,
-      "roughness_score": 12.7,
+      "roughness_score": 10.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4239,7 +4239,7 @@
       "latitude": 40.1343102,
       "longitude": -86.0190368,
       "depth_ft": 7.1,
-      "roughness_score": 2.3,
+      "roughness_score": 8.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4247,7 +4247,7 @@
       "latitude": 40.135211,
       "longitude": -86.0190239,
       "depth_ft": 5.34,
-      "roughness_score": 7.3,
+      "roughness_score": 22.7,
       "final_condition": "YELLOW"
     },
     {
@@ -4255,7 +4255,7 @@
       "latitude": 40.1361118,
       "longitude": -86.0190109,
       "depth_ft": 6.09,
-      "roughness_score": 13.1,
+      "roughness_score": 34.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4263,7 +4263,7 @@
       "latitude": 40.1379135,
       "longitude": -86.018985,
       "depth_ft": 3.42,
-      "roughness_score": 22.6,
+      "roughness_score": 3.1,
       "final_condition": "YELLOW"
     },
     {
@@ -4271,7 +4271,7 @@
       "latitude": 40.1388143,
       "longitude": -86.018972,
       "depth_ft": 3.34,
-      "roughness_score": 23.3,
+      "roughness_score": 6.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4279,7 +4279,7 @@
       "latitude": 40.1397151,
       "longitude": -86.0189591,
       "depth_ft": 3.81,
-      "roughness_score": 5.1,
+      "roughness_score": 8.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4287,7 +4287,7 @@
       "latitude": 40.140616,
       "longitude": -86.0189461,
       "depth_ft": 3.82,
-      "roughness_score": 4.2,
+      "roughness_score": 11.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4295,7 +4295,7 @@
       "latitude": 40.1415168,
       "longitude": -86.0189332,
       "depth_ft": 3.82,
-      "roughness_score": 5.2,
+      "roughness_score": 15.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4303,7 +4303,7 @@
       "latitude": 40.135201,
       "longitude": -86.0178502,
       "depth_ft": 6.03,
-      "roughness_score": 4.6,
+      "roughness_score": 15.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4311,7 +4311,7 @@
       "latitude": 40.1361019,
       "longitude": -86.0178372,
       "depth_ft": 5.77,
-      "roughness_score": 9.9,
+      "roughness_score": 29.7,
       "final_condition": "YELLOW"
     },
     {
@@ -4319,7 +4319,7 @@
       "latitude": 40.1370027,
       "longitude": -86.0178243,
       "depth_ft": 4.73,
-      "roughness_score": 14.0,
+      "roughness_score": 41.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4327,7 +4327,7 @@
       "latitude": 40.1379035,
       "longitude": -86.0178113,
       "depth_ft": 4.86,
-      "roughness_score": 14.7,
+      "roughness_score": 5.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4335,7 +4335,7 @@
       "latitude": 40.1415068,
       "longitude": -86.0177594,
       "depth_ft": 4.91,
-      "roughness_score": 8.3,
+      "roughness_score": 19.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4343,7 +4343,7 @@
       "latitude": 40.1351911,
       "longitude": -86.0166765,
       "depth_ft": 6.72,
-      "roughness_score": 1.3,
+      "roughness_score": 4.3,
       "final_condition": "YELLOW"
     },
     {
@@ -4351,7 +4351,7 @@
       "latitude": 40.1360919,
       "longitude": -86.0166636,
       "depth_ft": 5.82,
-      "roughness_score": 5.5,
+      "roughness_score": 22.1,
       "final_condition": "YELLOW"
     },
     {
@@ -4359,7 +4359,7 @@
       "latitude": 40.1369927,
       "longitude": -86.0166506,
       "depth_ft": 6.19,
-      "roughness_score": 6.2,
+      "roughness_score": 36.8,
       "final_condition": "YELLOW"
     },
     {
@@ -4367,7 +4367,7 @@
       "latitude": 40.1414969,
       "longitude": -86.0165856,
       "depth_ft": 1.97,
-      "roughness_score": 4.1,
+      "roughness_score": 4.9,
       "final_condition": "YELLOW"
     },
     {
@@ -4375,7 +4375,7 @@
       "latitude": 40.1423977,
       "longitude": -86.0165727,
       "depth_ft": 3.03,
-      "roughness_score": 7.9,
+      "roughness_score": 26.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4383,7 +4383,7 @@
       "latitude": 40.1432985,
       "longitude": -86.0165597,
       "depth_ft": 2.15,
-      "roughness_score": 10.5,
+      "roughness_score": 1.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4391,7 +4391,7 @@
       "latitude": 40.1441993,
       "longitude": -86.0165467,
       "depth_ft": 1.39,
-      "roughness_score": 13.8,
+      "roughness_score": 1.5,
       "final_condition": "YELLOW"
     },
     {
@@ -4399,7 +4399,7 @@
       "latitude": 40.1423877,
       "longitude": -86.0153989,
       "depth_ft": 1.29,
-      "roughness_score": 1.9,
+      "roughness_score": 12.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4407,7 +4407,7 @@
       "latitude": 40.1432885,
       "longitude": -86.0153859,
       "depth_ft": 0.7,
-      "roughness_score": 5.3,
+      "roughness_score": 33.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4415,7 +4415,7 @@
       "latitude": 40.1441894,
       "longitude": -86.0153729,
       "depth_ft": 1.81,
-      "roughness_score": 10.8,
+      "roughness_score": 8.6,
       "final_condition": "YELLOW"
     },
     {
@@ -4423,7 +4423,7 @@
       "latitude": 40.1450902,
       "longitude": -86.0153599,
       "depth_ft": 1.88,
-      "roughness_score": 24.5,
+      "roughness_score": 8.6,
       "final_condition": "YELLOW"
     },
     {
@@ -4431,7 +4431,7 @@
       "latitude": 40.1432786,
       "longitude": -86.0142121,
       "depth_ft": 0.43,
-      "roughness_score": 2.2,
+      "roughness_score": 19.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4439,7 +4439,7 @@
       "latitude": 40.1441794,
       "longitude": -86.014199,
       "depth_ft": 2.27,
-      "roughness_score": 16.0,
+      "roughness_score": 40.1,
       "final_condition": "YELLOW"
     },
     {
@@ -4447,7 +4447,7 @@
       "latitude": 40.1450802,
       "longitude": -86.014186,
       "depth_ft": 0.42,
-      "roughness_score": 2.5,
+      "roughness_score": 15.6,
       "final_condition": "YELLOW"
     },
     {
@@ -4455,7 +4455,7 @@
       "latitude": 40.1432686,
       "longitude": -86.0130383,
       "depth_ft": 3.1,
-      "roughness_score": 7.4,
+      "roughness_score": 1.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4463,7 +4463,7 @@
       "latitude": 40.1441694,
       "longitude": -86.0130252,
       "depth_ft": 0.44,
-      "roughness_score": 7.2,
+      "roughness_score": 0.3,
       "final_condition": "YELLOW"
     },
     {
@@ -4471,7 +4471,7 @@
       "latitude": 40.1423477,
       "longitude": -86.0107037,
       "depth_ft": 0.44,
-      "roughness_score": 8.6,
+      "roughness_score": 1.1,
       "final_condition": "YELLOW"
     },
     {
@@ -4479,7 +4479,7 @@
       "latitude": 40.1432485,
       "longitude": -86.0106907,
       "depth_ft": 0.3,
-      "roughness_score": 12.4,
+      "roughness_score": 6.4,
       "final_condition": "YELLOW"
     },
     {
@@ -4487,7 +4487,7 @@
       "latitude": 40.1441493,
       "longitude": -86.0106776,
       "depth_ft": 0.34,
-      "roughness_score": 2.1,
+      "roughness_score": 1.7,
       "final_condition": "YELLOW"
     },
     {
@@ -4495,7 +4495,7 @@
       "latitude": 40.1468518,
       "longitude": -86.0106384,
       "depth_ft": 0.36,
-      "roughness_score": 2.1,
+      "roughness_score": 6.4,
       "final_condition": "YELLOW"
     },
     {
@@ -4503,7 +4503,7 @@
       "latitude": 40.1414368,
       "longitude": -86.0095431,
       "depth_ft": 0.3,
-      "roughness_score": 0.0,
+      "roughness_score": 1.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4511,7 +4511,7 @@
       "latitude": 40.1423377,
       "longitude": -86.00953,
       "depth_ft": 0.44,
-      "roughness_score": 3.9,
+      "roughness_score": 5.1,
       "final_condition": "YELLOW"
     },
     {
@@ -4519,7 +4519,7 @@
       "latitude": 40.1432385,
       "longitude": -86.0095169,
       "depth_ft": 0.44,
-      "roughness_score": 7.3,
+      "roughness_score": 8.1,
       "final_condition": "YELLOW"
     },
     {
@@ -4527,7 +4527,7 @@
       "latitude": 40.1441393,
       "longitude": -86.0095038,
       "depth_ft": 0.44,
-      "roughness_score": 1.8,
+      "roughness_score": 1.6,
       "final_condition": "YELLOW"
     },
     {
@@ -4535,7 +4535,7 @@
       "latitude": 40.1468418,
       "longitude": -86.0094645,
       "depth_ft": 0.3,
-      "roughness_score": 1.8,
+      "roughness_score": 1.7,
       "final_condition": "YELLOW"
     },
     {
@@ -4551,7 +4551,7 @@
       "latitude": 40.1468217,
       "longitude": -86.0071168,
       "depth_ft": 0.3,
-      "roughness_score": 0.3,
+      "roughness_score": 0.0,
       "final_condition": "YELLOW"
     },
     {
@@ -4559,7 +4559,7 @@
       "latitude": 40.1468116,
       "longitude": -86.005943,
       "depth_ft": 0.3,
-      "roughness_score": 8.1,
+      "roughness_score": 1.5,
       "final_condition": "YELLOW"
     }
   ]
