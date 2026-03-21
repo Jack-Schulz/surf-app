@@ -267,10 +267,38 @@ let bestMarker = null;
 function updateBestMarker(points) {
   if (bestMarker) { bestMarker.remove(); bestMarker = null; }
 
-  const best = points
-    .filter(p => p.final_condition === 'GREEN' || p.final_condition === 'GOLD')
-    .sort((a, b) => a.roughness_score - b.roughness_score)[0];
-  if (!best) return;
+  const green = points.filter(p => p.final_condition === 'GREEN' || p.final_condition === 'GOLD');
+  if (!green.length) return;
+
+  // Build adjacency and flood-fill clusters
+  const THRESHOLD = 0.002;
+  const visited = new Array(green.length).fill(false);
+  let largestCluster = [];
+
+  for (let i = 0; i < green.length; i++) {
+    if (visited[i]) continue;
+    // BFS flood-fill from point i
+    const cluster = [];
+    const queue = [i];
+    visited[i] = true;
+    while (queue.length) {
+      const idx = queue.shift();
+      cluster.push(green[idx]);
+      for (let j = 0; j < green.length; j++) {
+        if (visited[j]) continue;
+        const dLat = green[idx].latitude  - green[j].latitude;
+        const dLng = green[idx].longitude - green[j].longitude;
+        if (Math.sqrt(dLat * dLat + dLng * dLng) < THRESHOLD) {
+          visited[j] = true;
+          queue.push(j);
+        }
+      }
+    }
+    if (cluster.length > largestCluster.length) largestCluster = cluster;
+  }
+
+  const lat = largestCluster.reduce((s, p) => s + p.latitude,  0) / largestCluster.length;
+  const lng = largestCluster.reduce((s, p) => s + p.longitude, 0) / largestCluster.length;
 
   const el = document.createElement('div');
   el.style.cssText = 'width:12px;height:12px;border-radius:50%;background:#2ECC71;border:2px solid #fff;position:relative;cursor:default;';
@@ -280,7 +308,7 @@ function updateBestMarker(points) {
   el.appendChild(label);
 
   bestMarker = new maplibregl.Marker({ element: el })
-    .setLngLat([best.longitude, best.latitude])
+    .setLngLat([lng, lat])
     .addTo(map);
 }
 
