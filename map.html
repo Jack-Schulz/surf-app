@@ -267,43 +267,57 @@ let bestMarker = null;
 function updateBestMarker(points) {
   if (bestMarker) { bestMarker.remove(); bestMarker = null; }
 
-  const green = points.filter(p => p.final_condition === 'GREEN' || p.final_condition === 'GOLD');
-  if (!green.length) return;
+  const greenPoints = points.filter(p => p.final_condition === 'GREEN' || p.final_condition === 'GOLD');
+  if (!greenPoints.length) return;
 
-  // Build adjacency and flood-fill clusters
-  const THRESHOLD = 0.002;
-  const visited = new Array(green.length).fill(false);
-  let largestCluster = [];
+  const THRESHOLD = 0.004;
 
-  for (let i = 0; i < green.length; i++) {
+  function getDistance(a, b) {
+    return Math.sqrt(
+      Math.pow(a.latitude  - b.latitude,  2) +
+      Math.pow(a.longitude - b.longitude, 2)
+    );
+  }
+
+  // Flood-fill clustering
+  const visited = new Array(greenPoints.length).fill(false);
+  const clusters = [];
+
+  for (let i = 0; i < greenPoints.length; i++) {
     if (visited[i]) continue;
-    // BFS flood-fill from point i
     const cluster = [];
     const queue = [i];
     visited[i] = true;
     while (queue.length) {
       const idx = queue.shift();
-      cluster.push(green[idx]);
-      for (let j = 0; j < green.length; j++) {
+      cluster.push(greenPoints[idx]);
+      for (let j = 0; j < greenPoints.length; j++) {
         if (visited[j]) continue;
-        const dLat = green[idx].latitude  - green[j].latitude;
-        const dLng = green[idx].longitude - green[j].longitude;
-        if (Math.sqrt(dLat * dLat + dLng * dLng) < THRESHOLD) {
+        if (getDistance(greenPoints[idx], greenPoints[j]) < THRESHOLD) {
           visited[j] = true;
           queue.push(j);
         }
       }
     }
-    if (cluster.length > largestCluster.length) largestCluster = cluster;
+    clusters.push(cluster);
   }
 
-  const lat = largestCluster.reduce((s, p) => s + p.latitude,  0) / largestCluster.length;
-  const lng = largestCluster.reduce((s, p) => s + p.longitude, 0) / largestCluster.length;
+  // Score each cluster: size + roughness bonus
+  const scored = clusters.map(cluster => {
+    const avgRoughness = cluster.reduce((s, p) => s + p.roughness_score, 0) / cluster.length;
+    const score = cluster.length * 2 + (1 - avgRoughness / 100);
+    return { cluster, score };
+  });
+
+  const best = scored.sort((a, b) => b.score - a.score)[0].cluster;
+
+  const lat = best.reduce((s, p) => s + p.latitude,  0) / best.length;
+  const lng = best.reduce((s, p) => s + p.longitude, 0) / best.length;
 
   const el = document.createElement('div');
   el.style.cssText = 'width:12px;height:12px;border-radius:50%;background:#2ECC71;border:2px solid #fff;position:relative;cursor:default;';
   const label = document.createElement('div');
-  label.textContent = 'Best right now';
+  label.textContent = `Best zone · ${best.length} points`;
   label.style.cssText = 'position:absolute;top:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(20,20,30,0.85);color:#fff;font-family:sans-serif;font-size:10px;padding:2px 6px;border-radius:4px;pointer-events:none;';
   el.appendChild(label);
 
