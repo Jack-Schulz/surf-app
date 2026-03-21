@@ -724,8 +724,8 @@
   <div class="live-strip">
     <div class="live-card">
       <p class="live-card-label">Morse Reservoir</p>
-      <p class="live-card-value score-good">8.2 <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span></p>
-      <p class="live-card-sub">Excellent · Wake Surf</p>
+      <p class="live-card-value score-good" id="morse-score">8.2 <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span></p>
+      <p class="live-card-sub" id="morse-condition">Excellent · Wake Surf</p>
     </div>
     <div class="live-card">
       <p class="live-card-label">Geist Reservoir</p>
@@ -734,8 +734,8 @@
     </div>
     <div class="live-card">
       <p class="live-card-label">Wind · Morse</p>
-      <p class="live-card-value">9 <span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">mph NW</span></p>
-      <p class="live-card-sub">Gusting to 13 mph</p>
+      <p class="live-card-value" id="morse-wind">9 <span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">mph NW</span></p>
+      <p class="live-card-sub" id="morse-wind-label">Gusting to 13 mph</p>
     </div>
     <div class="live-card">
       <p class="live-card-label">Best Window</p>
@@ -1049,6 +1049,46 @@
       btn.classList.add('active');
     });
   });
+</script>
+
+<script>
+  // Live conditions strip
+  (async () => {
+    try {
+      const resp = await fetch('conditions_data.json?v=' + Date.now());
+      const data = await resp.json();
+
+      function windCondLabel(speed) {
+        if (speed <= 7)  return 'Glass';
+        if (speed <= 12) return 'Rippled';
+        if (speed <= 17) return 'Choppy';
+        if (speed <= 22) return 'Rough';
+        return 'Stay Home';
+      }
+
+      // Wind card
+      document.getElementById('morse-wind').innerHTML =
+        `${data.wind_speed.toFixed(1)} <span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">${data.wind_dir_label}</span>`;
+      document.getElementById('morse-wind-label').textContent = windCondLabel(data.wind_speed);
+
+      // Session score
+      const greenCount = data.counts.GREEN || 0;
+      const total = data.points.length;
+      const score = ((greenCount / total) * 10).toFixed(1);
+      const scoreEl = document.getElementById('morse-score');
+      scoreEl.innerHTML = `${score} <span style="font-size:0.9rem;font-family:var(--mono);color:var(--mist)">/ 10</span>`;
+      scoreEl.className = 'live-card-value ' + (score >= 7 ? 'score-good' : score >= 5 ? 'score-fair' : 'score-poor');
+
+      let condLabel;
+      if (score >= 8)      condLabel = 'Excellent · Wake Surf';
+      else if (score >= 6) condLabel = 'Good · Wake Surf';
+      else if (score >= 4) condLabel = 'Fair · Wake Surf';
+      else                 condLabel = 'Poor · Wake Surf';
+      document.getElementById('morse-condition').textContent = condLabel;
+    } catch (e) {
+      console.warn('Could not load conditions data', e);
+    }
+  })();
 </script>
 
 </body>
