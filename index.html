@@ -1094,6 +1094,9 @@
                       : data.water_temp_f < 70 ? 'Light wetsuit optional'
                       : 'No wetsuit needed';
         document.getElementById('wetsuit-advisory').textContent = wetsuit;
+      } else {
+        document.getElementById('water-temp').textContent = 'Unavailable';
+        document.getElementById('wetsuit-advisory').textContent = '';
       }
     } catch (e) {
       console.warn('Could not load conditions data', e);

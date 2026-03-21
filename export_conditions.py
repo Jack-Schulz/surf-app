@@ -36,10 +36,27 @@ def fetch_weather():
     resp = requests.get(url, timeout=10)
     resp.raise_for_status()
     cw = resp.json()["current_weather"]
-    # temperature is returned in Celsius; convert to Fahrenheit
-    # Used as a proxy for lake surface temp until a dedicated lake temp source is integrated
-    air_temp_f = round(float(cw["temperature"]) * 9 / 5 + 32, 1)
-    return float(cw["windspeed"]), float(cw["winddirection"]), air_temp_f
+    return float(cw["windspeed"]), float(cw["winddirection"])
+
+
+def fetch_water_temp():
+    """Fetch water temperature using Open-Meteo soil_temperature_6cm as a lake surface proxy."""
+    url = (
+        "https://api.open-meteo.com/v1/forecast"
+        f"?latitude={LAT}&longitude={LNG}"
+        "&hourly=soil_temperature_6cm"
+        "&temperature_unit=fahrenheit"
+        "&forecast_days=1"
+        "&timezone=America%2FChicago"
+    )
+    try:
+        resp = requests.get(url, timeout=10)
+        resp.raise_for_status()
+        val = resp.json()["hourly"]["soil_temperature_6cm"][0]
+        return round(float(val), 1)
+    except Exception as e:
+        print(f"  Water temp fetch failed: {e}")
+        return None
 
 
 def fetch_hourly_forecast():
@@ -170,10 +187,16 @@ def lake_summary(counts, total, wind_speed, dir_name):
 
 def main():
     print("Fetching live wind...")
-    wind_speed, wind_dir_deg, water_temp_f = fetch_weather()
+    wind_speed, wind_dir_deg = fetch_weather()
     dir_name = nearest_direction(wind_dir_deg)
     print(f"  {wind_speed} mph from {wind_dir_deg}° ({dir_name})")
-    print(f"  Air temp (water proxy): {water_temp_f}°F")
+
+    print("Fetching water temperature (USGS)...")
+    water_temp_f = fetch_water_temp()
+    if water_temp_f is not None:
+        print(f"  Water temp: {water_temp_f}°F")
+    else:
+        print("  Water temp: unavailable")
 
     print("Fetching hourly forecast...")
     fc_times, fc_speeds, fc_dirs = fetch_hourly_forecast()
