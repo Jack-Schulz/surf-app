@@ -153,10 +153,10 @@
 
 <div id="legend">
   <div class="legend-title">Conditions</div>
-  <div class="legend-item"><div class="swatch" style="background:#2ECC71"></div>Glass + Deep</div>
-  <div class="legend-item"><div class="swatch" style="background:#F1C40F"></div>Calm / Shallow</div>
-  <div class="legend-item"><div class="swatch" style="background:#E67E22"></div>Moderate</div>
-  <div class="legend-item"><div class="swatch" style="background:#E74C3C"></div>Rough</div>
+  <div class="legend-item"><div class="swatch" style="background:#2ECC71"></div>Glass + Deep <span id="pct-green" style="color:rgba(255,255,255,0.55)"></span></div>
+  <div class="legend-item"><div class="swatch" style="background:#F1C40F"></div>Calm / Shallow <span id="pct-yellow" style="color:rgba(255,255,255,0.55)"></span></div>
+  <div class="legend-item"><div class="swatch" style="background:#E67E22"></div>Moderate <span id="pct-orange" style="color:rgba(255,255,255,0.55)"></span></div>
+  <div class="legend-item"><div class="swatch" style="background:#E74C3C"></div>Rough <span id="pct-red" style="color:rgba(255,255,255,0.55)"></span></div>
 </div>
 
 <div id="time-slider-panel">
@@ -264,6 +264,19 @@ function recalculatePoints(points, windSpeed, windDir) {
 
 let bestMarker = null;
 
+function updateLegendPercentages(points) {
+  const total = points.length;
+  if (!total) return;
+  const green  = points.filter(p => p.final_condition === 'GREEN' || p.final_condition === 'GOLD').length;
+  const yellow = points.filter(p => p.final_condition === 'YELLOW').length;
+  const orange = points.filter(p => p.final_condition === 'ORANGE').length;
+  const red    = points.filter(p => p.final_condition === 'RED').length;
+  document.getElementById('pct-green').textContent  = `· ${Math.round(green  / total * 100)}%`;
+  document.getElementById('pct-yellow').textContent = `· ${Math.round(yellow / total * 100)}%`;
+  document.getElementById('pct-orange').textContent = `· ${Math.round(orange / total * 100)}%`;
+  document.getElementById('pct-red').textContent    = `· ${Math.round(red    / total * 100)}%`;
+}
+
 function updateBestMarker(points) {
   if (bestMarker) { bestMarker.remove(); bestMarker = null; }
 
@@ -351,6 +364,7 @@ map.on('load', async () => {
   const geojson = buildGeoJSON(data.points);
 
   updateWindCard(data.wind_speed, data.wind_dir_label, data.wind_direction, data.last_updated);
+  updateLegendPercentages(data.points);
   updateBestMarker(data.points);
 
   map.addSource('conditions', {
@@ -442,6 +456,7 @@ map.on('load', async () => {
 
     const updated = recalculatePoints(data.points, hour.wind_speed, hour.wind_direction);
     map.getSource('conditions').setData(buildGeoJSON(updated));
+    updateLegendPercentages(updated);
     updateBestMarker(updated);
   });
 });
