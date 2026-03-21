@@ -689,6 +689,7 @@
       .live-strip { flex-wrap: wrap; }
       .live-card { flex: 1 1 50%; }
       .forecast-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .story-inner { grid-template-columns: 1fr !important; gap: 3rem !important; }
     }
   </style>
 </head>
@@ -706,6 +707,7 @@
       <li><a href="#forecast">Forecast</a></li>
       <li><a href="#lakes">Lakes</a></li>
       <li><a href="#features">Features</a></li>
+      <li><a href="#story">Story</a></li>
     </ul>
     <a href="#alerts" class="nav-cta">Get Alerts</a>
   </nav>
@@ -809,6 +811,40 @@
 </section>
 
 <hr class="full-divider" />
+
+<!-- ════════════════════════════════════════
+     STORY
+════════════════════════════════════════ -->
+<div id="story" style="background:var(--water);border-top:1px solid var(--rim);border-bottom:1px solid var(--rim);">
+  <div style="max-width:1200px;margin:0 auto;padding:7rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;" class="story-inner">
+    <div>
+      <p class="section-eyebrow">Our Story</p>
+      <h2 class="section-title">Built for the water.<br>Born in Cicero.</h2>
+      <p style="font-size:0.95rem;line-height:1.8;color:rgba(255,255,255,0.80);margin-bottom:1.4rem;">Fetch started the way most good ideas do — lying in bed early on a summer morning, phone in hand, checking the wind forecast and trying to figure out if the water would be worth it. The apps were fine. Wind speed, wind direction, a radar loop. But none of them could answer the only question that mattered: where on the lake is the water going to be glass?</p>
+      <p style="font-size:0.95rem;line-height:1.8;color:rgba(255,255,255,0.80);margin-bottom:1.4rem;">That question has a real answer. It's called fetch — the uninterrupted distance wind travels across open water before hitting shore. Short fetch means protected water. Long fetch means chop. Every lake has both at any given moment, depending on which way the wind is blowing. The problem was that no app knew that. They didn't know the shape of the lake, the geometry of the coves, the depth of the channel. They just knew the wind.</p>
+      <p style="font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--gold);line-height:1.3;margin:2rem 0;">Green means glass. Go there.</p>
+      <p style="font-size:0.95rem;line-height:1.8;color:rgba(255,255,255,0.80);margin-bottom:1.4rem;">Fetch was built in Cicero, Indiana — a town where the lake isn't just a feature, it's the identity. Morse Reservoir isn't a backdrop to the community — it is the community. The water creates the atmosphere, and the people do the rest. Growing up here meant growing up on the water, and learning to read conditions before you were old enough to drive the boat.</p>
+      <p style="font-size:0.95rem;line-height:1.8;color:rgba(255,255,255,0.80);">To give every watersports enthusiast — on every lake, at every skill level — the local knowledge it used to take years to earn. To make the best conditions findable, not just for the people who grew up on the water, but for everyone who loves it.</p>
+    </div>
+    <div>
+      <img src="morse-hero.JPG" style="width:100%;height:500px;object-fit:cover;border-radius:4px;border:1px solid var(--gold-dim);" alt="Morse Reservoir">
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     BUILT BY
+════════════════════════════════════════ -->
+<div id="built-by" style="background:var(--deep);border-bottom:1px solid var(--rim);padding:6rem 3rem;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;">
+    <p class="section-eyebrow" style="text-align:center;">Built By</p>
+    <img src="jack-photo.jpg" id="founder-photo" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim);margin:1.5rem auto;display:block;" alt="Jack Schulz">
+    <h2 class="section-title" style="text-align:center;font-size:2rem;">Jack Schulz</h2>
+    <p style="font-size:0.95rem;line-height:1.8;color:rgba(255,255,255,0.80);margin:1rem 0 0.5rem;">I grew up on Morse Reservoir in Cicero, Indiana. I built Fetch because I got tired of checking the wind and guessing — I wanted to know exactly where the glass water would be before I loaded the boat. This is that tool.</p>
+    <p style="font-size:0.9rem;color:rgba(255,255,255,0.55);margin-bottom:2rem;">Open to partners, collaborators, and anyone who loves the water.</p>
+    <a href="mailto:fetchweather@gmail.com" style="border:1px solid var(--gold-dim);color:var(--gold);font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.2rem;text-decoration:none;transition:all 0.2s;">Get In Touch</a>
+  </div>
+</div>
 
 <!-- ════════════════════════════════════════
      LAKES
