@@ -270,7 +270,7 @@ function updateBestMarker(points) {
   const greenPoints = points.filter(p => p.final_condition === 'GREEN' || p.final_condition === 'GOLD');
   if (!greenPoints.length) return;
 
-  const THRESHOLD = 0.004;
+  const THRESHOLD = 0.0015;
 
   function getDistance(a, b) {
     return Math.sqrt(
