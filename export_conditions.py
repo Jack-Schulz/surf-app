@@ -36,7 +36,10 @@ def fetch_weather():
     resp = requests.get(url, timeout=10)
     resp.raise_for_status()
     cw = resp.json()["current_weather"]
-    return float(cw["windspeed"]), float(cw["winddirection"])
+    # temperature is returned in Celsius; convert to Fahrenheit
+    # Used as a proxy for lake surface temp until a dedicated lake temp source is integrated
+    air_temp_f = round(float(cw["temperature"]) * 9 / 5 + 32, 1)
+    return float(cw["windspeed"]), float(cw["winddirection"]), air_temp_f
 
 
 def fetch_hourly_forecast():
@@ -167,9 +170,10 @@ def lake_summary(counts, total, wind_speed, dir_name):
 
 def main():
     print("Fetching live wind...")
-    wind_speed, wind_dir_deg = fetch_weather()
+    wind_speed, wind_dir_deg, water_temp_f = fetch_weather()
     dir_name = nearest_direction(wind_dir_deg)
     print(f"  {wind_speed} mph from {wind_dir_deg}° ({dir_name})")
+    print(f"  Air temp (water proxy): {water_temp_f}°F")
 
     print("Fetching hourly forecast...")
     fc_times, fc_speeds, fc_dirs = fetch_hourly_forecast()
@@ -221,6 +225,7 @@ def main():
         "wind_direction": wind_dir_deg,
         "wind_dir_label": dir_name,
         "last_updated":   last_updated,
+        "water_temp_f":   water_temp_f,
         "summary":        summary,
         "counts":         counts,
         "forecast":       forecast,

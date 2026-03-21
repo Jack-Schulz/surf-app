@@ -744,8 +744,8 @@
     </div>
     <div class="live-card">
       <p class="live-card-label">Water Temp</p>
-      <p class="live-card-value">74°<span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">F</span></p>
-      <p class="live-card-sub">No wetsuit needed</p>
+      <p class="live-card-value" id="water-temp">74°<span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">F</span></p>
+      <p class="live-card-sub" id="wetsuit-advisory">No wetsuit needed</p>
     </div>
   </div>
 </div>
@@ -1085,6 +1085,16 @@
       else if (score >= 4) condLabel = 'Fair · Wake Surf';
       else                 condLabel = 'Poor · Wake Surf';
       document.getElementById('morse-condition').textContent = condLabel;
+
+      // Water temp
+      if (data.water_temp_f != null) {
+        document.getElementById('water-temp').innerHTML =
+          `${Math.round(data.water_temp_f)}°<span style="font-size:1rem;font-family:var(--mono);color:var(--mist)">F</span>`;
+        const wetsuit = data.water_temp_f < 60 ? 'Wetsuit recommended'
+                      : data.water_temp_f < 70 ? 'Light wetsuit optional'
+                      : 'No wetsuit needed';
+        document.getElementById('wetsuit-advisory').textContent = wetsuit;
+      }
     } catch (e) {
       console.warn('Could not load conditions data', e);
     }

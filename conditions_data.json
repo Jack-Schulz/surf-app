@@ -2,7 +2,8 @@
   "wind_speed": 5.8,
   "wind_direction": 148.0,
   "wind_dir_label": "SE",
-  "last_updated": "March 21, 2026 2:05 PM",
+  "last_updated": "March 21, 2026 2:11 PM",
+  "water_temp_f": 61.7,
   "summary": "Morse is decent out there \u2014 some glass water available, check the deeper sections.",
   "counts": {
     "GREEN": 337,
